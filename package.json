@@ -1,0 +1,11 @@
+{
+  "name": "portfolio2",
+  "scripts": {
+    "dev:client": "cd client && bun run dev",
+    "dev:server": "cd server && bun run dev",
+    "dev": "bun run dev:client & bun run dev:server",
+    "build:client": "cd client && bun run build",
+    "build:server": "cd server && bun run build",
+    "build": "bun run build:client && bun run build:server"
+  }
+}

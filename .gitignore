@@ -1,0 +1,51 @@
+logs
+_.log
+npm-debug.log_
+bun-debug.log*
+
+.cache
+
+
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+
+pids
+_.pid
+_.seed
+*.pid.lock
+
+build/Release
+
+#
+
+node_modules/
+jspm_packages/
+
+
+
+# TypeScript cache
+
+*.tsbuildinfo
+
+# Optional npm cache directory
+
+.npm
+
+# Optional eslint cache
+
+.eslintcache
+
+
+# dotenv environment variable files
+
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+
+
+.vscode-test
+
+.DS_Store
