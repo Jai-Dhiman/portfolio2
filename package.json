@@ -1,11 +1,14 @@
 {
   "name": "portfolio2",
   "scripts": {
+    "dev": "concurrently \"bun run dev:client\" \"bun run dev:server\"",
     "dev:client": "cd client && bun run dev",
     "dev:server": "cd server && bun run dev",
-    "dev": "bun run dev:client & bun run dev:server",
     "build:client": "cd client && bun run build",
     "build:server": "cd server && bun run build",
     "build": "bun run build:client && bun run build:server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
