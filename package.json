@@ -12,10 +12,5 @@
     "concurrently": "^9.1.2"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.64.2",
-    "react-parallax-tilt": "^1.7.273",
-    "react-tsparticles": "^2.12.2",
-    "tsparticles": "^3.7.1",
-    "tsparticles-slim": "^2.12.0"
   }
 }
