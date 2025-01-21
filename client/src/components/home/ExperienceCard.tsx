@@ -6,6 +6,12 @@ interface ExperienceCardProps {
 }
 
 export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
+  console.log('Experience data:', {
+    experience,
+    startDate: experience?.startDate,
+    type: experience?.startDate ? typeof experience.startDate : 'null/undefined'
+  });
+
   const formatDate = (date: string | Date | null) => {
     if (!date) return '';
 
