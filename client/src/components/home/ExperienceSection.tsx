@@ -1,66 +1,42 @@
-// components/home/ExperienceSection.tsx
-import { useQuery } from '@tanstack/react-query';
-import { getExperiences } from '../../lib/api';
+// components/ExperienceSection.tsx
+import { useExperiences } from '../../hooks/useExperiences';
+import { ExperienceCard } from './ExperienceCard';
 
-export default function ExperienceSection() {
-  const { data: experiences, isLoading, error } = useQuery({
-    queryKey: ['experiences'],
-    queryFn: getExperiences
-  });
+export const ExperienceSection = () => {
+  const { data: experiences, isLoading, error } = useExperiences();
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-xl font-author">Loading experiences...</p>
+      <div className="animate-pulse">
+        <div className="h-8 bg-primary-200 dark:bg-dark-300 rounded w-1/4 mb-4"></div>
+        <div className="space-y-4">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="h-40 bg-primary-100 dark:bg-dark-400 rounded"></div>
+          ))}
+        </div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-xl font-author text-red-500">Error loading experiences</p>
+      <div className="text-accent-coral dark:text-accent-gold">
+        Error loading experiences
       </div>
     );
   }
 
   return (
     <section id="experience" className="py-16">
-      <h2 className="text-4xl font-author font-bold mb-8">Experience</h2>
-      <div className="space-y-8">
+      <h2 className="section-heading">Experience</h2>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
         {experiences?.map((experience) => (
-          <div
-            key={experience.id}
-            className="card hover:shadow-lg transition-shadow duration-200"
-          >
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <h3 className="text-xl font-author font-bold">{experience.title}</h3>
-                <p className="text-primary-300 dark:text-primary-200">{experience.company}</p>
-              </div>
-              <div className="text-right text-sm text-primary-300 dark:text-primary-200">
-                <p>
-                  {new Date(experience.startDate).toLocaleDateString('en-US', {
-                    month: 'long',
-                    year: 'numeric'
-                  })}
-                  {' - '}
-                  {experience.current
-                    ? 'Present'
-                    : new Date(experience.endDate!).toLocaleDateString('en-US', {
-                        month: 'long',
-                        year: 'numeric'
-                      })
-                  }
-                </p>
-              </div>
-            </div>
-            <p className="text-gray-900 dark:text-gray-100">
-              {experience.description}
-            </p>
-          </div>
+          <ExperienceCard 
+            key={experience.id} 
+            experience={experience} 
+          />
         ))}
       </div>
     </section>
   );
-}
+};

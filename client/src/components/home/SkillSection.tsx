@@ -10,16 +10,18 @@ export default function SkillsSection() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-xl font-author">Loading skills...</p>
+      <div className="min-h-[50vh] flex items-center justify-center">
+        <p className="text-gradient animate-fade-in">Loading skills...</p>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-xl font-author text-red-500">Error loading skills</p>
+      <div className="min-h-[50vh] flex items-center justify-center">
+        <p className="text-accent-coral dark:text-accent-gold animate-fade-in">
+          Error loading skills
+        </p>
       </div>
     );
   }
@@ -27,28 +29,28 @@ export default function SkillsSection() {
   const categories = [...new Set(skills?.map(skill => skill.category))];
 
   return (
-    <section id="skills" className="py-16">
-      <h2 className="text-4xl font-author font-bold mb-8">Skills</h2>
-      <div className="space-y-8">
+    <section id="skills" className="py-16 animate-slide-up">
+      <h2 className="section-heading">Skills & Technologies</h2>
+      <div className="space-y-12">
         {categories.map((category) => (
-          <div key={category}>
-            <h3 className="text-2xl font-author font-bold mb-4 capitalize">{category}</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div key={category} className="animate-fade-in">
+            <h3 className="text-gradient capitalize mb-6">{category}</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
               {skills
                 ?.filter(skill => skill.category === category)
                 .map((skill) => (
                   <div
                     key={skill.id}
-                    className="card flex items-center gap-2 p-3 hover:shadow-md transition-shadow duration-200"
+                    className="card hover-lift flex items-center gap-3 p-4"
                   >
                     {skill.iconUrl && (
                       <img
                         src={skill.iconUrl}
                         alt={skill.name}
-                        className="w-6 h-6"
+                        className="w-8 h-8 object-contain"
                       />
                     )}
-                    <span className="text-gray-900 dark:text-gray-100">{skill.name}</span>
+                    <span className="font-medium">{skill.name}</span>
                   </div>
                 ))}
             </div>

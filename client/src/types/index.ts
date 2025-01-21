@@ -22,7 +22,7 @@ export interface Experience {
   title: string;
   company: string;
   description: string;
-  startDate: string;
-  endDate?: string;
+  startDate: Date;
+  endDate?: Date;
   current: boolean;
 }

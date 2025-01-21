@@ -3,7 +3,7 @@ import Layout from './components/layout/Layout'
 import Hero from './components/layout/Hero'
 import ProjectsSection from './components/home/ProjectsSection'
 import SkillsSection from './components/home/SkillSection'
-import ExperienceSection from './components/home/ExperienceSection'
+import { ExperienceSection }from './components/home/ExperienceSection'
 
 
 const queryClient = new QueryClient()

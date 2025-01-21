@@ -27,12 +27,12 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="py-16">
-      <h2 className="text-4xl font-author font-bold mb-8">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects?.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
-    </section>
+  <h2 className="section-heading">Projects</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+    {projects?.map((project) => (
+      <ProjectCard key={project.id} project={project} />
+    ))}
+  </div>
+</section>
   );
 }
