@@ -1,4 +1,4 @@
-import { pgTable, serial, text, timestamp, boolean } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, date, boolean } from "drizzle-orm/pg-core";
 
 export const projects = pgTable("projects", {
   id: serial("id").primaryKey(),
@@ -8,7 +8,7 @@ export const projects = pgTable("projects", {
   githubUrl: text("github_url"),
   image: text("image"),
   techStack: text("tech_stack").array(),
-  createdAt: timestamp("created_at").defaultNow(),
+  createdAt: date("created_at").defaultNow(),
 });
 
 export const skills = pgTable("skills", {
@@ -23,7 +23,7 @@ export const experiences = pgTable("experiences", {
   title: text("title").notNull(),
   company: text("company").notNull(),
   description: text("description").notNull(),
-  startDate: timestamp("start_date").notNull(),
-  endDate: timestamp("end_date"),
+  startDate: date("start_date").notNull(),
+  endDate: date("end_date"),
   current: boolean("current").default(false),
 });
