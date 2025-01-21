@@ -8,13 +8,7 @@ export default function SkillsSection() {
     queryKey: ['skills'],
     queryFn: getSkills
   });
-
-  if (isLoading) {
-    return (
-    <Loader />
-    )
-  }
-
+  
   if (error) {
     return (
       <div className="min-h-[50vh] flex items-center justify-center">

@@ -1,3 +1,4 @@
+import Tilt from 'react-parallax-tilt';
 import { Project } from '../../types';
 
 interface ProjectCardProps {
@@ -11,8 +12,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   };
 
   return (
-    <article className="card hover:-translate-y-2 transition-all duration-300 group">
-      <div className="relative w-full pb-[56.25%] overflow-hidden rounded-t-lg bg-gray-50 dark:bg-dark-100">
+    <Tilt
+      tiltMaxAngleX={3}
+      tiltMaxAngleY={3}
+      perspective={1000}
+      transitionSpeed={1000}
+      scale={1.02}
+      className="w-full"
+    >
+      <article className="card group">
+        <div className="relative w-full pb-[56.25%] overflow-hidden rounded-t-lg bg-gray-50 dark:bg-dark-100">
         {project.image && (
           <img
       src={project.image}
@@ -83,5 +92,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
     </article>
+  </Tilt>
   );
 }
