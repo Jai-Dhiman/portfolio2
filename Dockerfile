@@ -2,6 +2,7 @@
 FROM oven/bun:1 as client-builder
 WORKDIR /app/client
 COPY client/package.json client/bun.lockb ./
+COPY client/.env.production ./
 RUN bun install
 COPY client/ ./
 RUN bun run build
