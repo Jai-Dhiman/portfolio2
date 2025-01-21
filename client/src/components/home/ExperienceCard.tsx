@@ -6,12 +6,21 @@ interface ExperienceCardProps {
 }
 
 export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
-  const formatDate = (date: string | Date) => {
-    const dateObj = typeof date === 'string' ? new Date(date) : date;
-    return dateObj.getFullYear().toString();
+  const formatDate = (date: string | Date | null) => {
+    if (!date) return '';
+
+    try {
+      const dateObj = typeof date === 'string' ? new Date(date) : date;
+      return dateObj.getFullYear().toString();
+    } catch (error) {
+      console.error('Error formatting date:', error);
+      return '';
+    }
   };
 
   const getDateDisplay = () => {
+    if (!experience?.startDate) return '';
+
     const startYear = formatDate(experience.startDate);
     if (experience.current) {
       return `${startYear} - Present`;
