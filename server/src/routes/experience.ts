@@ -6,7 +6,6 @@ import { eq } from "drizzle-orm";
 
 const experienceRoutes = new Hono();
 
-// GET all experiences
 experienceRoutes.get("/experiences", async (c) => {
   try {
     const allExperiences = await db.select().from(experiences);
@@ -15,7 +14,5 @@ experienceRoutes.get("/experiences", async (c) => {
     return c.json({ error: "Failed to fetch experiences" }, 500);
   }
 });
-
-// Additional CRUD routes similar to projects...
 
 export default experienceRoutes;
