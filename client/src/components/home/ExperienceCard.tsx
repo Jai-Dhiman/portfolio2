@@ -6,8 +6,9 @@ interface ExperienceCardProps {
 }
 
 export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
-  const formatDate = (date: Date) => {
-    return new Date(date).getFullYear().toString();
+  const formatDate = (date: string | Date) => {
+    const dateObj = typeof date === 'string' ? new Date(date) : date;
+    return dateObj.getFullYear().toString();
   };
 
   const getDateDisplay = () => {
