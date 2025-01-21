@@ -2,6 +2,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getProjects } from '../../lib/api';
 import ProjectCard from './ProjectCard';
+import Loader from '../loader';
 
 export default function ProjectsSection() {
   const { data: projects, isLoading, error } = useQuery({
@@ -11,10 +12,8 @@ export default function ProjectsSection() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-xl font-author">Loading projects...</p>
-      </div>
-    );
+    <Loader />
+    )
   }
 
   if (error) {

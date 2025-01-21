@@ -1,6 +1,7 @@
 // components/home/SkillSection.tsx
 import { useQuery } from '@tanstack/react-query';
 import { getSkills } from '../../lib/api';
+import Loader from '../loader';
 
 export default function SkillsSection() {
   const { data: skills, isLoading, error } = useQuery({
@@ -10,10 +11,8 @@ export default function SkillsSection() {
 
   if (isLoading) {
     return (
-      <div className="min-h-[50vh] flex items-center justify-center">
-        <p className="text-gradient animate-fade-in">Loading skills...</p>
-      </div>
-    );
+    <Loader />
+    )
   }
 
   if (error) {
