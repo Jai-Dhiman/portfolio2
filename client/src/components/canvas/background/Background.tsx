@@ -7,8 +7,8 @@ export function Background() {
   const meshRef = useRef<THREE.Mesh>(null)
   const uniformsRef = useRef({
     uTime: { value: 0 },
-    uColorA: { value: new THREE.Color('#2C3E50') },
-    uColorB: { value: new THREE.Color('#3498DB') },
+    uColorA: { value: new THREE.Color('#a5a9a0') },
+    uColorB: { value: new THREE.Color('#B1B5AC') },
   })
 
   const vertexShader = `

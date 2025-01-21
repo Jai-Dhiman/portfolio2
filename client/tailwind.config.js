@@ -5,22 +5,20 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          200: "#bae6fd",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1",
-          800: "#075985",
-          900: "#0c4a6e",
-          950: "#082f49",
+          100: "#FEF3E2",
+          200: "#BEC6A0",
+          300: "#708871",
+          400: "#606676",
+        },
+        dark: {
+          100: "#606676",
+          200: "#708871",
+          300: "#BEC6A0",
+          400: "#FEF3E2",
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        author: ["Author-Regular", "Author-Medium", "Author-Bold", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
