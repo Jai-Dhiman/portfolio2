@@ -4,7 +4,8 @@ WORKDIR /app/client
 COPY client/package.json client/bun.lockb ./
 RUN bun install
 COPY client/ ./
-RUN bun run build
+# Add type checking and build steps
+RUN bun run tsc --noEmit && bun run build
 
 # Stage 2: Build server
 FROM oven/bun:1 as server-builder
