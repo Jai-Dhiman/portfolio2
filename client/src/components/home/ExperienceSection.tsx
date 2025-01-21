@@ -14,8 +14,8 @@ export const ExperienceSection = () => {
 
   if (error) {
     return (
-      <div className="text-accent-coral dark:text-accent-gold">
-        Error loading experiences
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-xl font-author text-red-500">Error loading Experiences</p>
       </div>
     );
   }

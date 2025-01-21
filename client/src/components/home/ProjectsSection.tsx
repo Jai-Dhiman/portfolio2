@@ -10,6 +10,12 @@ export default function ProjectsSection() {
     queryFn: getProjects
   });
 
+  if (isLoading) {
+    return (
+    <Loader />
+    )
+  }
+  
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center">
