@@ -14,10 +14,10 @@ app.use(
     origin: "*",
     allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowHeaders: ["Content-Type", "Authorization"],
-    exposeHeaders: ["Content-Length", "X-Requested-With"],
   })
 );
 
+app.get("/health", (c) => c.json({ status: "ok" }));
 app.get("/api/health", (c) => c.json({ status: "ok" }));
 
 app.route("/api", projectRoutes);
@@ -25,11 +25,20 @@ app.route("/api", skillRoutes);
 app.route("/api", experienceRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  app.use("/*", serveStatic({ root: "../client/dist" }));
+  app.use("/*", async (c, next) => {
+    try {
+      return await serveStatic({ root: "./client/dist" })(c, next);
+    } catch {
+      return next();
+    }
+  });
 
-  // For SPA routing, serve index.html for all non-API routes
   app.get("*", async (c) => {
-    return serveStatic({ root: "../client/dist" })(c);
+    return c.newResponse(await Bun.file("./client/dist/index.html").text(), {
+      headers: {
+        "Content-Type": "text/html",
+      },
+    });
   });
 }
 

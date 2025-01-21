@@ -4,5 +4,5 @@ dockerfilePath = "Dockerfile"
 
 [deploy]
 startCommand = "bun run ./server/src/index.ts"
-healthcheckPath = "/"
+healthcheckPath = "/health"
 healthcheckTimeout = 100

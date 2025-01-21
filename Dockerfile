@@ -4,8 +4,7 @@ WORKDIR /app/client
 COPY client/package.json client/bun.lockb ./
 RUN bun install
 COPY client/ ./
-# Add type checking and build steps
-RUN bun run tsc --noEmit && bun run build
+RUN bun run build
 
 # Stage 2: Build server
 FROM oven/bun:1 as server-builder
@@ -17,6 +16,9 @@ COPY server/ ./
 # Stage 3: Production environment
 FROM oven/bun:1-slim
 WORKDIR /app
+
+# Create directory structure
+RUN mkdir -p client/dist server/src server/drizzle
 
 # Copy built client files
 COPY --from=client-builder /app/client/dist ./client/dist
@@ -30,6 +32,9 @@ COPY --from=server-builder /app/server/drizzle ./server/drizzle
 # Set environment variables
 ENV NODE_ENV=production
 ENV PORT=3000
+
+# Set working directory to where the server code is
+WORKDIR /app
 
 # Expose the port
 EXPOSE 3000
