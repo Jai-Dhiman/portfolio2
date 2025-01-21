@@ -15,5 +15,7 @@ export async function getSkills(): Promise<Skill[]> {
 
 export async function getExperiences(): Promise<Experience[]> {
   const response = await fetch(`${API_BASE_URL}/experiences`);
-  return response.json();
+  const data = await response.json();
+  console.log("Raw API response:", data);
+  return data;
 }

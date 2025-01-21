@@ -9,9 +9,16 @@ export const useExperiences = () => {
     queryFn: getExperiences,
     select: (data: Experience[]) => {
       return [...data].sort((a, b) => {
-        const dateA = new Date(a.startDate + 'T00:00:00');
-        const dateB = new Date(b.startDate + 'T00:00:00');
-        return dateB.valueOf() - dateA.valueOf();
+        if (!a.startDate) return 1;
+        if (!b.startDate) return -1;
+
+        const dateA = new Date(a.startDate);
+        const dateB = new Date(b.startDate);
+
+        if (isNaN(dateA.getTime())) return 1;
+        if (isNaN(dateB.getTime())) return -1;
+
+        return dateB.getTime() - dateA.getTime();
       });
     },
   });
