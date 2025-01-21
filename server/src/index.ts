@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { serve } from "@hono/node-server";
+import { serveStatic } from "@hono/node-server/serve-static";
 import { errorHandler } from "./middleware/error";
 import projectRoutes from "./routes/project";
 import skillRoutes from "./routes/skill";
@@ -12,6 +13,7 @@ const port = 3000;
 // Middleware
 app.use("*", cors());
 app.use("*", errorHandler);
+app.use("/*", serveStatic({ root: "./client/dist" }));
 
 // Routes
 app.route("/api", projectRoutes);
