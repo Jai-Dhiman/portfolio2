@@ -56,7 +56,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="btn-primary flex items-center gap-2"
             >
-              <span>Live Demo</span>
+              <span>Link</span>
               <svg 
                 className="w-4 h-4"
                 fill="none"
