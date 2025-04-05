@@ -18,6 +18,7 @@ app.use(
 );
 
 app.get("/health", (c) => c.json({ status: "ok" }));
+//comment for redploy
 app.get("/api/health", (c) => c.json({ status: "ok" }));
 
 app.route("/api", projectRoutes);
