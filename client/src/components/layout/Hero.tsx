@@ -64,7 +64,7 @@ export default function Hero() {
             },
             detectRetina: true,
           }}
-          />
+        />
       </div>
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto z-10">
@@ -72,9 +72,7 @@ export default function Hero() {
             Hi, I'm <span className="text-gradient">Jai Dhiman</span>
           </h1>
           <p className="text-xl animate-slide-up">
-            I'm a Full-Stack Developer with strong foundations in React, Node.js, and
-            TypeScript, combining analytical thinking with creative problem-solving to
-            deliver scalable web applications.
+            Full-Stack Developer with expertise in React Native, TypeScript, and serverless architecture. Proven ability to independently architect and deploy complete applications from concept to production, with focus on performance optimization and modern development practices.
           </p>
         </div>
       </div>
