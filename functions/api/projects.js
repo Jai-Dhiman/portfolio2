@@ -25,8 +25,8 @@ export async function onRequest({}) {
       description: "Accessible blogging platform",
       techStack: ["Vue.js", "Ruby on Rails", "PostgreSQL", "Rich Text Editor"],
       createdAt: "2024-05-01",
-      githubUrl: "github.com/badeblog",
-      liveUrl: "www.myideasmywords"
+      githubUrl: "github.com/Jai-Dhiman/badeblog",
+      liveUrl: "www.myideasmywords.com"
     }
   ];
   return new Response(JSON.stringify(projects), { headers: { "content-type": "application/json" } });
