@@ -1,6 +1,6 @@
 export async function onRequest({}) {
-  // Replace this array with your portfolio projects
-  const projects = [
+  
+const projects = [
     {
       id: 1,
       title: "Capture",
@@ -25,6 +25,7 @@ export async function onRequest({}) {
       description: "Accessible blogging platform",
       techStack: ["Vue.js", "Ruby on Rails", "PostgreSQL", "Rich Text Editor"],
       createdAt: "2024-05-01",
+      image: "/images/BadeBlog.png",
       githubUrl: "github.com/Jai-Dhiman/badeblog",
       liveUrl: "www.myideasmywords.com"
     }
