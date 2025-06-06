@@ -1,14 +1,13 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import Layout from './components/layout/Layout'
-import Hero from './components/layout/Hero'
-import ProjectsSection from './components/home/ProjectsSection'
-import SkillsSection from './components/home/SkillSection'
-import { ExperienceSection }from './components/home/ExperienceSection'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Layout from "./components/layout/Layout";
+import Hero from "./components/layout/Hero";
+import ProjectsSection from "./components/home/ProjectsSection";
+import SkillsSection from "./components/home/SkillSection";
+import { ExperienceSection } from "./components/home/ExperienceSection";
 
+const queryClient = new QueryClient();
 
-const queryClient = new QueryClient()
-
-function App() {
+export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Layout>
@@ -18,7 +17,5 @@ function App() {
         <ExperienceSection />
       </Layout>
     </QueryClientProvider>
-  )
-}
-
-export default App;
+  );
+} 
