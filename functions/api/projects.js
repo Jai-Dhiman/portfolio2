@@ -13,7 +13,7 @@ export async function onRequest({}) {
       id: 2,
       title: "Arden",
       description: "AI-Powered Personal Assistant",
-      techStack: ["React Native","Cloudflare Workers","Hono RPC","Vector Embeddings"],
+      techStack: ["React Native","Cloudflare Workers","tRPC","Vector Embeddings"],
       createdAt: "2025-01-01",
       image: "/images/Arden.png"
     }
