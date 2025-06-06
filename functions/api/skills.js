@@ -1,11 +1,11 @@
 export async function onRequest({}) {
   const skills = [
-    { id: 2, name: "React", category: "Frontend", iconUrl: "/icons/react.svg" },
+    { id: 1, name: "React", category: "Frontend", iconUrl: "/icons/react.svg" },
+    { id: 2, name: "React Native", category: "Frontend", iconUrl: "/icons/react.svg" },
     { id: 3, name: "TypeScript", category: "Frontend", iconUrl: "/icons/typescript.svg" },
-    { id: 4, name: "TanStack Query", category: "Frontend", iconUrl: "/icons/react-query.svg" },
-    { id: 5, name: "Tailwind CSS", category: "Frontend", iconUrl: "/icons/tailwind.svg" },
+    { id: 4, name: "Tailwind CSS", category: "Frontend", iconUrl: "/icons/tailwind.svg" },
+    { id: 5, name: "TanStack Query", category: "Frontend", iconUrl: "/icons/react-query.svg" },
     { id: 6, name: "Zustand", category: "Frontend", iconUrl: "/icons/zustand.png" },
-    { id: 8, name: "SvelteKit", category: "Frontend", iconUrl: "/icons/svelte.svg" },
     { id: 9, name: "Node.js", category: "Backend", iconUrl: "/icons/nodejs.svg" },
     { id: 10, name: "Hono", category: "Backend", iconUrl: "/icons/hono.svg" },
     { id: 11, name: "Cloudflare Workers", category: "Backend", iconUrl: "/icons/cloudflareworkers.svg" },
@@ -20,9 +20,8 @@ export async function onRequest({}) {
     { id: 23, name: "Claude Sonnet API", category: "AI/ML", iconUrl: "/icons/claude.svg" },
     { id: 24, name: "Vector Embeddings", category: "AI/ML", iconUrl: "/icons/vector.png" },
     { id: 25, name: "Semantic Search", category: "AI/ML", iconUrl: "/icons/search.png" },
-    { id: 26, name: "React Native", category: "Frontend", iconUrl: "/icons/react.svg" },
+
     { id: 27, name: "Expo", category: "Frontend", iconUrl: "/icons/expo.svg" },
-    { id: 28, name: "Jotai", category: "Frontend", iconUrl: "/icons/jotai.svg" },
     { id: 38, name: "Vitest", category: "Infrastructure & Tools", iconUrl: "/icons/vitest.svg" },
   ];
   return new Response(JSON.stringify(skills), { headers: { "content-type": "application/json" } });

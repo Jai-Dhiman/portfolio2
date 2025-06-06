@@ -22,7 +22,7 @@ export async function onRequest({}) {
     {
       id: 3,
       title: "Legacy Stories",
-      description: "Accessible blogging platform tailored for elderly users with rich text editing capabilities",
+      description: "Accessible blogging platform",
       techStack: ["Vue.js", "Ruby on Rails", "PostgreSQL", "Rich Text Editor"],
       createdAt: "2024-05-01",
       githubUrl: "github.com/badeblog",
