@@ -20,8 +20,6 @@ export async function onRequest({}) {
     { id: 23, name: "Claude Sonnet API", category: "AI/ML", iconUrl: "/icons/claude.svg" },
     { id: 24, name: "Vector Embeddings", category: "AI/ML", iconUrl: "/icons/vector.png" },
     { id: 25, name: "Semantic Search", category: "AI/ML", iconUrl: "/icons/search.png" },
-
-    { id: 27, name: "Expo", category: "Frontend", iconUrl: "/icons/expo.svg" },
     { id: 38, name: "Vitest", category: "Infrastructure & Tools", iconUrl: "/icons/vitest.svg" },
   ];
   return new Response(JSON.stringify(skills), { headers: { "content-type": "application/json" } });
