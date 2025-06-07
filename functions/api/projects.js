@@ -21,9 +21,9 @@ const projects = [
     },
     {
       id: 3,
-      title: "Legacy Stories",
+      title: "Legacy Stories Blog",
       description: "Accessible blogging platform",
-      techStack: ["Vue.js", "Ruby on Rails", "PostgreSQL", "Rich Text Editor"],
+      techStack: ["Nuxt", "Supabase", "Tailwind CSS", "Pinia"],
       createdAt: "2024-05-01",
       image: "/images/BadeBlog.png",
       githubUrl: "github.com/Jai-Dhiman/badeblog",
