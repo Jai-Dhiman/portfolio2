@@ -23,7 +23,7 @@ const projects = [
       id: 3,
       title: "Legacy Stories Blog",
       description: "Accessible blogging platform",
-      techStack: ["Nuxt", "Supabase", "Tailwind CSS", "Pinia"],
+      techStack: ["Nuxt", "Typescript", "Supabase", "Tailwind CSS", "Pinia"],
       createdAt: "2024-05-01",
       image: "/images/BadeBlog.png",
       githubUrl: "github.com/Jai-Dhiman/badeblog",
