@@ -4,6 +4,7 @@ import Hero from "./components/layout/Hero";
 import ProjectsSection from "./components/home/ProjectsSection";
 import SkillsSection from "./components/home/SkillSection";
 import { ExperienceSection } from "./components/home/ExperienceSection";
+import CaptureProjectSection from './components/home/CaptureProjectSection';
 
 const queryClient = new QueryClient();
 
@@ -12,9 +13,10 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <Layout>
         <Hero />
-        <ProjectsSection />
         <SkillsSection />
+        <CaptureProjectSection />
         <ExperienceSection />
+        <ProjectsSection /> {/* This will be adapted to show "other" projects */}
       </Layout>
     </QueryClientProvider>
   );
