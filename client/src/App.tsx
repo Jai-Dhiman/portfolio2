@@ -14,8 +14,8 @@ export default function App() {
       <Layout>
         <Hero />
         <SkillsSection />
-        <CaptureProjectSection />
         <ExperienceSection />
+        <CaptureProjectSection />
         <ProjectsSection /> {/* This will be adapted to show "other" projects */}
       </Layout>
     </QueryClientProvider>
