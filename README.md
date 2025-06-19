@@ -16,7 +16,7 @@ The website showcases my skills, projects, and professional experiences. It's de
     *   @tanstack/react-query (for data fetching and caching)
 *   **Backend (Serverless Functions):**
     *   Cloudflare Workers (hosting the API endpoints)
-    *   JavaScript (for the serverless functions)
+    *   TypeScript (for the serverless functions)
 *   **Deployment:**
     *   Cloudflare Pages (for the frontend)
     *   Static Assets hosted on Cloudflare
@@ -49,17 +49,17 @@ To run the project locally:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone github.com/Jai-Dhiman/portfolio2.git
+    cd portfolio2
     ```
 2.  **Install dependencies for the client:**
     ```bash
     cd client
-    npm install # or yarn install or bun install
+    bun install
     ```
 3.  **Run the development server for the client:**
     ```bash
-    npm run dev # or yarn dev or bun dev
+    bun run dev
     ```
     This will usually start the frontend application on `http://localhost:5173` (or another port specified by Vite).
 
