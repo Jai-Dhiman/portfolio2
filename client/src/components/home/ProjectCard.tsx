@@ -1,14 +1,11 @@
 import Tilt from 'react-parallax-tilt';
 import { Project } from '../../types';
-import { useState } from 'react';
-import ProjectDetailView from '../project/ProjectDetailView';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const [isDetailViewOpen, setIsDetailViewOpen] = useState(false);
 
   const formatUrl = (url: string) => {
     if (!url) return '';
@@ -16,7 +13,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   };
 
   return (
-    <>
       <Tilt
         tiltMaxAngleX={3}
         tiltMaxAngleY={3}
@@ -94,19 +90,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </svg>
             </a>
           )}
-          <button
-            onClick={() => setIsDetailViewOpen(true)}
-            className="btn-secondary flex items-center gap-2"
-          >
-            <span>View Case Study</span>
-          </button>
         </div>
       </div>
     </article>
   </Tilt>
-  {isDetailViewOpen && (
-    <ProjectDetailView project={project} onClose={() => setIsDetailViewOpen(false)} />
-  )}
-  </>
   );
 }
