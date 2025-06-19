@@ -46,7 +46,7 @@ export default function SkillsSection() {
                       <img
                         src={skill.iconUrl}
                         alt={skill.name}
-                        className="w-8 h-8 object-contain group-hover:animate-jump-spin"
+                        className="w-8 h-8 object-contain group-hover:animate-continuous-spin"
                       />
                     )}
                     <span className="font-medium block break-words whitespace-normal">{skill.name}</span>

@@ -1,4 +1,5 @@
 // components/ExperienceCard.tsx
+import Tilt from 'react-parallax-tilt';
 import { Experience } from '../../types/index';
 
 interface ExperienceCardProps {
@@ -34,10 +35,18 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   };
 
   return (
-    <div className="card hover-lift relative">
-      <div className="absolute top-6 right-6 text-sm text-primary-300 dark:text-dark-200">
-        {getDateDisplay()}
-      </div>
+    <Tilt
+      tiltMaxAngleX={3}
+      tiltMaxAngleY={3}
+      perspective={1000}
+      transitionSpeed={1000}
+      scale={1.02}
+      className="w-full h-full"
+    >
+      <div className="card relative">
+        <div className="absolute top-6 right-6 text-sm text-primary-300 dark:text-dark-200">
+          {getDateDisplay()}
+        </div>
       <h3 className="text-gradient pr-24">{experience.title}</h3>
       <p className="font-semibold text-accent-coral dark:text-accent-gold">
         {experience.company}
@@ -46,5 +55,6 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         {experience.description}
       </p>
     </div>
+    </Tilt>
   );
 };
