@@ -20,6 +20,15 @@
   }
 }
 
+@keyframes continuous-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @layer components {
   .btn-primary {
     @apply px-4 py-2 rounded-lg bg-primary-400 hover:bg-primary-500 text-white 
@@ -168,5 +177,9 @@
   }
   .animate-jump-spin {
     animation: jump-and-spin 0.5s ease-in-out;
+  }
+
+  .group-hover\:animate-continuous-spin:hover {
+    animation: continuous-spin 1s linear infinite;
   }
 }
