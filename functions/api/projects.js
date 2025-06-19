@@ -22,7 +22,7 @@ const projects = [
     },
     {
       id: 2,
-      title, "Portfolio",
+      title: "Portfolio",
       description: "This Portfolio Website",
       techStack: ["React", "Vite", "Tailwind CSS", "Cloudflare Pages"],
       createdAt: "2024-12-01",
