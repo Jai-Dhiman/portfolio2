@@ -22,6 +22,15 @@ const projects = [
     },
     {
       id: 2,
+      title, "Portfolio",
+      description: "This Portfolio Website",
+      techStack: ["React", "Vite", "Tailwind CSS", "Cloudflare Pages"],
+      createdAt: "2024-12-01",
+      image: "/images/Portfolio.png",
+      githubUrl: "github.com/Jai-Dhiman/portfolio2"
+    },
+    {
+      id: 3,
       title: "Arden",
       description: "AI-Powered Personal Assistant",
       techStack: ["React Native","Cloudflare Workers","tRPC","Vector Embeddings"],
@@ -30,7 +39,7 @@ const projects = [
       githubUrl: "github.com/Jai-Dhiman/Arden"
     },
     {
-      id: 3,
+      id: 4,
       title: "Legacy Stories Blog",
       description: "Accessible blogging platform",
       techStack: ["Nuxt", "Typescript", "Supabase", "Tailwind CSS", "Pinia"],
