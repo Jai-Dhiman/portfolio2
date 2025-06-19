@@ -40,16 +40,16 @@ export default function SkillsSection() {
                 .map((skill) => (
                   <div
                     key={skill.id}
-                    className="card hover-lift flex items-center gap-3 p-4"
+                    className="card hover-lift group flex items-center gap-3 p-4"
                   >
                     {skill.iconUrl && (
                       <img
                         src={skill.iconUrl}
                         alt={skill.name}
-                        className="w-8 h-8 object-contain"
+                        className="w-8 h-8 object-contain group-hover:animate-jump-spin"
                       />
                     )}
-                    <span className="font-medium">{skill.name}</span>
+                    <span className="font-medium block break-words whitespace-normal">{skill.name}</span>
                   </div>
                 ))}
             </div>

@@ -70,6 +70,18 @@
     50% { transform: translateY(-15px); }
   }
 
+@keyframes jump-and-spin {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r 
@@ -153,5 +165,8 @@
       /* max-w-3xl is already good for sm and up, but we can ensure good margins */
       @apply mx-auto;
     }
+  }
+  .animate-jump-spin {
+    animation: jump-and-spin 0.5s ease-in-out;
   }
 }
