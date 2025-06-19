@@ -104,4 +104,54 @@
   .dark #tsparticles canvas {
     opacity: 0.3;
   }
+
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4;
+    /* Added padding for small screen breathing room */
+  }
+
+  .modal-content {
+    @apply bg-white dark:bg-dark-400 p-6 sm:p-8 rounded-xl shadow-2xl w-full max-h-[90vh] overflow-y-auto
+           max-w-3xl; /* Increased max-width for better readability on larger screens */
+    /* Using dark:bg-dark-400 for a slightly less intense dark background than -500 */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: theme('colors.primary.300') theme('colors.primary.100'); /* For Firefox */
+  }
+
+  /* Webkit scrollbar styling */
+  .modal-content::-webkit-scrollbar {
+    @apply w-2;
+  }
+  .modal-content::-webkit-scrollbar-track {
+    @apply bg-primary-100 dark:bg-dark-300 rounded-full;
+  }
+  .modal-content::-webkit-scrollbar-thumb {
+    @apply bg-primary-300 dark:bg-dark-200 rounded-full;
+  }
+  .modal-content::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-400 dark:bg-accent-teal;
+  }
+
+  .mockups-container {
+    @apply flex flex-wrap gap-4 mt-2; /* Reduced top margin slightly */
+  }
+
+  .mockup-image-link {
+    @apply block border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden
+           hover:border-accent-coral dark:hover:border-accent-gold transition-all;
+  }
+
+  .mockup-image {
+    @apply w-full h-auto max-w-[150px] sm:max-w-[200px] object-contain rounded-md
+           hover:opacity-80 transition-opacity;
+    /* Ensure images are not overly large and maintain aspect ratio */
+  }
+
+  /* Responsive adjustments for the modal */
+  @screen sm {
+    .modal-content {
+      /* max-w-3xl is already good for sm and up, but we can ensure good margins */
+      @apply mx-auto;
+    }
+  }
 }

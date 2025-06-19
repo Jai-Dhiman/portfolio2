@@ -24,11 +24,22 @@ export default function ProjectsSection() {
     );
   }
 
+  const otherProjects = projects?.filter(project => project.id !== 1 && project.title.toLowerCase() !== "capture");
+
+  if (!otherProjects || otherProjects.length === 0) {
+    return (
+      <section id="other-projects" className="py-16 text-center">
+        <h2 className="section-heading">Other Projects</h2>
+        <p className="text-gray-700 dark:text-gray-300 mt-4">More projects will be showcased here soon.</p>
+      </section>
+    );
+  }
+
   return (
-    <section id="projects" className="py-16">
-  <h2 className="section-heading">Projects</h2>
+    <section id="other-projects" className="py-16">
+  <h2 className="section-heading">Other Projects</h2>
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
-    {projects?.map((project) => (
+    {otherProjects?.map((project) => (
       <ProjectCard key={project.id} project={project} />
     ))}
   </div>
