@@ -1,210 +1,338 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getProjects } from '../../lib/api';
-import { Project, ProductThinkingExercise } from '../../types';
-import Loader from '../loader'; // Assuming Loader is in ../loader/index.tsx or ../loader.tsx
+import Loader from '../loader';
+import Tilt from 'react-parallax-tilt';
 
-const productExercises: ProductThinkingExercise[] = [
-  {
-    id: 1,
-    title: "Strategic Deep Dive: Enhancing 'Capture'",
-    problem: "How can 'Capture' evolve to not just meet current user needs for privacy-first social sharing, but also anticipate future trends in digital interaction and content ownership?",
-    solution_summary: "Explore decentralized storage options (e.g., IPFS) for enhanced user data control. Investigate AI-driven content moderation that respects privacy while curbing misuse. Consider features for tokenizing unique content, allowing creators to claim verifiable ownership. Introduce tiered privacy settings for posts (e.g., 'close friends', 'acquaintances', 'public but encrypted'). A/B test UI/UX değişiklikleri to simplify privacy controls further, making them intuitive for non-technical users. Success metrics: user adoption of new features, user retention rates, qualitative feedback on perceived control and security, and opt-in rates for advanced features.",
-    details_link: "#"
-  },
-  {
-    id: 2,
-    title: "Feature Prioritization: 'Capture' Monetization without Compromising Privacy",
-    problem: "Develop a sustainable monetization strategy for 'Capture' that aligns with its core privacy-first principles, avoiding intrusive advertising or direct sale of user data.",
-    solution_summary: "Introduce optional premium features for a subscription fee (e.g., larger encrypted storage, advanced analytics for content creators (privacy-respecting), unique themes/customization). Explore a 'tipping' or 'support a creator' model. Offer B2B services like secure, private communication channels for organizations. Ensure all monetization strategies are transparent and opt-in. Key metrics: conversion rate to premium, average revenue per user (ARPU) for premium users, user sentiment regarding monetization efforts.",
-  }
-];
+// Leadership Evolution Card Component
+interface LeadershipCardProps {
+  title: string;
+  challenge: string;
+  approach: string;
+  skills: string;
+  index: number;
+}
 
-const CaptureProjectSection: React.FC = () => {
-  const { data: projects, isLoading, error } = useQuery<Project[], Error>({
-    queryKey: ['projects'],
-    queryFn: getProjects,
-  });
-
-  if (isLoading) {
-    return (
-      <section id="capture-project" className="py-20 bg-primary-50 dark:bg-dark-400 min-h-[50vh] flex items-center justify-center">
-        <Loader />
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section id="capture-project" className="py-20 bg-red-50 dark:bg-red-900 text-red-700 dark:text-red-200 text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4">Error Fetching Project Data</h2>
-          <p>{error.message}</p>
+function LeadershipCard({ title, challenge, approach, skills, index }: LeadershipCardProps) {
+  return (
+    <Tilt
+      tiltMaxAngleX={6}
+      tiltMaxAngleY={6}
+      perspective={1000}
+      transitionSpeed={1000}
+      scale={1.02}
+      className="w-full"
+    >
+      <div
+        className="card group"
+        style={{ animationDelay: `${index * 200}ms` }}
+      >
+        <div className="p-6">
+          <h4 className="text-lg font-author font-bold mb-3 text-gradient">
+            {title}
+          </h4>
+          <div className="space-y-3">
+            <div>
+              <span className="text-sm font-semibold text-primary-400 dark:text-accent-coral">Challenge:</span>
+              <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{challenge}</p>
+            </div>
+            <div>
+              <span className="text-sm font-semibold text-primary-400 dark:text-accent-coral">Approach:</span>
+              <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{approach}</p>
+            </div>
+            <div>
+              <span className="text-sm font-semibold text-primary-400 dark:text-accent-coral">PM Skills:</span>
+              <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{skills}</p>
+            </div>
+          </div>
         </div>
-      </section>
-    );
-  }
-
-  const captureProject = projects?.find(p => p.id === 1 || p.title.toLowerCase() === "capture");
-
-  if (!captureProject) {
-    return (
-      <section id="capture-project" className="py-20 bg-primary-50 dark:bg-dark-400 text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4 text-primary-400 dark:text-accent-coral">Capture Project Not Found</h2>
-          <p className="text-gray-700 dark:text-gray-300">The featured project details could not be loaded at this time.</p>
-        </div>
-      </section>
-    );
-  }
-
-  const renderField = (title: string, value?: string | string[], listType: 'ul' | 'ol' = 'ul') => {
-    if (!value || (Array.isArray(value) && value.length === 0)) {
-      return null;
-    }
-    return (
-      <div className="mb-6 md:mb-8">
-        <h4 className="text-xl lg:text-2xl font-author font-semibold mb-3 text-primary-400 dark:text-accent-teal">
-          {title}
-        </h4>
-        {Array.isArray(value) ? (
-          React.createElement(listType, { className: "list-inside space-y-1 text-gray-700 dark:text-gray-300 pl-4 " + (listType === 'ul' ? "list-disc" : "list-decimal") },
-            value.map((item, index) => <li key={index}>{item}</li>)
-          )
-        ) : (
-          <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line">{value}</p>
-        )}
       </div>
-    );
-  };
+    </Tilt>
+  );
+}
 
-  const formatUrl = (url: string) => {
-    if (!url) return '';
-    return url.startsWith('http') ? url : `https://${url}`;
-  };
+// Mobile Mockup Component with 9:16 aspect ratio
+interface MobileMockupProps {
+  src: string;
+  alt: string;
+  caption: string;
+  index: number;
+}
+
+function MobileMockup({ src, alt, caption, index }: MobileMockupProps) {
+  return (
+    <div
+      className="relative group"
+      style={{ animationDelay: `${index * 300}ms` }}
+    >
+      <div className="aspect-[9/16] relative overflow-hidden rounded-xl bg-gray-100 dark:bg-dark-200 shadow-lg">
+        <img
+          src="/images/Capture.png"
+          alt={alt}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        {/* Overlay with screen label */}
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm text-white p-2">
+          <p className="text-xs font-medium text-center">{alt}</p>
+        </div>
+      </div>
+      <p className="text-center text-xs text-gray-600 dark:text-gray-400 mt-2">{caption}</p>
+    </div>
+  );
+}
+
+// Data Flow Particles Component
+function DataFlowParticles() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Resize canvas
+    const resizeCanvas = () => {
+      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    };
+
+    resizeCanvas();
+
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      opacity: number;
+    }> = [];
+
+    // Create particles
+    for (let i = 0; i < 30; i++) {
+      particles.push({
+        x: Math.random() * canvas.offsetWidth,
+        y: Math.random() * canvas.offsetHeight,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 3 + 1,
+        opacity: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+
+      particles.forEach(particle => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Wrap around edges
+        if (particle.x < 0) particle.x = canvas.offsetWidth;
+        if (particle.x > canvas.offsetWidth) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.offsetHeight;
+        if (particle.y > canvas.offsetHeight) particle.y = 0;
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(59, 130, 246, ${particle.opacity})`; // Primary blue
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    window.addEventListener('resize', resizeCanvas);
+    return () => window.removeEventListener('resize', resizeCanvas);
+  }, []);
 
   return (
-    <section id="capture-project-case-study" className="py-12 md:py-20 bg-primary-100 dark:bg-dark-500">
-      <div className="container mx-auto px-4">
-        {/* Project Details Section */}
-        <header className="text-center mb-10 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-author font-bold text-gradient mb-4">
-            Featured Project: {captureProject.title}
-          </h2>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            {captureProject.description}
-          </p>
-        </header>
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 pointer-events-none"
+      style={{ width: '100%', height: '100%' }}
+    />
+  );
+}
 
-        <div className="grid md:grid-cols-5 gap-8 lg:gap-12 mb-12 md:mb-20">
-          <div className="md:col-span-3">
-            {captureProject.image && (
-              <img
-                src={captureProject.image}
-                alt={captureProject.title}
-                className="w-full h-auto object-cover rounded-xl shadow-2xl mb-8 md:mb-0"
-              />
-            )}
-          </div>
-          <div className="md:col-span-2 space-y-4">
-             {renderField("Tech Stack", captureProject.techStack)}
-            {captureProject.liveUrl && (
-              <div>
-                <h4 className="text-xl font-semibold mb-2 text-primary-400 dark:text-accent-teal">Live Demo</h4>
-                <a href={formatUrl(captureProject.liveUrl)} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                  View Live Site
-                </a>
-              </div>
-            )}
-            {captureProject.githubUrl && (
-              <div>
-                <h4 className="text-xl font-semibold mb-2 text-primary-400 dark:text-accent-teal">Source Code</h4>
-                <a href={formatUrl(captureProject.githubUrl)} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-                  View on GitHub
-                </a>
-              </div>
-            )}
-          </div>
+export default function CaptureProjectSection() {
+  const { data: projects, isLoading, error } = useQuery({
+    queryKey: ['projects'],
+    queryFn: getProjects
+  });
+
+  if (isLoading) return <Loader />;
+  if (error) return null;
+
+  const captureProject = projects?.find(project =>
+    project.title.toLowerCase() === "capture" || project.id === 1
+  );
+
+  const leadershipCards = [
+    {
+      title: "Solo Architect → Team Lead",
+      challenge: "Managing growing codebase complexity while onboarding new team members",
+      approach: "Implemented Agile methodologies and code review processes",
+      skills: "Team scaling, process implementation"
+    },
+    {
+      title: "Technical Decisions → Product Strategy",
+      challenge: "Balancing technical debt with feature development priorities",
+      approach: "Created product roadmap prioritizing user safety and scalability",
+      skills: "Strategic prioritization, roadmap planning"
+    },
+    {
+      title: "Individual Contributor → Cross-Functional Leader",
+      challenge: "Coordinating between design vision and technical constraints",
+      approach: "Established design-dev sync meetings and feasibility review process",
+      skills: "Cross-functional collaboration, stakeholder alignment"
+    }
+  ];
+
+  const mockupData = [
+    { src: "", alt: "Feed", caption: "Privacy-first chronological feed" },
+    { src: "", alt: "Privacy Dashboard", caption: "User control & data transparency" },
+    { src: "", alt: "Onboarding", caption: "Ethical design principles" },
+    { src: "", alt: "Team Collaboration", caption: "Cross-functional development" }
+  ];
+
+  return (
+    <section id="capture-project-case-study" className="py-16 relative overflow-hidden">
+      {/* Data Flow Particles Background */}
+      <div className="absolute inset-0 opacity-30">
+        <DataFlowParticles />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-4xl font-author font-bold mb-6">
+            <span className="text-gradient">Capture</span>
+          </h2>
+          <h3 className="text-md md:text-xl font-author font-semibold mb-4 text-gradient">
+            From Berklee to Building Privacy-First Innovation
+          </h3>
+          <p className="text-md text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            How music composition skills translate to product architecture and team leadership
+          </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          {renderField("Problem Statement", captureProject.pm_problem_statement)}
-          {renderField("User Needs", captureProject.pm_user_needs)}
-          {renderField("Proposed Solution", captureProject.pm_solution)}
-          {renderField("Feature Prioritization", captureProject.pm_feature_prioritization)}
-          {renderField("Key Design Choices", captureProject.pm_design_choices)}
-          {renderField("Technical Trade-offs", captureProject.pm_technical_tradeoffs)}
-          {renderField("Success Metrics", captureProject.pm_success_metrics)}
-          {renderField("Project Learnings & Outcomes", captureProject.pm_learnings)}
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          {/* Left Column - Project Overview */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-author font-bold mb-4 text-gradient">
+                System Architecture & Strategic Vision
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Co-founded privacy-first social platform built with React Native, TypeScript, Cloudflare Workers, and a sophisticated uninvasive recommendation system.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300">
+                <strong>PM Focus:</strong> Product vision balancing user wellbeing with technical scalability.
+              </p>
+            </div>
 
-          {captureProject.mockups && captureProject.mockups.length > 0 && (
-            <div className="mb-6 md:mb-8">
-              <h4 className="text-xl lg:text-2xl font-author font-semibold mb-3 text-primary-400 dark:text-accent-teal">
-                Mockups & Visuals
-              </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {captureProject.mockups.map((mockup, index) => (
-                  <a key={index} href={mockup} target="_blank" rel="noopener noreferrer" className="block border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:border-accent-coral dark:hover:border-accent-gold transition-all">
-                    <img src={mockup} alt={`${captureProject.title} mockup ${index + 1}`} className="w-full h-auto object-contain aspect-video"/>
-                  </a>
+            <div>
+              <h3 className="text-2xl font-author font-bold mb-4 text-gradient">
+                Co-founder to Team Lead
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Evolved from co-founding with designer to leading 3-person development team. Implemented Agile methodologies and Jira workflows.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300">
+                <strong>PM Focus:</strong> Team scaling, process improvement, stakeholder management.
+              </p>
+            </div>
+
+            {/* Tech Stack */}
+            <div>
+              <h4 className="text-lg font-semibold mb-3">Tech Stack & PM Tools</h4>
+              <div className="flex flex-wrap gap-2">
+                {["React Native", "TypeScript", "Cloudflare Workers", "GraphQL", "End-to-end Encryption", "Jira", "Agile/Scrum"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-4 py-2 bg-primary-100 dark:bg-dark-300 text-primary-400 dark:text-dark-100 rounded-full text-sm font-medium border border-primary-200 dark:border-dark-400 hover-lift group cursor-pointer transition-all duration-300"
+                  >
+                    {tech}
+                  </span>
                 ))}
               </div>
             </div>
-          )}
+          </div>
 
-          {captureProject.case_study_link && (
-             <div className="mt-10 text-center">
-                <a href={captureProject.case_study_link} target="_blank" rel="noopener noreferrer" className="btn-primary btn-lg">
-                  Read Full Case Study Document
-                </a>
+          {/* Right Column - Mobile Mockups */}
+          <div>
+            <h3 className="text-2xl font-author font-bold mb-6 text-gradient">
+              Product Features & User Experience
+            </h3>
+            <div className="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 justify-items-center">
+              {mockupData.map((mockup, index) => (
+                <MobileMockup
+                  key={mockup.alt}
+                  src={mockup.src}
+                  alt={mockup.alt}
+                  caption={mockup.caption}
+                  index={index}
+                />
+              ))}
             </div>
-          )}
+          </div>
         </div>
 
-        {/* Product Thinking Exercises Section */}
-        <section className="mt-16 md:mt-24 pt-10 border-t-2 border-primary-200 dark:border-dark-300">
-          <h3 className="text-2xl md:text-3xl font-author font-bold text-center mb-10 md:mb-16 text-gradient">
-            Related Product Thinking
+        {/* Leadership Evolution Cards */}
+        <div className="mb-16 px-4">
+          <h3 className="text-2xl font-author font-bold text-center mb-8 text-gradient">
+            Leadership Evolution: From Music to Product Management
           </h3>
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-            {productExercises.map((exercise) => (
-              <div key={exercise.id} className="card p-6 bg-white dark:bg-dark-400 flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <h4 className="text-xl lg:text-2xl font-author font-bold mb-3 text-primary-400 dark:text-accent-coral">
-                  {exercise.title}
-                </h4>
-                {exercise.problem && (
-                  <div className="mb-3">
-                    <h5 className="text-md font-semibold mb-1 text-gray-600 dark:text-gray-400">The Challenge:</h5>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      {exercise.problem}
-                    </p>
-                  </div>
-                )}
-                <div className="mb-4 flex-grow">
-                  <h5 className="text-md font-semibold mb-1 text-gray-600 dark:text-gray-400">My Approach & Ideas:</h5>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm">
-                    {exercise.solution_summary}
-                  </p>
-                </div>
-                {exercise.details_link && (
-                  <div className="mt-auto pt-3 border-t border-gray-200 dark:border-gray-600">
-                    <a
-                      href={exercise.details_link}
-                      target={exercise.details_link === "#" ? "_self" : "_blank"}
-                      rel="noopener noreferrer"
-                      className="btn-secondary btn-sm w-full text-center"
-                    >
-                      Explore Detailed Write-up (Soon)
-                    </a>
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6">
+              {leadershipCards.map((card, index) => (
+                <LeadershipCard
+                  key={card.title}
+                  title={card.title}
+                  challenge={card.challenge}
+                  approach={card.approach}
+                  skills={card.skills}
+                  index={index}
+                />
+              ))}
+            </div>
           </div>
-        </section>
+        </div>
+
+        {/* Call to Actions */}
+        <div className="text-center space-y-4">
+          <div className="flex justify-center gap-4 flex-wrap">
+            <a
+              href="https://github.com/Jai-Dhiman/capture"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary flex items-center gap-2"
+            >
+              <span>Explore Technical Deep-Dive</span>
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+            <button className="btn-secondary">
+              View Product Roadmap
+            </button>
+          </div>
+          <p className="text-sm text-gray-600 dark:text-gray-400 italic">
+            "Bringing creative problem-solving from music composition to product development,
+            with proven ability to scale from individual contributor to team leader."
+          </p>
+        </div>
       </div>
     </section>
   );
-};
-
-export default CaptureProjectSection;
+}

@@ -6,15 +6,15 @@
   body {
     @apply bg-primary-100 dark:bg-dark-400 text-primary-500 dark:text-dark-100 transition-colors duration-200;
   }
-  
+
   h1 {
     @apply text-4xl font-author font-bold mb-4 text-primary-500 dark:text-dark-100;
   }
-  
+
   h2 {
     @apply text-3xl font-author font-bold mb-3 text-primary-400 dark:text-dark-200;
   }
-  
+
   h3 {
     @apply text-2xl font-author font-medium mb-2 text-primary-300 dark:text-dark-200;
   }
@@ -24,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -31,33 +32,25 @@
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 rounded-lg bg-primary-400 hover:bg-primary-500 text-white 
-    dark:bg-accent-coral dark:hover:bg-accent-gold dark:text-dark-500 transition-colors duration-200;
+    @apply px-4 py-2 rounded-lg bg-primary-400 hover:bg-primary-500 text-white dark:bg-accent-coral dark:hover:bg-accent-gold dark:text-dark-500 transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply px-4 py-2 rounded-lg border-2 border-primary-400 text-primary-400
-    hover:bg-primary-400 hover:text-white
-    dark:border-accent-teal dark:text-accent-teal
-    dark:hover:bg-accent-teal dark:hover:text-dark-500
-    transition-colors duration-200;
+    @apply px-4 py-2 rounded-lg border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white dark:border-accent-teal dark:text-accent-teal dark:hover:bg-accent-teal dark:hover:text-dark-500 transition-colors duration-200;
   }
-  
+
   .card {
-    @apply bg-white dark:bg-dark-400 rounded-lg shadow-md p-6 
-    border border-primary-100 dark:border-dark-300 transition-all duration-200
-    hover:border-accent-teal dark:hover:border-accent-coral;
+    @apply bg-white dark:bg-dark-400 rounded-lg shadow-md p-6 border border-primary-100 dark:border-dark-300 transition-all duration-200 hover:border-accent-teal dark:hover:border-accent-coral;
   }
-  
+
   .nav-link {
-    @apply text-primary-400 dark:text-dark-100 hover:text-accent-coral 
-    dark:hover:text-accent-gold transition-colors duration-200;
+    @apply text-primary-400 dark:text-dark-100 hover:text-accent-coral dark:hover:text-accent-gold transition-colors duration-200;
   }
 
   .highlight {
     @apply text-accent-coral dark:text-accent-gold;
   }
-   
+
   .loader {
     @apply flex items-center justify-center gap-2 h-20;
   }
@@ -73,19 +66,28 @@
   }
 
 }
-  
-  @keyframes wave {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
 
 @keyframes jump-and-spin {
   0% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(180deg);
   }
+
   100% {
     transform: translateY(0) rotate(360deg);
   }
@@ -93,15 +95,11 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r 
-    from-primary-400 to-primary-300 
-    dark:from-accent-coral dark:to-accent-gold;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-300 dark:from-accent-coral dark:to-accent-gold;
   }
-  
+
   .glass-effect {
-    @apply backdrop-blur-md 
-    bg-primary-100/30 dark:bg-dark-400/30 
-    border border-primary-200/50 dark:border-dark-300/50;
+    @apply backdrop-blur-md bg-primary-100/30 dark:bg-dark-400/30 border border-primary-200/50 dark:border-dark-300/50;
   }
 
   .accent-border {
@@ -121,7 +119,7 @@
     width: 100% !important;
     height: 100% !important;
   }
-  
+
   .dark #tsparticles canvas {
     opacity: 0.3;
   }
@@ -132,39 +130,43 @@
   }
 
   .modal-content {
-    @apply bg-white dark:bg-dark-400 p-6 sm:p-8 rounded-xl shadow-2xl w-full max-h-[90vh] overflow-y-auto
-           max-w-3xl; /* Increased max-width for better readability on larger screens */
+    @apply bg-white dark:bg-dark-400 p-6 sm:p-8 rounded-xl shadow-2xl w-full max-h-[90vh] overflow-y-auto max-w-3xl;
+    /* Increased max-width for better readability on larger screens */
     /* Using dark:bg-dark-400 for a slightly less intense dark background than -500 */
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: theme('colors.primary.300') theme('colors.primary.100'); /* For Firefox */
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: theme('colors.primary.300') theme('colors.primary.100');
+    /* For Firefox */
   }
 
   /* Webkit scrollbar styling */
   .modal-content::-webkit-scrollbar {
     @apply w-2;
   }
+
   .modal-content::-webkit-scrollbar-track {
     @apply bg-primary-100 dark:bg-dark-300 rounded-full;
   }
+
   .modal-content::-webkit-scrollbar-thumb {
     @apply bg-primary-300 dark:bg-dark-200 rounded-full;
   }
+
   .modal-content::-webkit-scrollbar-thumb:hover {
     @apply bg-primary-400 dark:bg-accent-teal;
   }
 
   .mockups-container {
-    @apply flex flex-wrap gap-4 mt-2; /* Reduced top margin slightly */
+    @apply flex flex-wrap gap-4 mt-2;
+    /* Reduced top margin slightly */
   }
 
   .mockup-image-link {
-    @apply block border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden
-           hover:border-accent-coral dark:hover:border-accent-gold transition-all;
+    @apply block border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden hover:border-accent-coral dark:hover:border-accent-gold transition-all;
   }
 
   .mockup-image {
-    @apply w-full h-auto max-w-[150px] sm:max-w-[200px] object-contain rounded-md
-           hover:opacity-80 transition-opacity;
+    @apply w-full h-auto max-w-[150px] sm:max-w-[200px] object-contain rounded-md hover:opacity-80 transition-opacity;
     /* Ensure images are not overly large and maintain aspect ratio */
   }
 
@@ -175,11 +177,10 @@
       @apply mx-auto;
     }
   }
+
   .animate-jump-spin {
     animation: jump-and-spin 0.5s ease-in-out;
   }
 
-  .group-hover\:animate-continuous-spin:hover {
-    animation: continuous-spin 1s linear infinite;
-  }
+
 }

@@ -13,10 +13,10 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <Layout>
         <Hero />
+        <CaptureProjectSection />
         <SkillsSection />
         <ExperienceSection />
-        <CaptureProjectSection />
-        <ProjectsSection /> {/* This will be adapted to show "other" projects */}
+        <ProjectsSection />
       </Layout>
     </QueryClientProvider>
   );
