@@ -33,15 +33,15 @@ function LeadershipCard({ title, challenge, approach, skills, index }: Leadershi
           </h4>
           <div className="space-y-3">
             <div>
-              <span className="text-sm font-semibold text-primary-400 dark:text-accent-coral">Challenge:</span>
+              <span className="text-sm font-semibold text-primary-400 dark:text-accent-gold">Challenge:</span>
               <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{challenge}</p>
             </div>
             <div>
-              <span className="text-sm font-semibold text-primary-400 dark:text-accent-coral">Approach:</span>
+              <span className="text-sm font-semibold text-primary-400 dark:text-accent-gold">Approach:</span>
               <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{approach}</p>
             </div>
             <div>
-              <span className="text-sm font-semibold text-primary-400 dark:text-accent-coral">PM Skills:</span>
+              <span className="text-sm font-semibold text-primary-400 dark:text-accent-gold">PM Skills:</span>
               <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{skills}</p>
             </div>
           </div>
@@ -177,22 +177,22 @@ export default function CaptureProjectSection() {
 
   const leadershipCards = [
     {
-      title: "Solo Architect → Team Lead",
-      challenge: "Managing growing codebase complexity while onboarding new team members",
-      approach: "Implemented Agile methodologies and code review processes",
-      skills: "Team scaling, process implementation"
+      title: "Engineering Mindset → Product Thinking",
+      challenge: "Initially focused on technical implementation without validating user needs",
+      approach: "Conducting user interviews and applying PM frameworks to prioritize features based on user value over technical complexity",
+      skills: "User research, hypothesis validation, problem-solution fit"
     },
     {
-      title: "Technical Decisions → Product Strategy",
-      challenge: "Balancing technical debt with feature development priorities",
-      approach: "Created product roadmap prioritizing user safety and scalability",
-      skills: "Strategic prioritization, roadmap planning"
+      title: "Building Features → Building Strategy",
+      challenge: "Making product decisions based on assumptions rather than data",
+      approach: "Learning to define success metrics, create user personas, and apply competitive analysis before building",
+      skills: "Strategic frameworks, metrics definition, market positioning"
     },
     {
-      title: "Individual Contributor → Cross-Functional Leader",
-      challenge: "Coordinating between design vision and technical constraints",
-      approach: "Established design-dev sync meetings and feasibility review process",
-      skills: "Cross-functional collaboration, stakeholder alignment"
+      title: "Individual Work → Team Leadership",
+      challenge: "Scaling from 2-person founder team to structured development process",
+      approach: "Implementing Agile ceremonies, cross-functional communication, and stakeholder alignment practices",
+      skills: "Process design, team facilitation, stakeholder management"
     }
   ];
 
@@ -218,11 +218,15 @@ export default function CaptureProjectSection() {
             <span className="text-gradient">Capture</span>
           </h2>
           <h3 className="text-md md:text-xl font-author font-semibold mb-4 text-gradient">
-            From Berklee to Building Privacy-First Innovation
+            Learning Product Management Through Building
           </h3>
           <p className="text-md text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            How music composition skills translate to product architecture and team leadership
+            My journey from music performance to product strategy, applying PM frameworks while co-founding a privacy-first social platform
           </p>
+          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-dark-300 rounded-full text-sm">
+            <span className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></span>
+            Currently in development - Building my first product from 0→1
+          </div>
         </div>
 
         {/* Main Content Grid */}
@@ -230,68 +234,137 @@ export default function CaptureProjectSection() {
           {/* Left Column - Project Overview */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-author font-bold mb-4 text-gradient">
-                System Architecture & Strategic Vision
+              <h3 className="text-2xl font-author font-bold mb-4 text-primary-600 dark:text-accent-gold">
+                Problem Discovery & Strategy Learning
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Co-founded privacy-first social platform built with React Native, TypeScript, Cloudflare Workers, and a sophisticated uninvasive recommendation system.
+                <strong>The Challenge:</strong> What started as an Instagram clone evolved into exploring privacy-first social media after recognizing user dissatisfaction with invasive data practices.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                <strong>My PM Learning:</strong> Currently conducting user interviews to validate our hypothesis and applying competitive analysis frameworks from Aha! PM certification.
               </p>
               <p className="text-gray-700 dark:text-gray-300">
-                <strong>PM Focus:</strong> Product vision balancing user wellbeing with technical scalability.
+                <strong>Next Steps:</strong> Implementing RICE prioritization and defining OKRs based on user research findings.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-author font-bold mb-4 text-gradient">
-                Co-founder to Team Lead
+              <h3 className="text-2xl font-author font-bold mb-4 text-primary-600 dark:text-accent-gold">
+                Building PM Process & Team Culture
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Evolved from co-founding with designer to leading 3-person development team. Implemented Agile methodologies and Jira workflows.
+                <strong>Process Implementation:</strong> Introducing Agile/Scrum methodologies through Atlassian certification learnings - 2-week sprints, daily standups, and retrospectives.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                <strong>Cross-functional Collaboration:</strong> Facilitating design-engineering alignment through structured workflows and open communication forums.
               </p>
               <p className="text-gray-700 dark:text-gray-300">
-                <strong>PM Focus:</strong> Team scaling, process improvement, stakeholder management.
+                <strong>Lessons Learned:</strong> Balancing process adoption with team autonomy while maintaining product momentum.
               </p>
             </div>
 
-            {/* Tech Stack */}
+            {/* Skills & Learning */}
             <div>
-              <h4 className="text-lg font-semibold mb-3">Tech Stack & PM Tools</h4>
+              <h4 className="text-lg font-semibold mb-3">PM Skills in Development</h4>
               <div className="flex flex-wrap gap-2">
-                {["React Native", "TypeScript", "Cloudflare Workers", "GraphQL", "End-to-end Encryption", "Jira", "Agile/Scrum"].map((tech) => (
+                {[
+                  "User Research", "Competitive Analysis", "Agile/Scrum",
+                  "Jira Workflows", "Product Strategy",
+                  "Cross-functional Leadership", "RICE Prioritization"
+                ].map((skill) => (
                   <span
-                    key={tech}
+                    key={skill}
                     className="px-4 py-2 bg-primary-100 dark:bg-dark-300 text-primary-400 dark:text-dark-100 rounded-full text-sm font-medium border border-primary-200 dark:border-dark-400 hover-lift group cursor-pointer transition-all duration-300"
                   >
-                    {tech}
+                    {skill}
                   </span>
                 ))}
               </div>
+              <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 italic">
+                Building through Atlassian & Aha! PM certifications + hands-on application
+              </p>
             </div>
           </div>
 
-          {/* Right Column - Mobile Mockups */}
+          {/* Right Column - Product Vision */}
           <div>
-            <h3 className="text-2xl font-author font-bold mb-6 text-gradient">
-              Product Features & User Experience
+            <h3 className="text-2xl font-author font-bold mb-6 text-primary-600 dark:text-accent-gold">
+              Core Features & Differentiation
             </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 justify-items-center">
-              {mockupData.map((mockup, index) => (
-                <MobileMockup
-                  key={mockup.alt}
-                  src={mockup.src}
-                  alt={mockup.alt}
-                  caption={mockup.caption}
-                  index={index}
-                />
-              ))}
+            <div className="space-y-6 px-4">
+              <Tilt
+                tiltMaxAngleX={6}
+                tiltMaxAngleY={6}
+                perspective={1000}
+                transitionSpeed={1000}
+                scale={1.02}
+                className="w-full"
+              >
+                <div className="card group">
+                  <div className="p-4">
+                    <h4 className="font-semibold text-primary-600 dark:text-accent-coral mb-2">
+                      Collections-First Organization
+                    </h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Pinterest-inspired saving system with privacy controls - users can create private bookmarks, public themed collections, and collaborative group boards.
+                    </p>
+                  </div>
+                </div>
+              </Tilt>
+
+              <Tilt
+                tiltMaxAngleX={6}
+                tiltMaxAngleY={6}
+                perspective={1000}
+                transitionSpeed={1000}
+                scale={1.02}
+                className="w-full"
+              >
+                <div className="card group">
+                  <div className="p-4">
+                    <h4 className="font-semibold text-primary-600 dark:text-accent-coral mb-2">
+                      Privacy-by-Design Architecture
+                    </h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Granular privacy controls, transparent data practices, and user-controlled recommendation settings prioritizing wellbeing over engagement.
+                    </p>
+                  </div>
+                </div>
+              </Tilt>
+
+              <Tilt
+                tiltMaxAngleX={6}
+                tiltMaxAngleY={6}
+                perspective={1000}
+                transitionSpeed={1000}
+                scale={1.02}
+                className="w-full"
+              >
+                <div className="card group">
+                  <div className="p-4">
+                    <h4 className="font-semibold text-primary-600 dark:text-accent-coral mb-2">
+                      Collaborative Discovery
+                    </h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Shared collections for group planning (travel, events, projects) that prioritize meaningful connections over algorithmic content distribution.
+                    </p>
+                  </div>
+                </div>
+              </Tilt>
+
+              <div className="p-3 bg-white/10 rounded-lg border border-primary-200/30 dark:border-dark-400/30 backdrop-blur-sm">
+                <p className="text-xs text-primary-600 dark:text-accent-gold">
+                  <strong>PM Insight:</strong> These features emerged from competitive analysis showing gaps in current privacy-focused platforms - they either sacrifice usability for privacy or lack collaborative features.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Leadership Evolution Cards */}
         <div className="mb-16 px-4">
-          <h3 className="text-2xl font-author font-bold text-center mb-8 text-gradient">
-            Leadership Evolution: From Music to Product Management
+          <h3 className="text-2xl font-author font-bold text-center mb-8 text-primary-600 dark:text-accent-gold">
+            My Product Management Learning Journey
           </h3>
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6">
@@ -309,6 +382,77 @@ export default function CaptureProjectSection() {
           </div>
         </div>
 
+        {/* Product Screenshots */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-author font-bold text-center mb-8 text-primary-600 dark:text-accent-gold">
+            Key Features in Development
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Collections Feature */}
+            <div className="text-center">
+              <div className="aspect-[9/19] max-w-[200px] mx-auto mb-4 overflow-hidden rounded-xl shadow-lg bg-gray-100 dark:bg-dark-200">
+                <img
+                  src="/images/capture-collections.png"
+                  alt="Collections and bookmarks with privacy controls"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h4 className="font-semibold text-primary-600 dark:text-accent-coral mb-2">
+                Collections & Privacy Controls
+              </h4>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                Pinterest-inspired organization with granular privacy settings for personal and collaborative collections.
+              </p>
+            </div>
+
+            {/* Collaborative Feature */}
+            <div className="text-center">
+              <div className="aspect-[9/19] max-w-[200px] mx-auto mb-4 overflow-hidden rounded-xl shadow-lg bg-gray-100 dark:bg-dark-200">
+                <img
+                  src="/images/capture-collaboration.png"
+                  alt="Collaborative travel planning collection"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h4 className="font-semibold text-primary-600 dark:text-accent-coral mb-2">
+                Collaborative Discovery
+              </h4>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                Shared collections for group planning that prioritize meaningful connections over algorithmic distribution.
+              </p>
+            </div>
+
+            {/* Privacy Features */}
+            <div className="text-center">
+              <div className="aspect-[9/19] max-w-[200px] mx-auto mb-4 overflow-hidden rounded-xl shadow-lg bg-gray-100 dark:bg-dark-200">
+                <img
+                  src="/images/capture-notifications.png"
+                  alt="Privacy-focused notifications and security features"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h4 className="font-semibold text-primary-600 dark:text-accent-coral mb-2">
+                Transparent Communications
+              </h4>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                Clear, user-friendly notifications about privacy settings, security, and content moderation decisions.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-primary-200/30 dark:border-dark-400/30 backdrop-blur-sm text-sm">
+              <span className="w-2 h-2 bg-primary-500 dark:bg-accent-gold rounded-full animate-pulse"></span>
+              <span className="text-primary-600 dark:text-accent-gold">
+                Screenshots from current development build - iterating based on user feedback
+              </span>
+            </div>
+          </div>
+        </div>
+
         {/* Call to Actions */}
         <div className="text-center space-y-4">
           <div className="flex justify-center gap-4 flex-wrap">
@@ -318,18 +462,14 @@ export default function CaptureProjectSection() {
               rel="noopener noreferrer"
               className="btn-primary flex items-center gap-2"
             >
-              <span>Explore Technical Deep-Dive</span>
+              <span>View Technical Implementation</span>
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
             </a>
-            <button className="btn-secondary">
-              View Product Roadmap
-            </button>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-400 italic">
-            "Bringing creative problem-solving from music composition to product development,
-            with proven ability to scale from individual contributor to team leader."
+            "Learning to think like a PM while building - combining creative problem-solving with systematic product methodologies."
           </p>
         </div>
       </div>
