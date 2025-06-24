@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Notebook, TowerControl, Database } from 'lucide-react';
 
 // Data Flow Particles Component
 function DataFlowParticles() {
@@ -96,7 +97,7 @@ export default function CaptureProjectSection() {
             <span className="text-gradient">Product Management Journey</span>
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-6">
-            Learning Product Management through building - applying PM frameworks while co-founding
+            Practicing Product Management through building - applying PM frameworks while co-founding
             a privacy-first social platform for the Pinterest PM Apprenticeship.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -114,7 +115,7 @@ export default function CaptureProjectSection() {
             <div className="card group hover-lift transition-all duration-300">
               <div className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary-100 dark:bg-dark-300 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-primary-600 dark:text-accent-gold text-xl">📋</span>
+                  <Notebook className="text-primary-600 dark:text-accent-gold w-6 h-6" />
                 </div>
                 <h3 className="font-author font-bold text-lg mb-2 text-gradient">
                   Product Strategy
@@ -128,7 +129,7 @@ export default function CaptureProjectSection() {
             <div className="card group hover-lift transition-all duration-300">
               <div className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary-100 dark:bg-dark-300 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-primary-600 dark:text-accent-gold text-xl">🏗️</span>
+                  <TowerControl className="text-primary-600 dark:text-accent-gold w-6 h-6" />
                 </div>
                 <h3 className="font-author font-bold text-lg mb-2 text-gradient">
                   Systems Thinking
@@ -142,7 +143,7 @@ export default function CaptureProjectSection() {
             <div className="card group hover-lift transition-all duration-300">
               <div className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary-100 dark:bg-dark-300 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-primary-600 dark:text-accent-gold text-xl">📊</span>
+                  <Database className="text-primary-600 dark:text-accent-gold w-6 h-6" />
                 </div>
                 <h3 className="font-author font-bold text-lg mb-2 text-gradient">
                   Data-Driven PM

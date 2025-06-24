@@ -11,7 +11,7 @@ export async function onRequest({}) {
     { id: 11, name: "Cloudflare Workers", category: "Backend", iconUrl: "/icons/cloudflareworkers.svg" },
     { id: 14, name: "GraphQL", category: "Backend", iconUrl: "/icons/graphql.svg" },
     { id: 15, name: "tRPC", category: "Backend", iconUrl: "/icons/trpc.svg" },
-    { id: 15, name: "Drizzle ORM", category: "Backend", iconUrl: "/icons/drizzle.png" },
+    { id: 20, name: "Drizzle ORM", category: "Backend", iconUrl: "/icons/drizzle.png" },
     { id: 16, name: "CI/CD Pipelines", category: "Infrastructure & Tools", iconUrl: "/icons/ci-cd.png" },
     { id: 17, name: "Cloudflare", category: "Infrastructure & Tools", iconUrl: "/icons/cloudflare.svg" },
     { id: 18, name: "Docker", category: "Infrastructure & Tools", iconUrl: "/icons/docker.svg" },

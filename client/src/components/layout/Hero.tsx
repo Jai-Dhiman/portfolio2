@@ -72,7 +72,7 @@ export default function Hero() {
             Hi, I'm <span className="text-gradient">Jai Dhiman</span>
           </h1>
           <p className="text-xl animate-slide-up">
-            Full-Stack Developer with expertise in React Native, TypeScript, and serverless architecture. Proven ability to independently architect and deploy complete applications from concept to production, with focus on performance optimization and modern development practices.
+            Aspiring Product Manager from a non-traditional background bringing creative innovation to user-centered product development. Proven ability to conduct user research, lead cross-functional teams, and build products prioritizing user well-being.
           </p>
         </div>
       </div>

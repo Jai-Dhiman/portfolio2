@@ -71,7 +71,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-dark-100/95 backdrop-blur-sm">
+        <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-dark-400/95 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-4 space-y-2">
             <Link
               to="/"

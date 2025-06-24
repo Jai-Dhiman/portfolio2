@@ -30,11 +30,11 @@ function ToolEmbed({ title, description, embedUrl, fallbackImage, externalUrl }:
           </p>
 
           {/* Embed or Fallback */}
-          <div className="relative min-h-[280px] bg-gray-100 dark:bg-dark-200 rounded-lg overflow-hidden mb-4">
+          <div className="relative w-full aspect-[16/9] bg-gray-50 dark:bg-dark-100 rounded-lg overflow-hidden mb-4">
             {embedUrl ? (
               <iframe
                 src={embedUrl}
-                className="w-full h-full border-0"
+                className="absolute inset-0 w-full h-full border-0"
                 loading="lazy"
                 title={title}
               />
@@ -42,11 +42,11 @@ function ToolEmbed({ title, description, embedUrl, fallbackImage, externalUrl }:
               <img
                 src={fallbackImage}
                 alt={`${title} Preview`}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-center"
                 loading="lazy"
               />
             ) : (
-              <div className="flex items-center justify-center h-full text-gray-500 dark:text-gray-400">
+              <div className="absolute inset-0 flex items-center justify-center text-gray-500 dark:text-gray-400">
                 <span>Preview Coming Soon</span>
               </div>
             )}
@@ -215,7 +215,7 @@ export default function ProductManager() {
           From Music Performance to Product Strategy
         </h2>
         <p className="text-md text-gray-700 dark:text-gray-300 max-w-4xl mx-auto mb-6">
-          Learning Product Management through building Capture, a privacy-first social platform while applying PM frameworks,
+          Practicing Product Management through building Capture, a privacy-first social platform while applying PM frameworks,
           conducting user research, and implementing data-driven decision making.
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
