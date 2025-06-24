@@ -1,19 +1,56 @@
+import { useState } from 'react';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const { darkMode, setDarkMode } = useDarkMode();
-  
+  const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <nav className="sticky top-0 z-50 glass-effect">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="h-8">
+        <Link to="/" className="h-8">
           <img
             src="/icons/portfolioIcon.png"
             alt="Jai Dhiman"
             className="h-full w-auto object-contain hover-lift"
           />
+        </Link>
+
+        <div className="hidden md:flex items-center gap-6">
+          <Link
+            to="/"
+            className={`text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/'
+              ? 'text-primary-600 dark:text-accent-gold'
+              : 'text-gray-700 dark:text-gray-300'
+              }`}
+          >
+            Portfolio
+          </Link>
+          <Link
+            to="/product-manager"
+            className={`text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/product-manager'
+              ? 'text-primary-600 dark:text-accent-gold'
+              : 'text-gray-700 dark:text-gray-300'
+              }`}
+          >
+            Product Management Journey
+          </Link>
         </div>
+
         <div className="flex items-center gap-4">
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden btn-secondary p-2"
+            aria-label="Toggle mobile menu"
+          >
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="btn-secondary p-2"
@@ -31,6 +68,34 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-dark-100/95 backdrop-blur-sm">
+          <div className="container mx-auto px-4 py-4 space-y-2">
+            <Link
+              to="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-2 text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/'
+                ? 'text-primary-600 dark:text-accent-gold'
+                : 'text-gray-700 dark:text-gray-300'
+                }`}
+            >
+              Portfolio
+            </Link>
+            <Link
+              to="/product-manager"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-2 text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/product-manager'
+                ? 'text-primary-600 dark:text-accent-gold'
+                : 'text-gray-700 dark:text-gray-300'
+                }`}
+            >
+              Product Manager
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

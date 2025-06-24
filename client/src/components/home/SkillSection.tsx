@@ -8,10 +8,10 @@ export default function SkillsSection() {
     queryKey: ['skills'],
     queryFn: getSkills
   });
-  
+
   if (isLoading) {
     return (
-    <Loader />
+      <Loader />
     )
   }
 
@@ -28,7 +28,7 @@ export default function SkillsSection() {
   const categories = [...new Set(skills?.map(skill => skill.category))];
 
   return (
-    <section id="skills" className="py-16 animate-slide-up">
+    <section id="skills" className="pt-8 pb-16 animate-slide-up">
       <h2 className="section-heading">Skills & Technologies</h2>
       <div className="space-y-12">
         {categories.map((category) => (

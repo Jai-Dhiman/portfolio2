@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-parallax-tilt": "^1.7.273",
+    "react-router-dom": "^7.6.2",
     "react-tsparticles": "^2.12.2",
     "three": "^0.160.0",
     "tsparticles-engine": "^2.12.0",
