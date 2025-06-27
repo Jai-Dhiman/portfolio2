@@ -32,6 +32,7 @@ export default {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.5s ease-out",
         "continuous-spin": "continuous-spin 1s linear infinite",
+        "gradient": "gradient 8s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -49,6 +50,11 @@ export default {
           to: {
             transform: "rotate(360deg)",
           },
+        },
+        gradient: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
         },
       },
     },

@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import GradientText from "../../styles/textAnimations/GradientText/GradientText";
 
 export default function Hero() {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -12,7 +13,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative -mx-4 min-h-[calc(100vh-4rem)] flex items-center justify-center">
+    <section className="relative -mx-4 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden justify-center">
       <div className="absolute inset-0">
         <Particles
           id="tsparticles"
@@ -68,10 +69,16 @@ export default function Hero() {
       </div>
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto z-10">
-          <h1 className="animate-fade-in">
-            Hi, I'm <span className="text-gradient">Jai Dhiman</span>
+          <h1 className="animate-fade-in text-3xl md:text-5xl font-author font-bold mb-6">
+            Hi, I'm <GradientText
+              lightColors={["#4338CA", "#818CF8", "#4338CA"]}
+              darkColors={["#FFD93D", "#FF6B6B", "#FFD93D"]}
+              animationSpeed={6}
+            >
+              Jai Dhiman
+            </GradientText>
           </h1>
-          <p className="text-xl animate-slide-up">
+          <p className="text-xl animate-slide-up text-gray-700 dark:text-gray-300 max-w-3xl">
             Aspiring Product Manager from a non-traditional background bringing creative innovation to user-centered product development. Proven ability to conduct user research, lead cross-functional teams, and build products prioritizing user well-being.
           </p>
         </div>

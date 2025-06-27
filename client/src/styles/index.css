@@ -41,6 +41,7 @@
 
   .card {
     @apply bg-white dark:bg-dark-400 rounded-lg shadow-md p-6 border border-primary-100 dark:border-dark-300 transition-all duration-200 hover:border-accent-teal dark:hover:border-accent-coral;
+    contain: layout style paint;
   }
 
   .nav-link {
@@ -96,6 +97,7 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-300 dark:from-accent-coral dark:to-accent-gold;
+    will-change: background-position;
   }
 
   .glass-effect {
@@ -108,6 +110,12 @@
 
   .hover-lift {
     @apply transition-transform duration-200 hover:-translate-y-1;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px) translateZ(0);
   }
 
   .section-heading {
@@ -182,5 +190,60 @@
     animation: jump-and-spin 0.5s ease-in-out;
   }
 
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .hover-lift:hover {
+      transform: none;
+    }
 
+    .animate-fade-in,
+    .animate-pulse,
+    .animate-spin {
+      animation: none !important;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #4338CA 0%, #7C3AED 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      animation: none !important;
+    }
+
+    /* Disable all transforms for reduced motion */
+    [data-tilt] {
+      transform: none !important;
+    }
+
+    .scroll-smooth {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Optimize animations for better performance */
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-fade-in {
+      will-change: opacity, transform;
+    }
+
+    /* Optimize Tilt components */
+    [data-tilt] {
+      will-change: transform;
+      transform: translateZ(0);
+    }
+  }
+
+  /* Optimize image loading */
+  img {
+    content-visibility: auto;
+  }
+
+  /* Reduce paint complexity */
+  .card {
+    contain: layout style paint;
+  }
+
+  /* Optimize scroll performance */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
 }
