@@ -23,7 +23,7 @@ export async function onRequest({}) {
     { id: 21, name: "Retrieval Augemented Generation", category: "AI/ML", iconUrl: "/icons/rag.png" },
     { id: 22, name: "Model Context Protocol", category: "AI/ML", iconUrl: "/icons/mcp.png" },
     { id: 23, name: "Claude Sonnet API", category: "AI/ML", iconUrl: "/icons/claude.svg" },
-    { id: 24, name: "OpenAI API", category: "AI/ML", iconUrl: "/icons/openai.svg" },
+    { id: 24, name: "OpenAI API", category: "AI/ML", iconUrl: "/icons/openai.htm" },
   ];
   return new Response(JSON.stringify(skills), { headers: { "content-type": "application/json" } });
 } 
