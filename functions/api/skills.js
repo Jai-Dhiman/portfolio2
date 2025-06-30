@@ -19,9 +19,11 @@ export async function onRequest({}) {
     { id: 17, name: "Vite", category: "Infrastructure & Tools", iconUrl: "/icons/vite.svg" },
     { id: 18, name: "CI/CD Pipelines", category: "Infrastructure & Tools", iconUrl: "/icons/ci-cd.png" },
     { id: 19, name: "Vector Embeddings", category: "AI/ML", iconUrl: "/icons/vector.png" },
-    { id: 20, name: "Claude Sonnet API", category: "AI/ML", iconUrl: "/icons/claude.svg" },
-    { id: 21, name: "Semantic Search", category: "AI/ML", iconUrl: "/icons/search.png" },
-    { id: 22, name: "Retrieval Augemented Generation", category: "AI/ML", iconUrl: "/icons/rag.png" },
+    { id: 20, name: "Semantic Search", category: "AI/ML", iconUrl: "/icons/search.png" },
+    { id: 21, name: "Retrieval Augemented Generation", category: "AI/ML", iconUrl: "/icons/rag.png" },
+    { id: 22, name: "Model Context Protocol", category: "AI/ML", iconUrl: "/icons/mcp.png" },
+    { id: 23, name: "Claude Sonnet API", category: "AI/ML", iconUrl: "/icons/claude.svg" },
+    { id: 24, name: "OpenAI API", category: "AI/ML", iconUrl: "/icons/openai.svg" },
   ];
   return new Response(JSON.stringify(skills), { headers: { "content-type": "application/json" } });
 } 
