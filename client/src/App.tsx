@@ -13,7 +13,7 @@ export default function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/product-manager" element={<ProductManager />} />
+            {/* <Route path="/product-manager" element={<ProductManager />} /> */}
           </Routes>
         </Layout>
       </Router>

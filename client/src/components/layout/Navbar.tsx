@@ -18,6 +18,7 @@ export default function Navbar() {
           />
         </Link>
 
+        {/*
         <div className="hidden md:flex items-center gap-6">
           <Link
             to="/"
@@ -38,9 +39,11 @@ export default function Navbar() {
             Product Management Journey
           </Link>
         </div>
+        */}
 
         <div className="flex items-center gap-4">
           {/* Mobile menu button */}
+          {/*
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden btn-secondary p-2"
@@ -50,6 +53,7 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
+          */}
 
           <button
             onClick={() => setDarkMode(!darkMode)}
@@ -70,6 +74,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
+      {/*
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-dark-400/95 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-4 space-y-2">
@@ -96,6 +101,7 @@ export default function Navbar() {
           </div>
         </div>
       )}
+      */}
     </nav>
   );
 }

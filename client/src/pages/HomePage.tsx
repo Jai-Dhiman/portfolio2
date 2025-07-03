@@ -39,8 +39,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <CaptureProjectSection />
-      {/* Skills section and below with LetterGlitch background */}
+      {/* <CaptureProjectSection /> */}
       <div className="relative" ref={skillsSectionRef}>
         {shouldLoadBackground && (
           <div className="absolute -inset-x-16 inset-y-0 opacity-5">
