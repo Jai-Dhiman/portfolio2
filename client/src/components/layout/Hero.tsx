@@ -79,7 +79,7 @@ export default function Hero() {
             </GradientText>
           </h1>
           <p className="text-xl animate-slide-up text-gray-700 dark:text-gray-300 max-w-3xl">
-            Aspiring Product Manager from a non-traditional background bringing creative innovation to user-centered product development. Proven ability to conduct user research, lead cross-functional teams, and build products prioritizing user well-being.
+            Developer with a proven track record of independently shipping production-grade applications using AI-assisted workflows. Strong foundation in React Native, TypeScript, serverless infrastructure, and scalable backend design. Creator of Capture, a privacy-first mobile social app featuring encrypted messaging, semantic feeds, and CI/CD-enabled development. Passionate about building fast, learning fast, and solving real product problems from day one.
           </p>
         </div>
       </div>
