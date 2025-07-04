@@ -79,7 +79,9 @@ export default function Hero() {
             </GradientText>
           </h1>
           <p className="text-xl animate-slide-up text-gray-700 dark:text-gray-300 max-w-3xl">
-            Developer with a proven track record of independently shipping production-grade applications using AI-assisted workflows. Strong foundation in React Native, TypeScript, serverless infrastructure, and scalable backend design. Creator of Capture, a privacy-first mobile social app featuring encrypted messaging, semantic feeds, and CI/CD-enabled development. Passionate about building fast, learning fast, and solving real product problems from day one.
+            Full-stack developer and co-founder building Capture, a privacy-first social platform with AI-powered recommendations.
+            Expert in React Native, TypeScript, serverless architecture, and vector databases.
+            Passionate about shipping production-ready applications that solve real problems.
           </p>
         </div>
       </div>
