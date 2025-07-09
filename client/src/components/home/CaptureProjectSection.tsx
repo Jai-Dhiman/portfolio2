@@ -184,9 +184,9 @@ function ToolEmbed({ title, description, embedUrl, fallbackImage, externalUrl }:
 const ScreenshotGallery = React.memo(function ScreenshotGallery() {
   const screenshots = useMemo(() => [
     {
-      src: "/images/capture-collections.png",
-      alt: "Capture Collections Feature",
-      title: "Collections & Organization"
+      src: "/images/capture-feed.png",
+      alt: "Capture Feed Feature",
+      title: "Personalized Feed"
     },
     {
       src: "/images/capture-collaboration.png",
@@ -308,12 +308,12 @@ const TechArchitectureCards = React.memo(function TechArchitectureCards() {
               <div className="p-8">
                 <div className="flex items-start space-x-4">
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${card.type === 'primary'
-                      ? 'bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-800 dark:to-primary-900'
-                      : 'bg-gradient-to-br from-accent-coral/20 to-accent-gold/20 dark:from-accent-coral/30 dark:to-accent-gold/30'
+                    ? 'bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-800 dark:to-primary-900'
+                    : 'bg-gradient-to-br from-accent-coral/20 to-accent-gold/20 dark:from-accent-coral/30 dark:to-accent-gold/30'
                     }`}>
                     <card.icon className={`w-8 h-8 ${card.type === 'primary'
-                        ? 'text-primary-600 dark:text-primary-400'
-                        : 'text-accent-coral dark:text-accent-gold'
+                      ? 'text-primary-600 dark:text-primary-400'
+                      : 'text-accent-coral dark:text-accent-gold'
                       }`} />
                   </div>
                   <div className="flex-1">
