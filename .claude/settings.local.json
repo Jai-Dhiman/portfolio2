@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun add:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(bun remove:*)"
+    ],
+    "deny": []
+  }
+}

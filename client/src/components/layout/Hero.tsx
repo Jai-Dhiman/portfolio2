@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import React, { useCallback, Suspense } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
@@ -6,10 +6,14 @@ import { Link } from "react-router-dom";
 import { Users, Target, Zap, Code } from "lucide-react";
 import GradientText from "../../styles/textAnimations/GradientText/GradientText";
 import { useThemeDetection } from "../../hooks/useDarkMode";
+import ErrorBoundary from "../ErrorBoundary";
+
+// Lazy load the Lanyard component
+const Lanyard = React.lazy(() => import("../Lanyard"));
 
 export default function Hero() {
   const isDarkMode = useThemeDetection();
-  
+
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
@@ -72,6 +76,17 @@ export default function Hero() {
           }}
         />
       </div>
+
+      {/* Lanyard Animation */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-70">
+          <ErrorBoundary fallback={<div />}>
+            <Suspense fallback={<div />}>
+              <Lanyard position={[0, 0, 18]} gravity={[0, -40, 0]} fov={12} transparent={true} />
+            </Suspense>
+          </ErrorBoundary>
+        </div>
+      </div>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto z-10 text-center">
           <h1 className="animate-fade-in text-3xl md:text-5xl font-author font-bold mb-6">
@@ -89,7 +104,7 @@ export default function Hero() {
           <p className="text-lg animate-slide-up text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
             Building AI-powered products from concept to code
           </p>
-          
+
           {/* CTA Button */}
           <div className="animate-fade-in mb-12">
             <Link
@@ -110,7 +125,7 @@ export default function Hero() {
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-sm">Privacy-first social platform</p>
             </div>
-            
+
             <div className="flex flex-col items-center text-center">
               <div className="flex items-center gap-2 text-primary-600 dark:text-accent-gold mb-2">
                 <Target className="w-5 h-5" />
@@ -118,7 +133,7 @@ export default function Hero() {
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-sm">4-person cross-functional team</p>
             </div>
-            
+
             <div className="flex flex-col items-center text-center">
               <div className="flex items-center gap-2 text-primary-600 dark:text-accent-gold mb-2">
                 <Zap className="w-5 h-5" />
@@ -126,7 +141,7 @@ export default function Hero() {
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-sm">AI/ML recommendation systems</p>
             </div>
-            
+
             <div className="flex flex-col items-center text-center">
               <div className="flex items-center gap-2 text-primary-600 dark:text-accent-gold mb-2">
                 <Code className="w-5 h-5" />
