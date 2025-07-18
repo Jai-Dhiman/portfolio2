@@ -11,6 +11,7 @@
     "build": "bun run build:client && bun run build:server"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "concurrently": "^9.1.2",
     "wrangler": "^3.0.0"
   },

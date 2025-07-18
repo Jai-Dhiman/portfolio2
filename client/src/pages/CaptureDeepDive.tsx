@@ -1,33 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { Play, ExternalLink, FileText, Users, Target, Zap, Shield, Brain, Github, TrendingUp, AlertTriangle, Calendar, MessageCircle, Lightbulb, Award, Compass, Code, ArrowRight } from "lucide-react";
+import { ExternalLink, FileText, Users, Target, Zap, Shield, Brain, Github, TrendingUp, AlertTriangle, Calendar, MessageCircle, Lightbulb, Award, Compass, Code, ArrowRight } from "lucide-react";
 import Tilt from 'react-parallax-tilt';
 import GradientText from '../styles/textAnimations/GradientText/GradientText';
 import SpotlightCard from '../styles/components/SpotlightCard/SpotlightCard';
 import DataFlowParticles from '../components/background/DataFlowParticles';
 
 const CaptureDeepDive = () => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
-  const handleVideoToggle = () => {
-    const video = document.getElementById("vector-video") as HTMLVideoElement;
-    if (video) {
-      if (isVideoPlaying) {
-        video.pause();
-      } else {
-        video.play();
-      }
-      setIsVideoPlaying(!isVideoPlaying);
-    }
-  };
-
   return (
     <div className="relative py-16 min-h-screen overflow-hidden">
       {/* Data Flow Particles Background */}
       <div className="absolute inset-0 opacity-20 pointer-events-none z-0">
         <DataFlowParticles />
       </div>
-      
+
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 z-10">
         <div className="max-w-7xl mx-auto">
@@ -46,7 +32,7 @@ const CaptureDeepDive = () => {
               >
                 <GradientText>Capture: Privacy-First Social Platform</GradientText>
               </motion.h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -96,7 +82,7 @@ const CaptureDeepDive = () => {
                 </motion.a>
               </motion.div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -426,28 +412,17 @@ const CaptureDeepDive = () => {
                 scale={1.01}
                 className="w-full"
               >
-                <video
-                  id="vector-video"
-                  className="w-full rounded-lg shadow-2xl"
-                  poster="/images/capture-feed.png"
-                  controls
-                  onPlay={() => setIsVideoPlaying(true)}
-                  onPause={() => setIsVideoPlaying(false)}
-                >
-                  <source src="/images/VectorVideo.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <div className="aspect-w-16 aspect-h-9 w-full">
+                  <iframe
+                    className="w-full h-full rounded-lg shadow-2xl"
+                    src="https://www.youtube.com/embed/-pnPIgEL2pI"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </Tilt>
-
-              <motion.button
-                onClick={handleVideoToggle}
-                className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{ display: isVideoPlaying ? 'none' : 'flex' }}
-              >
-                <Play className="w-16 h-16 text-white" />
-              </motion.button>
             </motion.div>
 
             <motion.div
