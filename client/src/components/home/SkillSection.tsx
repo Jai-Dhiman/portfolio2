@@ -33,7 +33,7 @@ export default function SkillsSection() {
       <div className="space-y-12">
         {categories.map((category) => (
           <div key={category} className="animate-fade-in">
-            <h3 className="text-gradient capitalize mb-6">{category}</h3>
+            <h3 className="text-primary-600 dark:text-accent-coral capitalize mb-6 text-xl font-author font-bold">{category}</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
               {skills
                 ?.filter(skill => skill.category === category)

@@ -1,9 +1,7 @@
 import React, { Suspense, useState, useEffect, useRef } from "react";
 import Hero from "../components/layout/Hero";
-import ProjectsSection from "../components/home/ProjectsSection";
 import SkillsSection from "../components/home/SkillSection";
 import { ExperienceSection } from "../components/home/ExperienceSection";
-import CaptureProjectSection from "../components/home/CaptureProjectSection";
 
 // Lazy load LetterGlitch for better performance
 const LetterGlitch = React.lazy(() => import("../styles/backgrounds/LetterGlitch/LetterGlitch"));
@@ -39,7 +37,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <CaptureProjectSection />
       <div className="relative" ref={skillsSectionRef}>
         {shouldLoadBackground && (
           <div className="absolute -inset-x-16 inset-y-0 opacity-5">
@@ -51,7 +48,6 @@ export default function HomePage() {
         <div className="relative z-10">
           <SkillsSection />
           <ExperienceSection />
-          <ProjectsSection />
         </div>
       </div>
     </>

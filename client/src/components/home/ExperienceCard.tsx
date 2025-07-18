@@ -1,5 +1,6 @@
 // components/ExperienceCard.tsx
 import Tilt from 'react-parallax-tilt';
+import { Link } from 'react-router-dom';
 import { Experience } from '../../types/index';
 
 interface ExperienceCardProps {
@@ -47,13 +48,26 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         <div className="absolute top-6 right-6 text-sm text-primary-300 dark:text-dark-200">
           {getDateDisplay()}
         </div>
-        <h3 className="pr-24"><span className="text-gradient">{experience.title}</span></h3>
+        <h3 className="pr-24"><span className="text-primary-600 dark:text-accent-coral">{experience.title}</span></h3>
         <p className="font-semibold text-primary-300 dark:text-accent-gold">
           {experience.company}
         </p>
-        <p className="text-primary-400 dark:text-dark-100 mt-2">
+        <p className="text-primary-400 dark:text-dark-100 mt-2 mb-4">
           {experience.description}
         </p>
+        
+        {/* Add link to Capture deep dive if this is the Capture experience */}
+        {experience.company === 'Capture' && (
+          <Link
+            to="/capture"
+            className="btn-primary text-sm hover-lift inline-flex items-center gap-2 mt-4"
+          >
+            <span>View Full Case Study</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
+        )}
       </div>
     </Tilt>
   );

@@ -24,7 +24,13 @@ export const ExperienceSection = () => {
     <section id="experience" className="py-16">
       <h2 className="section-heading">Experience</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
-        {experiences?.map((experience) => (
+        {experiences?.sort((a, b) => {
+          // Sort by current status first (current = true comes first)
+          if (a.current && !b.current) return -1;
+          if (!a.current && b.current) return 1;
+          // Then sort by start date (most recent first)
+          return new Date(b.startDate).getTime() - new Date(a.startDate).getTime();
+        }).map((experience) => (
           <ExperienceCard 
             key={experience.id} 
             experience={experience} 

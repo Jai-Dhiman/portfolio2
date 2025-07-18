@@ -18,7 +18,6 @@ export default function Navbar() {
           />
         </Link>
 
-        {/*
         <div className="hidden md:flex items-center gap-6">
           <Link
             to="/"
@@ -30,20 +29,18 @@ export default function Navbar() {
             Portfolio
           </Link>
           <Link
-            to="/product-manager"
-            className={`text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/product-manager'
+            to="/capture"
+            className={`text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/capture'
               ? 'text-primary-600 dark:text-accent-gold'
               : 'text-gray-700 dark:text-gray-300'
               }`}
           >
-            Product Management Journey
+            Capture Case Study
           </Link>
         </div>
-        */}
 
         <div className="flex items-center gap-4">
           {/* Mobile menu button */}
-          {/*
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden btn-secondary p-2"
@@ -53,7 +50,6 @@ export default function Navbar() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          */}
 
           <button
             onClick={() => setDarkMode(!darkMode)}
@@ -74,7 +70,6 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {/*
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-dark-400/95 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-4 space-y-2">
@@ -89,19 +84,18 @@ export default function Navbar() {
               Portfolio
             </Link>
             <Link
-              to="/product-manager"
+              to="/capture"
               onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/product-manager'
+              className={`block py-2 text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/capture'
                 ? 'text-primary-600 dark:text-accent-gold'
                 : 'text-gray-700 dark:text-gray-300'
                 }`}
             >
-              Product Manager
+              Capture Case Study
             </Link>
           </div>
         </div>
       )}
-      */}
     </nav>
   );
 }
