@@ -49,8 +49,24 @@ export default function Lanyard({
   transparent = false,
 }: LanyardProps) {
   const [hasError, setHasError] = useState(false);
+  const [isLowPerformance, setIsLowPerformance] = useState(false);
 
-  if (hasError) {
+  // Check device performance
+  useEffect(() => {
+    const checkPerformance = () => {
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isLowMemory = (navigator as any).deviceMemory && (navigator as any).deviceMemory < 4;
+      const isSlowCPU = navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4;
+
+      if (isMobile || isLowMemory || isSlowCPU) {
+        setIsLowPerformance(true);
+      }
+    };
+
+    checkPerformance();
+  }, []);
+
+  if (hasError || isLowPerformance) {
     return <div className="w-full h-screen" />;
   }
 
@@ -58,44 +74,35 @@ export default function Lanyard({
     <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
       <Canvas
         camera={{ position, fov }}
-        gl={{ alpha: transparent }}
-        onCreated={({ gl }) =>
-          gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)
-        }
+        gl={{
+          alpha: transparent,
+          antialias: false, // Disable for better performance
+          powerPreference: "high-performance",
+        }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1);
+          gl.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio
+        }}
         onError={() => setHasError(true)}
       >
-        <ambientLight intensity={Math.PI} />
-        <Physics gravity={gravity} timeStep={1 / 60}>
+        <ambientLight intensity={10} />
+        <Physics gravity={gravity} timeStep={1 / 30}>
           <Band />
         </Physics>
         <Environment blur={0.75}>
           <Lightformer
-            intensity={2}
+            intensity={2.5}
             color="white"
             position={[0, -1, 5]}
             rotation={[0, 0, Math.PI / 3]}
-            scale={[100, 0.1, 1]}
+            scale={[50, 0.1, 1]}
           />
           <Lightformer
-            intensity={3}
+            intensity={2.5}
             color="white"
             position={[-1, -1, 1]}
             rotation={[0, 0, Math.PI / 3]}
-            scale={[100, 0.1, 1]}
-          />
-          <Lightformer
-            intensity={3}
-            color="white"
-            position={[1, 1, 1]}
-            rotation={[0, 0, Math.PI / 3]}
-            scale={[100, 0.1, 1]}
-          />
-          <Lightformer
-            intensity={10}
-            color="white"
-            position={[-10, 0, 14]}
-            rotation={[0, Math.PI / 2, Math.PI / 3]}
-            scale={[100, 10, 1]}
+            scale={[50, 0.1, 1]}
           />
         </Environment>
       </Canvas>

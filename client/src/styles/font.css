@@ -23,38 +23,7 @@
 
 *
 */
-@font-face {
-  font-family: 'Author-Extralight';
-  src: url('../fonts/Author-Extralight.woff') format('woff'),
-       url('../fonts/Author-Extralight.ttf') format('truetype');
-  font-weight: 200;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Author-ExtralightItalic';
-  src: url('../fonts/Author-ExtralightItalic.woff') format('woff'),
-       url('../fonts/Author-ExtralightItalic.ttf') format('truetype');
-  font-weight: 200;
-  font-display: swap;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Author-Light';
-  src: url('../fonts/Author-Light.woff') format('woff'),
-       url('../fonts/Author-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Author-LightItalic';
-  src: url('../fonts/Author-LightItalic.woff') format('woff'),
-       url('../fonts/Author-LightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-display: swap;
-  font-style: italic;
-}
+/* Removed rarely used font weights to improve performance */
 @font-face {
   font-family: 'Author-Regular';
   src: url('../fonts/Author-Regular.woff') format('woff'),

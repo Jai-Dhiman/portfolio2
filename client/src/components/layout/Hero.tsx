@@ -79,7 +79,7 @@ export default function Hero() {
 
       {/* Lanyard Animation - Hidden on mobile */}
       <div className="absolute inset-0 hidden lg:block">
-        <div className="absolute top-0 right-0 w-1/3 h-full opacity-70">
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-80 saturate-150">
           <ErrorBoundary fallback={<div />}>
             <Suspense fallback={<div />}>
               <Lanyard position={[0, 0, 18]} gravity={[0, -40, 0]} fov={12} transparent={true} />

@@ -1,13 +1,16 @@
 // components/home/SkillSection.tsx
+import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getSkills } from '../../lib/api';
+import { useReducedMotion } from '../../hooks/useDarkMode';
 import Loader from '../loader';
 
-export default function SkillsSection() {
+export default React.memo(function SkillsSection() {
   const { data: skills, isLoading, error } = useQuery({
     queryKey: ['skills'],
     queryFn: getSkills
   });
+  const prefersReducedMotion = useReducedMotion();
 
   if (isLoading) {
     return (
@@ -46,7 +49,9 @@ export default function SkillsSection() {
                       <img
                         src={skill.iconUrl}
                         alt={skill.name}
-                        className="w-8 h-8 object-contain group-hover:animate-continuous-spin"
+                        className={`w-8 h-8 object-contain ${!prefersReducedMotion ? 'group-hover:animate-continuous-spin' : ''}`}
+                        loading="lazy"
+                        decoding="async"
                       />
                     )}
                     <span className="font-medium block break-words whitespace-normal">{skill.name}</span>
@@ -58,4 +63,4 @@ export default function SkillsSection() {
       </div>
     </section>
   );
-}
+});

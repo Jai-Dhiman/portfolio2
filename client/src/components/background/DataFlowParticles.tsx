@@ -28,7 +28,7 @@ const DataFlowParticles = React.memo(function DataFlowParticles() {
     resizeCanvas();
 
     // Optimized particle count for better performance
-    const particleCount = Math.min(100, Math.floor(canvas.getBoundingClientRect().width)); // Increased particles for better visibility
+    const particleCount = Math.min(50, Math.floor(canvas.getBoundingClientRect().width / 20)); // Reduced particles for better performance
     const particles: Array<{
       x: number;
       y: number;
@@ -52,7 +52,7 @@ const DataFlowParticles = React.memo(function DataFlowParticles() {
     }
 
     let lastTime = 0;
-    const targetFPS = 30; // Lower FPS for better performance
+    const targetFPS = 24; // Even lower FPS for better performance
     const frameInterval = 1000 / targetFPS;
 
     const animate = (currentTime: number) => {
