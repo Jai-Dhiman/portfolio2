@@ -25,6 +25,16 @@ import profilePic from "../assets/lanyard/profilepic.png";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
+// TypeScript declarations for extended three.js components
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      meshLineGeometry: any;
+      meshLineMaterial: any;
+    }
+  }
+}
+
 interface LanyardProps {
   position?: [number, number, number];
   gravity?: [number, number, number];
@@ -125,8 +135,8 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
 
   // Fix texture orientation and scaling
   profileTexture.flipY = false; // Try flipping Y
-  profileTexture.repeat.set(1.36, 1.36); // Zoom out more
-  profileTexture.offset.set(0.34, 0.05); // Center the texture
+  profileTexture.repeat.set(1.45, 1.45); // Zoom out more
+  profileTexture.offset.set(0.365, 0.05); // Center the texture
   profileTexture.center.set(0.5, 0.5); // Set rotation center
   profileTexture.rotation = 0; // Rotate 180 degrees to fix orientation
 

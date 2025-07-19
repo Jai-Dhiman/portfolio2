@@ -77,8 +77,8 @@ export default function Hero() {
         />
       </div>
 
-      {/* Lanyard Animation */}
-      <div className="absolute inset-0">
+      {/* Lanyard Animation - Hidden on mobile */}
+      <div className="absolute inset-0 hidden lg:block">
         <div className="absolute top-0 right-0 w-1/3 h-full opacity-70">
           <ErrorBoundary fallback={<div />}>
             <Suspense fallback={<div />}>
