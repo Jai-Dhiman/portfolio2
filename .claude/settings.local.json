@@ -3,7 +3,12 @@
     "allow": [
       "Bash(bun add:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(bun remove:*)"
+      "Bash(bun remove:*)",
+      "Bash(find:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"Converting $file...\")",
+      "Bash(cwebp:*)",
+      "Bash(done)"
     ],
     "deny": []
   }

@@ -5,6 +5,7 @@ import Tilt from 'react-parallax-tilt';
 import GradientText from '../styles/textAnimations/GradientText/GradientText';
 import SpotlightCard from '../styles/components/SpotlightCard/SpotlightCard';
 import DataFlowParticles from '../components/background/DataFlowParticles';
+import YouTubeEmbed from '../components/YouTubeEmbed';
 
 const CaptureDeepDive = () => {
   return (
@@ -97,11 +98,15 @@ const CaptureDeepDive = () => {
                 scale={1.02}
                 className="inline-block"
               >
-                <img
-                  src="/images/capture-feed.png"
-                  alt="Capture App Interface"
-                  className="w-80 h-auto rounded-2xl shadow-2xl"
-                />
+                <picture>
+                  <source srcSet="/images/capture-feed.webp" type="image/webp" />
+                  <img
+                    src="/images/capture-feed.png"
+                    alt="Capture App Interface"
+                    className="w-80 h-auto rounded-2xl shadow-2xl"
+                    loading="lazy"
+                  />
+                </picture>
               </Tilt>
             </motion.div>
           </div>
@@ -314,11 +319,15 @@ const CaptureDeepDive = () => {
                 scale={1.01}
                 className="w-full"
               >
-                <img
-                  src="/images/FeedSystemArchitecture.png"
-                  alt="Feed System Architecture"
-                  className="w-full rounded-lg shadow-2xl"
-                />
+                <picture>
+                  <source srcSet="/images/FeedSystemArchitecture.webp" type="image/webp" />
+                  <img
+                    src="/images/FeedSystemArchitecture.png"
+                    alt="Feed System Architecture"
+                    className="w-full rounded-lg shadow-2xl"
+                    loading="lazy"
+                  />
+                </picture>
               </Tilt>
             </motion.div>
 
@@ -396,13 +405,13 @@ const CaptureDeepDive = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative flex justify-center"
             >
               <Tilt
                 tiltMaxAngleX={3}
@@ -410,18 +419,12 @@ const CaptureDeepDive = () => {
                 perspective={1500}
                 transitionSpeed={1200}
                 scale={1.01}
-                className="w-full"
+                className="w-full max-w-lg"
               >
-                <div className="aspect-w-16 aspect-h-9 w-full">
-                  <iframe
-                    className="w-full h-full rounded-lg shadow-2xl"
-                    src="https://www.youtube.com/embed/-pnPIgEL2pI"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
+                <YouTubeEmbed
+                  videoId="-pnPIgEL2pI"
+                  title="Capture Vector Embedding Demo"
+                />
               </Tilt>
             </motion.div>
 
@@ -515,11 +518,15 @@ const CaptureDeepDive = () => {
                 scale={1.01}
                 className="w-full"
               >
-                <img
-                  src="/images/gitbook-preview.png"
-                  alt="Product Strategy Documentation"
-                  className="w-full rounded-lg shadow-2xl"
-                />
+                <picture>
+                  <source srcSet="/images/gitbook-preview.webp" type="image/webp" />
+                  <img
+                    src="/images/gitbook-preview.png"
+                    alt="Product Strategy Documentation"
+                    className="w-full rounded-lg shadow-2xl"
+                    loading="lazy"
+                  />
+                </picture>
               </Tilt>
             </motion.div>
 
