@@ -13,7 +13,6 @@ export default defineConfig({
     }),
   ],
   define: {
-    __CF_ANALYTICS_TOKEN__: JSON.stringify(process.env.VITE_CF_ANALYTICS_TOKEN || ''),
     __AMPLITUDE_API_KEY__: JSON.stringify(process.env.VITE_AMPLITUDE_API_KEY || ''),
   },
   assetsInclude: ['**/*.glb'],
