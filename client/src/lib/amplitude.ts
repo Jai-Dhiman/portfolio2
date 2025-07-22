@@ -2,10 +2,14 @@ import * as amplitude from '@amplitude/analytics-browser';
 
 // Initialize Amplitude
 const initAmplitude = () => {
-  const apiKey = (window as any).__AMPLITUDE_API_KEY__;
+  // Try build-time variable first, then runtime
+  const buildTimeKey = (window as any).__AMPLITUDE_API_KEY__;
+  const runtimeKey = import.meta.env.VITE_AMPLITUDE_API_KEY;
+  const apiKey = buildTimeKey || runtimeKey;
   
-  console.log('Amplitude API Key:', apiKey ? 'Found' : 'Missing');
-  console.log('All window vars:', Object.keys(window).filter(k => k.startsWith('__')));
+  console.log('Build-time API Key:', buildTimeKey ? 'Found' : 'Missing');
+  console.log('Runtime API Key:', runtimeKey ? 'Found' : 'Missing');
+  console.log('Final API Key:', apiKey ? 'Found' : 'Missing');
   
   if (apiKey) {
     amplitude.init(apiKey, undefined, {
