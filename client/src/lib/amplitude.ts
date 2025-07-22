@@ -14,10 +14,11 @@ const initAmplitude = () => {
   if (apiKey) {
     amplitude.init(apiKey, undefined, {
       // Free tier optimizations
-      logLevel: amplitude.Types.LogLevel.Debug, // Temporarily enable debug logs
+      logLevel: amplitude.Types.LogLevel.Warn,
       flushIntervalMillis: 30000, // Batch events every 30s
       flushQueueSize: 50, // Batch up to 50 events
       useBatch: true,
+      serverUrl: 'https://api.eu.amplitude.com/batch', // EU endpoint for better CORS
     });
     console.log('Amplitude initialized with key:', apiKey.substring(0, 8) + '...');
   } else {
