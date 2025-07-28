@@ -6,22 +6,16 @@ const initAmplitude = () => {
   const buildTimeKey = (window as any).__AMPLITUDE_API_KEY__;
   const runtimeKey = import.meta.env.VITE_AMPLITUDE_API_KEY;
   const apiKey = buildTimeKey || runtimeKey;
-  
-  console.log('Build-time API Key:', buildTimeKey ? 'Found' : 'Missing');
-  console.log('Runtime API Key:', runtimeKey ? 'Found' : 'Missing');
-  console.log('Final API Key:', apiKey ? 'Found' : 'Missing');
-  
+
   if (apiKey) {
-    amplitude.init(apiKey, undefined, {
-      // Free tier optimizations
+    amplitude.init(apiKey, {
+      defaultTracking: true,
       logLevel: amplitude.Types.LogLevel.Warn,
-      flushIntervalMillis: 30000, // Batch events every 30s
-      flushQueueSize: 50, // Batch up to 50 events
+      flushIntervalMillis: 30000,
+      flushQueueSize: 50,
       useBatch: true,
-      serverUrl: 'https://api.eu.amplitude.com/batch', // EU endpoint for better CORS
-      defaultTracking: true, // Suppress warning
+      serverUrl: 'https://api2.amplitude.com/batch',
     });
-    console.log('Amplitude initialized with key:', apiKey.substring(0, 8) + '...');
   } else {
     console.error('Amplitude API key not found! Check VITE_AMPLITUDE_API_KEY env var');
   }
