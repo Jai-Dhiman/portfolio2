@@ -30,8 +30,8 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
 	const getSpotlightColor = () => {
 		if (spotlightColor) return spotlightColor;
 		return isDarkMode
-			? "rgba(129, 140, 248, 0.15)" // Light purple for dark mode
-			: "rgba(67, 56, 202, 0.25)"; // Darker purple for light mode
+			? "rgba(107, 127, 107, 0.15)" // Muted sage green for dark mode
+			: "rgba(139, 111, 71, 0.25)"; // Cognac brown for light mode
 	};
 
 	const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = useCallback((e) => {
@@ -67,7 +67,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
 			onBlur={handleBlur}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className={`relative rounded-xl border border-gray-200 dark:border-dark-300 bg-white dark:bg-dark-400 overflow-hidden p-6 transition-all ${prefersReducedMotion ? 'duration-0' : 'duration-300'} hover:border-primary-300 dark:hover:border-accent-gold ${className}`}
+			className={`relative rounded-xl border border-gray-200 dark:border-dark-300 bg-white dark:bg-dark-400 overflow-hidden p-6 transition-all ${prefersReducedMotion ? 'duration-0' : 'duration-300'} hover:border-accent-sage dark:hover:border-accent-coral ${className}`}
 		>
 			<div
 				className={`pointer-events-none absolute inset-0 opacity-0 transition-opacity ease-in-out ${prefersReducedMotion ? 'duration-0' : 'duration-500'}`}

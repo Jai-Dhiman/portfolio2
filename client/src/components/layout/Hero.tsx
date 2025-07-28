@@ -36,10 +36,10 @@ export default function Hero() {
             fpsLimit: 60,
             particles: {
               color: {
-                value: isDarkMode ? "#4338CA" : "#E5E7EB",
+                value: isDarkMode ? "#6B7F6B" : "#8B6F47", // Sage green for dark, cognac for light
               },
               links: {
-                color: isDarkMode ? "#818CF8" : "#D1D5DB",
+                color: isDarkMode ? "#A69080" : "#B59B7A", // Taupe for dark, light cognac for light
                 distance: 150,
                 enable: true,
                 opacity: isDarkMode ? 0.5 : 0.3,
@@ -91,8 +91,6 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto z-10 text-center">
           <h1 className="animate-fade-in text-3xl md:text-5xl font-author font-bold mb-6">
             Hi, I'm <GradientText
-              lightColors={["#4338CA", "#818CF8", "#4338CA"]}
-              darkColors={["#FFD93D", "#FF6B6B", "#FFD93D"]}
               animationSpeed={6}
             >
               Jai Dhiman
@@ -119,7 +117,7 @@ export default function Hero() {
           {/* Quick Stats */}
           <div className="animate-slide-up grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="flex flex-col items-center text-center">
-              <div className="flex items-center gap-2 text-primary-600 dark:text-accent-gold mb-2">
+              <div className="flex items-center gap-2 text-accent-sage dark:text-accent-coral mb-2">
                 <Users className="w-5 h-5" />
                 <span className="text-sm font-medium">Co-founded</span>
               </div>
@@ -127,7 +125,7 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="flex items-center gap-2 text-primary-600 dark:text-accent-gold mb-2">
+              <div className="flex items-center gap-2 text-accent-sage dark:text-accent-coral mb-2">
                 <Target className="w-5 h-5" />
                 <span className="text-sm font-medium">Led team</span>
               </div>
@@ -135,7 +133,7 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="flex items-center gap-2 text-primary-600 dark:text-accent-gold mb-2">
+              <div className="flex items-center gap-2 text-accent-sage dark:text-accent-coral mb-2">
                 <Zap className="w-5 h-5" />
                 <span className="text-sm font-medium">Built</span>
               </div>
@@ -143,7 +141,7 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="flex items-center gap-2 text-primary-600 dark:text-accent-gold mb-2">
+              <div className="flex items-center gap-2 text-accent-sage dark:text-accent-coral mb-2">
                 <Code className="w-5 h-5" />
                 <span className="text-sm font-medium">DevSecOps</span>
               </div>

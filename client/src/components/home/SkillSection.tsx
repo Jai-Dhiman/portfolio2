@@ -21,7 +21,7 @@ export default React.memo(function SkillsSection() {
   if (error) {
     return (
       <div className="min-h-[50vh] flex items-center justify-center">
-        <p className="text-accent-coral dark:text-accent-gold animate-fade-in">
+        <p className="text-accent-sage dark:text-accent-coral animate-fade-in">
           Error loading skills
         </p>
       </div>
@@ -36,7 +36,7 @@ export default React.memo(function SkillsSection() {
       <div className="space-y-12">
         {categories.map((category) => (
           <div key={category} className="animate-fade-in">
-            <h3 className="text-primary-600 dark:text-accent-coral capitalize mb-6 text-xl font-author font-bold">{category}</h3>
+            <h3 className="text-accent-sage dark:text-accent-coral capitalize mb-6 text-xl font-author font-bold">{category}</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
               {skills
                 ?.filter(skill => skill.category === category)

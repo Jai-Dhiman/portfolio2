@@ -79,8 +79,8 @@ const DataFlowParticles = React.memo(function DataFlowParticles() {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = isDarkMode
-          ? `rgba(59, 130, 246, ${particle.opacity})` // Primary blue for dark mode
-          : `rgba(107, 114, 128, ${particle.opacity})`; // Gray for light mode
+          ? `rgba(107, 127, 107, ${particle.opacity})` // Muted sage green for dark mode
+          : `rgba(139, 111, 71, ${particle.opacity})`; // Cognac brown for light mode
         ctx.fill();
       });
 

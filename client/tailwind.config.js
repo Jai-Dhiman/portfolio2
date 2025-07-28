@@ -5,24 +5,24 @@ export default {
     extend: {
       colors: {
         primary: {
-          100: "#F5F3FF",
-          200: "#A5B4FC",
-          300: "#818CF8",
-          400: "#4338CA",
-          500: "#312E81",
+          100: "#F5F3F0", // Warm off-white base
+          200: "#D4C4B0", // Light cognac tint
+          300: "#B59B7A", // Medium cognac tint
+          400: "#8B6F47", // Main brand color - Warm Cognac Brown
+          500: "#6B5435", // Darker cognac
         },
         dark: {
-          100: "#E2E8F0",
-          200: "#94A3B8",
-          300: "#475569",
-          400: "#1E293B",
-          500: "#0F172A",
+          100: "#F5F3F0", // Light text on dark
+          200: "#A69080", // Soft taupe for secondary text
+          300: "#6B5D52", // Medium dark tone
+          400: "#2C241D", // Dark background
+          500: "#1A1410", // Darkest background
         },
         accent: {
-          coral: "#FF6B6B",
-          gold: "#FFD93D",
-          sage: "#A8B5A5",
-          teal: "#4F9D9D",
+          coral: "#A69080", // Soft Taupe (replacing coral)
+          gold: "#8B6F47", // Using main brand for gold contexts
+          sage: "#6B7F6B", // Muted Sage Green
+          teal: "#6B7F6B", // Using sage for teal contexts
         },
       },
       fontFamily: {

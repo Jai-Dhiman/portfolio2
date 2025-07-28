@@ -48,8 +48,8 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         <div className="absolute top-6 right-6 text-sm text-primary-300 dark:text-dark-200">
           {getDateDisplay()}
         </div>
-        <h3 className="pr-24"><span className="text-primary-600 dark:text-accent-coral">{experience.title}</span></h3>
-        <p className="font-semibold text-primary-300 dark:text-accent-gold">
+        <h3 className="pr-24"><span className="text-primary-500 dark:text-accent-coral">{experience.title}</span></h3>
+        <p className="font-semibold text-accent-sage dark:text-accent-coral">
           {experience.company}
         </p>
         <p className="text-primary-400 dark:text-dark-100 mt-2 mb-4">

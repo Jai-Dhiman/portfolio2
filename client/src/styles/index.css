@@ -32,24 +32,24 @@
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 rounded-lg bg-primary-400 hover:bg-primary-500 text-white dark:bg-accent-coral dark:hover:bg-accent-gold dark:text-dark-500 transition-colors duration-200;
+    @apply px-4 py-2 rounded-lg bg-primary-400 hover:bg-primary-500 text-white dark:bg-accent-sage dark:hover:bg-accent-coral dark:text-dark-100 transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply px-4 py-2 rounded-lg border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white dark:border-accent-teal dark:text-accent-teal dark:hover:bg-accent-teal dark:hover:text-dark-500 transition-colors duration-200;
+    @apply px-4 py-2 rounded-lg border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white dark:border-accent-sage dark:text-accent-sage dark:hover:bg-accent-sage dark:hover:text-dark-100 transition-colors duration-200;
   }
 
   .card {
-    @apply bg-white dark:bg-dark-400 rounded-lg shadow-md p-6 border border-primary-100 dark:border-dark-300 transition-all duration-200 hover:border-accent-teal dark:hover:border-accent-coral;
+    @apply bg-white dark:bg-dark-400 rounded-lg shadow-md p-6 border border-primary-200 dark:border-dark-300 transition-all duration-200 hover:border-accent-sage dark:hover:border-accent-coral;
     contain: layout style paint;
   }
 
   .nav-link {
-    @apply text-primary-400 dark:text-dark-100 hover:text-accent-coral dark:hover:text-accent-gold transition-colors duration-200;
+    @apply text-primary-400 dark:text-dark-100 hover:text-accent-sage dark:hover:text-accent-coral transition-colors duration-200;
   }
 
   .highlight {
-    @apply text-accent-coral dark:text-accent-gold;
+    @apply text-accent-sage dark:text-accent-coral;
   }
 
   .loader {
@@ -96,7 +96,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-300 dark:from-accent-coral dark:to-accent-gold;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-300 dark:from-accent-sage dark:to-accent-coral;
     will-change: background-position;
   }
 
@@ -105,7 +105,7 @@
   }
 
   .accent-border {
-    @apply border-2 border-accent-teal dark:border-accent-coral;
+    @apply border-2 border-accent-sage dark:border-accent-coral;
   }
 
   .hover-lift {
@@ -119,7 +119,7 @@
   }
 
   .section-heading {
-    @apply text-primary-400 dark:text-accent-gold font-author font-bold text-2xl mb-6;
+    @apply text-primary-400 dark:text-accent-coral font-author font-bold text-2xl mb-6;
   }
 
   #tsparticles {
@@ -161,7 +161,7 @@
   }
 
   .modal-content::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary-400 dark:bg-accent-teal;
+    @apply bg-primary-400 dark:bg-accent-sage;
   }
 
   .mockups-container {
@@ -170,7 +170,7 @@
   }
 
   .mockup-image-link {
-    @apply block border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden hover:border-accent-coral dark:hover:border-accent-gold transition-all;
+    @apply block border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden hover:border-accent-sage dark:hover:border-accent-coral transition-all;
   }
 
   .mockup-image {

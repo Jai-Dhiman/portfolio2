@@ -21,8 +21,8 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6">
           <Link
             to="/"
-            className={`text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/'
-              ? 'text-primary-600 dark:text-accent-gold'
+            className={`text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/'
+              ? 'text-accent-sage dark:text-accent-coral'
               : 'text-gray-700 dark:text-gray-300'
               }`}
           >
@@ -30,8 +30,8 @@ export default function Navbar() {
           </Link>
           <Link
             to="/capture"
-            className={`text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/capture'
-              ? 'text-primary-600 dark:text-accent-gold'
+            className={`text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/capture'
+              ? 'text-accent-sage dark:text-accent-coral'
               : 'text-gray-700 dark:text-gray-300'
               }`}
           >
@@ -76,8 +76,8 @@ export default function Navbar() {
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/'
-                ? 'text-primary-600 dark:text-accent-gold'
+              className={`block py-2 text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/'
+                ? 'text-accent-sage dark:text-accent-coral'
                 : 'text-gray-700 dark:text-gray-300'
                 }`}
             >
@@ -86,8 +86,8 @@ export default function Navbar() {
             <Link
               to="/capture"
               onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 text-sm font-medium transition-colors hover:text-primary-600 dark:hover:text-accent-gold ${location.pathname === '/capture'
-                ? 'text-primary-600 dark:text-accent-gold'
+              className={`block py-2 text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/capture'
+                ? 'text-accent-sage dark:text-accent-coral'
                 : 'text-gray-700 dark:text-gray-300'
                 }`}
             >

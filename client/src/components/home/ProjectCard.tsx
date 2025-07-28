@@ -23,7 +23,7 @@ const ProjectCard = React.memo(function ProjectCard({ project }: ProjectCardProp
     project.techStack.map((tech) => (
       <span
         key={tech}
-        className="px-3 py-1 bg-primary-100 dark:bg-dark-300 text-primary-400 dark:text-dark-100 rounded-full text-sm font-medium"
+        className="px-3 py-1 bg-accent-sage/10 dark:bg-dark-300 text-accent-sage dark:text-dark-100 rounded-full text-sm font-medium"
       >
         {tech}
       </span>
