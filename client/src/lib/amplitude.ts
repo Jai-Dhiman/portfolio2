@@ -18,7 +18,7 @@ const initAmplitude = () => {
       flushIntervalMillis: 30000, // Batch events every 30s
       flushQueueSize: 50, // Batch up to 50 events
       useBatch: true,
-      serverUrl: 'https://api.eu.amplitude.com/batch', // EU endpoint for better CORS
+      serverUrl: 'https://api2.amplitude.com/batch',
     });
     console.log('Amplitude initialized with key:', apiKey.substring(0, 8) + '...');
   } else {
