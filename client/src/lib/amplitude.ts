@@ -9,8 +9,7 @@ const initAmplitude = () => {
 
   if (apiKey) {
     amplitude.init(apiKey, {
-      defaultTracking: true, // ✅ Explicitly enable default tracking
-    }, {
+      defaultTracking: true,
       logLevel: amplitude.Types.LogLevel.Warn,
       flushIntervalMillis: 30000,
       flushQueueSize: 50,
