@@ -89,7 +89,7 @@ export default function Lanyard({
         <Physics gravity={gravity} timeStep={1 / 30}>
           <Band />
         </Physics>
-        <Environment blur={0.75}>
+        <Environment blur={0.75} background={false}>
           <Lightformer
             intensity={2.5}
             color="white"
@@ -142,8 +142,8 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
 
   // Fix texture orientation and scaling
   profileTexture.flipY = false; // Try flipping Y
-  profileTexture.repeat.set(1.45, 1.45); // Zoom out more
-  profileTexture.offset.set(0.365, 0.05); // Center the texture
+  profileTexture.repeat.set(1.25, 1.25); // Zoom out more
+  profileTexture.offset.set(0.3, 0.15); // Center the texture
   profileTexture.center.set(0.5, 0.5); // Set rotation center
   profileTexture.rotation = 0; // Rotate 180 degrees to fix orientation
 
