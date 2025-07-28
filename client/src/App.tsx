@@ -24,11 +24,11 @@ function PageTracker() {
   return null;
 }
 
-useEffect(() => {
-  trackEvent("Test Event", { source: "App.tsx" });
-}, []);
-
 export default function App() {
+  useEffect(() => {
+    trackEvent("Test Event", { source: "App.tsx" });
+  }, []);
+  
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
