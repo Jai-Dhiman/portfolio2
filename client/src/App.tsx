@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import Layout from "./components/layout/Layout";
 import Loader from "./components/loader";
 import { trackPageView } from "./lib/amplitude";
+import { trackEvent } from "./lib/amplitude";
 
 // Lazy load pages for better performance
 const HomePage = React.lazy(() => import("./pages/HomePage"));
@@ -22,6 +23,10 @@ function PageTracker() {
 
   return null;
 }
+
+useEffect(() => {
+  trackEvent("Test Event", { source: "App.tsx" });
+}, []);
 
 export default function App() {
   return (
