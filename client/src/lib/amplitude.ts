@@ -17,7 +17,6 @@ const initAmplitude = () => {
       useBatch: true,
       serverUrl: 'https://api2.amplitude.com/batch',
     });
-    console.log('Amplitude initialized with key:', apiKey.substring(0, 8) + '...');
   } else {
     console.error('Amplitude API key not found! Check VITE_AMPLITUDE_API_KEY env var');
   }
