@@ -8,7 +8,7 @@ import { trackEvent } from "./lib/amplitude";
 
 // Lazy load pages for better performance
 const HomePage = React.lazy(() => import("./pages/HomePage"));
-const CaptureDeepDive = React.lazy(() => import("./pages/CaptureDeepDive"));
+const ProjectsPage = React.lazy(() => import("./pages/ProjectsPage"));
 
 const queryClient = new QueryClient();
 
@@ -37,7 +37,7 @@ export default function App() {
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/capture" element={<CaptureDeepDive />} />
+              <Route path="/projects" element={<ProjectsPage />} />
             </Routes>
           </Suspense>
         </Layout>

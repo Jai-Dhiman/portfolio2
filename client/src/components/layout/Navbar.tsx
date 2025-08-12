@@ -29,13 +29,13 @@ export default function Navbar() {
             Portfolio
           </Link>
           <Link
-            to="/capture"
-            className={`text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/capture'
+            to="/projects"
+            className={`text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/projects'
               ? 'text-accent-sage dark:text-accent-coral'
               : 'text-gray-700 dark:text-gray-300'
               }`}
           >
-            Capture Case Study
+            Projects
           </Link>
         </div>
 
@@ -84,14 +84,14 @@ export default function Navbar() {
               Portfolio
             </Link>
             <Link
-              to="/capture"
+              to="/projects"
               onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/capture'
+              className={`block py-2 text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/projects'
                 ? 'text-accent-sage dark:text-accent-coral'
                 : 'text-gray-700 dark:text-gray-300'
                 }`}
             >
-              Capture Case Study
+              Projects
             </Link>
           </div>
         </div>

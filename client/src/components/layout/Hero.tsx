@@ -97,20 +97,20 @@ export default function Hero() {
             </GradientText>
           </h1>
           <p className="text-xl animate-slide-up text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
-            Technical Product Manager with hands-on engineering experience
+            Product Manager & Product Builder
           </p>
           <p className="text-lg animate-slide-up text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
-            Building AI-powered products from concept to code
+            I ship AI-powered products people actually use - from strategy through design to code
           </p>
 
           {/* CTA Button */}
           <div className="animate-fade-in mb-12">
             <Link
-              to="/capture"
+              to="/projects"
               className="btn-primary text-lg px-8 py-4 hover-lift inline-flex items-center gap-2"
             >
-              <span>View Capture Case Study</span>
-              <Target className="w-5 h-5" />
+              <span>See What I've Built</span>
+              <Code className="w-5 h-5" />
             </Link>
           </div>
 
