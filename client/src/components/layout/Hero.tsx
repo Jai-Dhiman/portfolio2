@@ -42,7 +42,7 @@ export default function Hero() {
                 color: isDarkMode ? "#A69080" : "#B59B7A", // Taupe for dark, light cognac for light
                 distance: 150,
                 enable: true,
-                opacity: isDarkMode ? 0.5 : 0.3,
+                opacity: isDarkMode ? 0.5 : 0.15,
                 width: 1,
               },
               move: {
@@ -60,10 +60,10 @@ export default function Hero() {
                   enable: true,
                   area: 600,
                 },
-                value: 80,
+                value: isDarkMode ? 80 : 50,
               },
               opacity: {
-                value: isDarkMode ? 0.5 : 0.3,
+                value: isDarkMode ? 0.5 : 0.15,
               },
               shape: {
                 type: "circle",
@@ -115,7 +115,7 @@ export default function Hero() {
           </div>
 
           {/* Quick Stats */}
-          <div className="animate-slide-up grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="animate-slide-up grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="flex flex-col items-center text-center">
               <div className="flex items-center gap-2 text-accent-sage dark:text-accent-coral mb-2">
                 <Users className="w-5 h-5" />
@@ -138,14 +138,6 @@ export default function Hero() {
                 <span className="text-sm font-medium">Built</span>
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-sm">AI/ML recommendation systems</p>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <div className="flex items-center gap-2 text-accent-sage dark:text-accent-coral mb-2">
-                <Code className="w-5 h-5" />
-                <span className="text-sm font-medium">DevSecOps</span>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">Southern Glazer's intern</p>
             </div>
           </div>
         </div>

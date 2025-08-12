@@ -22,7 +22,7 @@ const ProjectsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-author font-bold mb-8"
+            className="text-3xl md:text-4xl lg:text-5xl font-author font-bold mb-8"
           >
             <GradientText>Products I've Built & Shipped</GradientText>
           </motion.h1>
@@ -78,13 +78,13 @@ const ProjectsPage = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Impact & Progress</h3>
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
-                      <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">50+</div>
-                      <div className="text-base text-gray-600 dark:text-gray-400">User Interviews</div>
+                    <div className="bg-white dark:bg-dark-400 p-6 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
+                      <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">20+</div>
+                      <div className="text-base text-primary-400 dark:text-dark-200">User Interviews</div>
                     </div>
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
-                      <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">MVP</div>
-                      <div className="text-base text-gray-600 dark:text-gray-400">Near Launch</div>
+                    <div className="bg-white dark:bg-dark-400 p-6 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
+                      <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">Beta Launch</div>
+                      <div className="text-base text-primary-400 dark:text-dark-200">Near Release</div>
                     </div>
                   </div>
                 </div>
@@ -93,11 +93,11 @@ const ProjectsPage = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">My Role</h3>
                   <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-base text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-3 text-base text-primary-400 dark:text-dark-200">
                       <Users className="w-5 h-5 text-accent-sage dark:text-accent-coral" />
                       <span>Co-founder & Technical Product Lead</span>
                     </div>
-                    <div className="flex items-center gap-3 text-base text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-3 text-base text-primary-400 dark:text-dark-200">
                       <Calendar className="w-5 h-5 text-accent-sage dark:text-accent-coral" />
                       <span>8 months, MVP shipped</span>
                     </div>
@@ -109,7 +109,7 @@ const ProjectsPage = () => {
                   <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Built With</h3>
                   <div className="flex flex-wrap gap-3">
                     {['React Native', 'TypeScript', 'Cloudflare Workers', 'Vector Embeddings'].map((tech) => (
-                      <span key={tech} className="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full text-base font-medium">
+                      <span key={tech} className="px-4 py-2 bg-primary-200 dark:bg-gray-700 text-primary-500 dark:text-gray-300 rounded-full text-base font-medium">
                         {tech}
                       </span>
                     ))}
@@ -170,7 +170,7 @@ const ProjectsPage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Figma Design System */}
                     <div className="w-full">
-                      <h4 className="text-base font-medium mb-4 text-gray-600 dark:text-gray-400">Design System</h4>
+                      <h4 className="text-base font-medium mb-4 text-primary-400 dark:text-dark-200">Design System</h4>
                       <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3}>
                         <img 
                           src="/images/figma.webp" 
@@ -182,7 +182,7 @@ const ProjectsPage = () => {
                     
                     {/* System Architecture */}
                     <div className="w-full">
-                      <h4 className="text-base font-medium mb-4 text-gray-600 dark:text-gray-400">System Architecture</h4>
+                      <h4 className="text-base font-medium mb-4 text-primary-400 dark:text-dark-200">System Architecture</h4>
                       <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3}>
                         <img 
                           src="/images/FeedSystemArchitecture.webp" 
@@ -203,19 +203,19 @@ const ProjectsPage = () => {
                 <SpotlightCard className="p-8 text-center">
                   <Brain className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
                   <h4 className="text-lg font-bold mb-4">Product Strategy</h4>
-                  <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">User research, privacy-first positioning, content discovery algorithms</p>
+                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">User research, privacy-first positioning, content discovery algorithms</p>
                 </SpotlightCard>
                 
                 <SpotlightCard className="p-8 text-center">
                   <Compass className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
                   <h4 className="text-lg font-bold mb-4">System Design</h4>
-                  <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">Vector embeddings, recommendation engine, scalable architecture</p>
+                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">Vector embeddings, recommendation engine, scalable architecture</p>
                 </SpotlightCard>
                 
                 <SpotlightCard className="p-8 text-center">
                   <Code className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
                   <h4 className="text-lg font-bold mb-4">Full-Stack Development</h4>
-                  <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">React Native mobile app, Cloudflare Workers backend, AI/ML integration</p>
+                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">React Native mobile app, Cloudflare Workers backend, AI/ML integration</p>
                 </SpotlightCard>
               </div>
             </div>
@@ -250,13 +250,13 @@ const ProjectsPage = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Learning & Progress</h3>
                   <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+                    <div className="bg-white dark:bg-dark-400 p-6 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
                       <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">End-to-End</div>
-                      <div className="text-base text-gray-600 dark:text-gray-400">Product Development</div>
+                      <div className="text-base text-primary-400 dark:text-dark-200">Product Development</div>
                     </div>
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+                    <div className="bg-white dark:bg-dark-400 p-6 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
                       <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">ML Pipeline</div>
-                      <div className="text-base text-gray-600 dark:text-gray-400">In Development</div>
+                      <div className="text-base text-primary-400 dark:text-dark-200">In Development</div>
                     </div>
                   </div>
                 </div>
@@ -265,15 +265,15 @@ const ProjectsPage = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">My Role</h3>
                   <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-base text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-3 text-base text-primary-400 dark:text-dark-200">
                       <Users className="w-5 h-5 text-accent-sage dark:text-accent-coral" />
                       <span>Solo Developer & Product Builder</span>
                     </div>
-                    <div className="flex items-center gap-3 text-base text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-3 text-base text-primary-400 dark:text-dark-200">
                       <Calendar className="w-5 h-5 text-accent-sage dark:text-accent-coral" />
                       <span>Ongoing learning project</span>
                     </div>
-                    <div className="flex items-center gap-3 text-base text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-3 text-base text-primary-400 dark:text-dark-200">
                       <Target className="w-5 h-5 text-accent-sage dark:text-accent-coral" />
                       <span>User research → MVP development</span>
                     </div>
@@ -285,7 +285,7 @@ const ProjectsPage = () => {
                   <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Built With</h3>
                   <div className="flex flex-wrap gap-3">
                     {['React Native', 'Python', 'Computer Vision', 'LLM Integration', 'Custom ML Pipeline'].map((tech) => (
-                      <span key={tech} className="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full text-base font-medium">
+                      <span key={tech} className="px-4 py-2 bg-primary-200 dark:bg-gray-700 text-primary-500 dark:text-gray-300 rounded-full text-base font-medium">
                         {tech}
                       </span>
                     ))}
@@ -329,19 +329,19 @@ const ProjectsPage = () => {
                 <SpotlightCard className="p-8 text-center">
                   <Target className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
                   <h4 className="text-lg font-bold mb-4">Product Development Process</h4>
-                  <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">User research → feature prioritization → technical feasibility → MVP</p>
+                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">User research → feature prioritization → technical feasibility → MVP</p>
                 </SpotlightCard>
                 
                 <SpotlightCard className="p-8 text-center">
                   <Camera className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
                   <h4 className="text-lg font-bold mb-4">Computer Vision</h4>
-                  <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">Ingredient recognition, mobile camera integration, custom ML pipeline development</p>
+                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">Ingredient recognition, mobile camera integration, custom ML pipeline development</p>
                 </SpotlightCard>
                 
                 <SpotlightCard className="p-8 text-center">
                   <Brain className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
                   <h4 className="text-lg font-bold mb-4">LLM Integration</h4>
-                  <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">AI-powered recipe generation, balancing user needs with technical complexity</p>
+                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">AI-powered recipe generation, balancing user needs with technical complexity</p>
                 </SpotlightCard>
               </div>
             </div>
