@@ -100,7 +100,9 @@ export default function Hero() {
             Product Manager & Product Builder
           </p>
           <p className="text-lg animate-slide-up text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
-            I ship AI-powered products people actually use - from strategy through design to code
+            I ship AI-powered products people actually use.
+            <br />
+            From strategy through design to code.
           </p>
 
           {/* CTA Button */}
