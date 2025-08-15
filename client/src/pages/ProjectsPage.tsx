@@ -292,14 +292,17 @@ const ProjectsPage = () => {
 
                 {/* CTA Button */}
                 <div className="pt-4">
-                  <motion.button
-                    className="btn-primary flex items-center gap-3 px-6 py-3 text-base hover-lift"
+                  <motion.a
+                    href="https://fridgeai-gradio-559184824609.us-central1.run.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center gap-3 px-6 py-3 text-base hover-lift"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <ExternalLink className="w-5 h-5" />
                     Try Gradio Demo
-                  </motion.button>
+                  </motion.a>
                 </div>
               </div>
 
