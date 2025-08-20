@@ -4,15 +4,15 @@ export async function onRequest({}) {
       id: 1,
       title: "Co-Founder & Technical Product Lead",
       company: "Capture",
-      description: "Led product strategy and technical development for privacy-first social media platform from concept to pre-beta.",
+      description: "Built full-stack platform with semantic search using vector embeddings and database. Implemented custom evaluation harnesses for ML recommendation systems with real-time A/B testing frameworks.",
       startDate: "2024-06-01",
       current: true
     },
     {
       id: 2,
-      title: "DevSecOps Engineering Intern",
+      title: "Software Engineering Intern",
       company: "Southern Glazer Wine & Spirits",
-      description: "Analyzed enterprise AI workflow requirements and collaborated with stakeholders to define product specifications. Contributed to internal tool development improving developer productivity by 25%.",
+      description: "Automated enterprise workflows with Python and built monitoring dashboards using statistical analysis. Collaborated on secure deployment pipelines and CI/CD tooling, improving developer productivity by 25%.",
       startDate: "2025-05-01",
       current: false
     },
@@ -20,7 +20,7 @@ export async function onRequest({}) {
       id: 3,
       title: "Full-Stack Developer Student",
       company: "Actualize Coding Bootcamp",
-      description: "500+ hours intensive full-stack dev training with focus on collaborative workflows and technology adoption. Completed comprehensive program covering React, Ruby on Rails, JavaScript, HTML/CSS, database management, agile methodologies, version control, and testing.",
+      description: "500+ hours intensive program emphasizing data structures, algorithms, and system design foundations. Built full-stack applications with focus on performance optimization, database design, and scalable architecture patterns.",
       startDate: "2024-01-01",
       endDate: "2024-06-30",
       current: false

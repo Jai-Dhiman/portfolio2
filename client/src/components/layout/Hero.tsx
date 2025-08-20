@@ -97,12 +97,9 @@ export default function Hero() {
             </GradientText>
           </h1>
           <p className="text-xl animate-slide-up text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
-            Product Manager & Product Builder
+            I like to build things From ML evaluation frameworks to full-stack products.
           </p>
-          <p className="text-lg animate-slide-up text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
-            I ship AI-powered products people actually use.
-            <br />
-            From strategy through design to code.
+          <p className="max-w-3xl mx-auto mb-8">
           </p>
 
           {/* CTA Button */}
@@ -131,7 +128,7 @@ export default function Hero() {
                 <Target className="w-5 h-5" />
                 <span className="text-sm font-medium">Led team</span>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">4-person cross-functional team</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">3-person cross-functional team</p>
             </div>
 
             <div className="flex flex-col items-center text-center">
@@ -139,7 +136,7 @@ export default function Hero() {
                 <Zap className="w-5 h-5" />
                 <span className="text-sm font-medium">Built</span>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">AI/ML recommendation systems</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">ML evaluation & recommendation systems</p>
             </div>
           </div>
         </div>
