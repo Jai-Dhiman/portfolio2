@@ -97,7 +97,7 @@ export default function Hero() {
             </GradientText>
           </h1>
           <p className="text-xl animate-slide-up text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
-            I like to build things From ML evaluation frameworks to full-stack products.
+            I like to build things and play music.
           </p>
           <p className="max-w-3xl mx-auto mb-8">
           </p>
@@ -108,37 +108,11 @@ export default function Hero() {
               to="/projects"
               className="btn-primary text-lg px-8 py-4 hover-lift inline-flex items-center gap-2"
             >
-              <span>See What I've Built</span>
+              <span>Currently Building</span>
               <Code className="w-5 h-5" />
             </Link>
           </div>
 
-          {/* Quick Stats */}
-          <div className="animate-slide-up grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center text-center">
-              <div className="flex items-center gap-2 text-accent-sage dark:text-accent-coral mb-2">
-                <Users className="w-5 h-5" />
-                <span className="text-sm font-medium">Co-founded</span>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">Privacy-first social platform</p>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <div className="flex items-center gap-2 text-accent-sage dark:text-accent-coral mb-2">
-                <Target className="w-5 h-5" />
-                <span className="text-sm font-medium">Led team</span>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">3-person cross-functional team</p>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <div className="flex items-center gap-2 text-accent-sage dark:text-accent-coral mb-2">
-                <Zap className="w-5 h-5" />
-                <span className="text-sm font-medium">Built</span>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">ML evaluation & recommendation systems</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

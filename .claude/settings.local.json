@@ -9,7 +9,10 @@
       "Bash(do echo \"Converting $file...\")",
       "Bash(cwebp:*)",
       "Bash(done)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "WebSearch",
+      "Read(/Users/jdhiman/Documents/ml-learning/**)",
+      "Read(/Users/jdhiman/Documents/ml-learning/piano-analysis-model/**)"
     ],
     "deny": []
   }

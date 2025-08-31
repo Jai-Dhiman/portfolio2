@@ -15,27 +15,6 @@ const ProjectsPage = () => {
         <DataFlowParticles />
       </div>
 
-      {/* Page Hero */}
-      <section className="relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 z-10">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-author font-bold mb-8"
-          >
-            <GradientText>Products I've Built & Shipped</GradientText>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 mb-16 max-w-4xl mx-auto leading-relaxed"
-          >
-            From 0→1 product building: strategy, design, and code. Each project shows real user impact and cross-functional execution.
-          </motion.p>
-        </div>
-      </section>
 
       {/* Project 1: Capture */}
       <section className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 z-10">
@@ -98,14 +77,14 @@ const ProjectsPage = () => {
               </div>
             </div>
 
-            {/* Project Content */}
+            {/* Project Content - Showing Full Product Lifecycle */}
             <div className="space-y-16">
-              {/* Impact Metrics & CTA */}
+              {/* Top Row: Impact & Demo */}
               <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-                {/* Left: Impact Metrics */}
+                {/* Left: Impact & Links */}
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Impact & Progress</h3>
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-2 gap-6 mb-8">
                     <div className="bg-white dark:bg-dark-400 p-6 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
                       <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">20+</div>
                       <div className="text-base text-primary-400 dark:text-dark-200">User Interviews</div>
@@ -117,7 +96,7 @@ const ProjectsPage = () => {
                   </div>
                   
                   {/* CTA Buttons */}
-                  <div className="flex flex-wrap gap-6 pt-8">
+                  <div className="flex flex-wrap gap-6">
                     <motion.a
                       href="https://github.com/Jai-Dhiman/capture"
                       target="_blank"
@@ -163,13 +142,13 @@ const ProjectsPage = () => {
                 </div>
               </div>
               
-              {/* Architecture Diagrams Side by Side */}
+              {/* Bottom Row: Full Product Lifecycle - Design & Architecture */}
               <div>
-                <h3 className="text-2xl font-semibold mb-12 text-center text-gray-700 dark:text-gray-300">Technical Architecture & Design</h3>
+                <h3 className="text-2xl font-semibold mb-12 text-center text-gray-700 dark:text-gray-300">Complete Product Lifecycle: Design → Architecture → Code</h3>
                 <div className="grid md:grid-cols-2 gap-12">
                   {/* Design System */}
                   <div>
-                    <h4 className="text-lg font-medium mb-6 text-primary-400 dark:text-dark-200 text-center">Design System</h4>
+                    <h4 className="text-lg font-medium mb-6 text-primary-400 dark:text-dark-200 text-center">Design System & UX</h4>
                     <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3}>
                       <img 
                         src="/images/figma.webp" 
@@ -181,7 +160,7 @@ const ProjectsPage = () => {
                   
                   {/* System Architecture */}
                   <div>
-                    <h4 className="text-lg font-medium mb-6 text-primary-400 dark:text-dark-200 text-center">System Architecture</h4>
+                    <h4 className="text-lg font-medium mb-6 text-primary-400 dark:text-dark-200 text-center">System Architecture & Implementation</h4>
                     <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3}>
                       <img 
                         src="/images/FeedSystemArchitecture.webp" 
@@ -194,26 +173,28 @@ const ProjectsPage = () => {
               </div>
             </div>
 
-            {/* Cross-Discipline Skills */}
+            {/* Key Achievements */}
             <div>
-              <h3 className="text-2xl font-semibold mb-12 text-center text-gray-700 dark:text-gray-300">Cross-Discipline Execution</h3>
-              <div className="grid md:grid-cols-3 gap-8">
-                <SpotlightCard className="p-8 text-center">
-                  <Brain className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
-                  <h4 className="text-lg font-bold mb-4">Product Strategy</h4>
-                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">User research, privacy-first positioning, content discovery algorithms</p>
+              <h3 className="text-2xl font-semibold mb-8 text-center text-gray-700 dark:text-gray-300">Key Deliverables</h3>
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <SpotlightCard className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Brain className="w-8 h-8 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-lg font-bold mb-2">Vector Embedding Content Discovery</h4>
+                      <p className="text-base text-primary-400 dark:text-dark-200">Built semantic search using sentence transformers + vector database for personalized content feeds</p>
+                    </div>
+                  </div>
                 </SpotlightCard>
                 
-                <SpotlightCard className="p-8 text-center">
-                  <Compass className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
-                  <h4 className="text-lg font-bold mb-4">System Design</h4>
-                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">Vector embeddings, recommendation engine, scalable architecture</p>
-                </SpotlightCard>
-                
-                <SpotlightCard className="p-8 text-center">
-                  <Code className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
-                  <h4 className="text-lg font-bold mb-4">Full-Stack Development</h4>
-                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">React Native mobile app, Cloudflare Workers backend, AI/ML integration</p>
+                <SpotlightCard className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Smartphone className="w-8 h-8 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-lg font-bold mb-2">Cross-Platform Mobile App</h4>
+                      <p className="text-base text-primary-400 dark:text-dark-200">React Native app with design system, real-time features, and privacy-focused architecture</p>
+                    </div>
+                  </div>
                 </SpotlightCard>
               </div>
             </div>
@@ -221,7 +202,7 @@ const ProjectsPage = () => {
         </div>
       </section>
 
-      {/* Project 2: FridgeAI */}
+      {/* Project 2: ChopAIn */}
       <section className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 z-10">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -233,10 +214,10 @@ const ProjectsPage = () => {
             {/* Project Header */}
             <div className="text-center space-y-6">
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-author font-bold leading-tight">
-                <GradientText>FridgeAI: Computer Vision Recipe Generator</GradientText>
+                <GradientText>ChopAIn: Constitutional AI for Piano Analysis</GradientText>
               </h2>
               <p className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Learning project developing computer vision mobile app for ingredient recognition and AI-powered recipe generation using LLM integration and custom ML pipeline
+                Building AI systems that understand musical expression - recreating academic research to predict 19 perceptual dimensions from piano performance audio
               </p>
             </div>
 
@@ -246,34 +227,34 @@ const ProjectsPage = () => {
               <div className="space-y-12">
                 {/* Impact Metrics */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Learning & Progress</h3>
+                  <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Research Progress</h3>
                   <div className="grid grid-cols-2 gap-6">
                     <div className="bg-white dark:bg-dark-400 p-6 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
-                      <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">End-to-End</div>
-                      <div className="text-base text-primary-400 dark:text-dark-200">Product Development</div>
+                      <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">1202</div>
+                      <div className="text-base text-primary-400 dark:text-dark-200">Performance Dataset</div>
                     </div>
                     <div className="bg-white dark:bg-dark-400 p-6 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
-                      <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">ML Pipeline</div>
-                      <div className="text-base text-primary-400 dark:text-dark-200">In Development</div>
+                      <div className="text-3xl font-bold text-accent-sage dark:text-accent-coral mb-2">19</div>
+                      <div className="text-base text-primary-400 dark:text-dark-200">Perceptual Dimensions</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Role & Timeline */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">My Role</h3>
+                  <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">My Approach</h3>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3 text-base text-primary-400 dark:text-dark-200">
                       <Users className="w-5 h-5 text-accent-sage dark:text-accent-coral" />
-                      <span>Solo Developer & Product Builder</span>
+                      <span>Solo Research & Implementation</span>
                     </div>
                     <div className="flex items-center gap-3 text-base text-primary-400 dark:text-dark-200">
                       <Calendar className="w-5 h-5 text-accent-sage dark:text-accent-coral" />
-                      <span>Ongoing learning project</span>
+                      <span>Part of 8-month Constitutional AI learning path</span>
                     </div>
                     <div className="flex items-center gap-3 text-base text-primary-400 dark:text-dark-200">
                       <Target className="w-5 h-5 text-accent-sage dark:text-accent-coral" />
-                      <span>User research → MVP development</span>
+                      <span>Dataset analysis → Model training → Constitutional AI</span>
                     </div>
                   </div>
                 </div>
@@ -282,7 +263,7 @@ const ProjectsPage = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Built With</h3>
                   <div className="flex flex-wrap gap-3">
-                    {['React Native', 'Python', 'Computer Vision', 'LLM Integration', 'Custom ML Pipeline'].map((tech) => (
+                    {['Python', 'JAX/Flax', 'Audio Processing', 'Constitutional AI', 'ML Pipeline', 'Research Methods'].map((tech) => (
                       <span key={tech} className="px-4 py-2 bg-primary-200 dark:bg-gray-700 text-primary-500 dark:text-gray-300 rounded-full text-base font-medium">
                         {tech}
                       </span>
@@ -293,56 +274,64 @@ const ProjectsPage = () => {
                 {/* CTA Button */}
                 <div className="pt-4">
                   <motion.a
-                    href="https://fridgeai-gradio-559184824609.us-central1.run.app"
+                    href="https://github.com/Jai-Dhiman/piano-analysis-model"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center gap-3 px-6 py-3 text-base hover-lift"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <ExternalLink className="w-5 h-5" />
-                    Try Gradio Demo
+                    <Github className="w-5 h-5" />
+                    View Research Code
                   </motion.a>
                 </div>
               </div>
 
-              {/* Right: Computer Vision Demo & Features */}
+              {/* Right: Research Analysis & Features */}
               <div className="space-y-8">
-                {/* Fridge Recognition Demo */}
+                {/* Research Approach */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Computer Vision Demo</h3>
-                  <div className="w-full">
-                    <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3}>
-                      <img 
-                        src="/images/fridge.webp" 
-                        alt="Fridge Ingredient Recognition with Boundary Boxes"
-                        className="w-full h-auto rounded-xl shadow-2xl"
-                      />
-                    </Tilt>
-                    <p className="text-sm text-primary-400 dark:text-dark-200 mt-3 text-center">AI-powered ingredient detection with boundary box recognition</p>
+                  <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Constitutional AI Research</h3>
+                  <div className="bg-white dark:bg-dark-400 p-6 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
+                    <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed mb-4">
+                      This piano analysis work is part of my broader learning path in Constitutional AI and alignment research - building AI systems that are helpful, harmless, and honest.
+                    </p>
+                    <p className="text-sm text-accent-sage dark:text-accent-coral">
+                      Learning to implement constitutional principles in AI systems through hands-on music analysis research.
+                    </p>
                   </div>
                 </div>
                 
-                {/* Feature Cards */}
+                {/* Key Insights */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Key Features</h3>
+                  <h3 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Key Research Insights</h3>
                   <div className="space-y-4">
                     <SpotlightCard className="p-4">
                       <div className="flex items-start gap-3">
-                        <Camera className="w-6 h-6 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
+                        <Brain className="w-6 h-6 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
                         <div>
-                          <h4 className="text-base font-semibold mb-1">Image Recognition</h4>
-                          <p className="text-sm text-primary-400 dark:text-dark-200">Custom ML pipeline for ingredient identification</p>
+                          <h4 className="text-base font-semibold mb-1">Perceptual Dimensions</h4>
+                          <p className="text-sm text-primary-400 dark:text-dark-200">Timing, articulation, pedal, emotion, interpretation - 19 measurable aspects of musical expression</p>
                         </div>
                       </div>
                     </SpotlightCard>
                     
                     <SpotlightCard className="p-4">
                       <div className="flex items-start gap-3">
-                        <ChefHat className="w-6 h-6 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
+                        <TrendingUp className="w-6 h-6 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
                         <div>
-                          <h4 className="text-base font-semibold mb-1">AI Recipe Generation</h4>
-                          <p className="text-sm text-primary-400 dark:text-dark-200">LLM integration for personalized recipes</p>
+                          <h4 className="text-base font-semibold mb-1">Dataset Recreation</h4>
+                          <p className="text-sm text-primary-400 dark:text-dark-200">Rebuilding PercePiano research from scratch to understand ML fundamentals deeply</p>
+                        </div>
+                      </div>
+                    </SpotlightCard>
+
+                    <SpotlightCard className="p-4">
+                      <div className="flex items-start gap-3">
+                        <Shield className="w-6 h-6 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="text-base font-semibold mb-1">Alignment Research Path</h4>
+                          <p className="text-sm text-primary-400 dark:text-dark-200">Building toward Constitutional AI implementation with RLAIF methodology</p>
                         </div>
                       </div>
                     </SpotlightCard>
@@ -352,26 +341,26 @@ const ProjectsPage = () => {
               </div>
             </div>
 
-            {/* Learning & Skills Development */}
+            {/* Research & Skills Development */}
             <div>
-              <h3 className="text-2xl font-semibold mb-12 text-center text-gray-700 dark:text-gray-300">Learning & Skills Development</h3>
+              <h3 className="text-2xl font-semibold mb-12 text-center text-gray-700 dark:text-gray-300">Research & Constitutional AI Learning</h3>
               <div className="grid md:grid-cols-3 gap-8">
                 <SpotlightCard className="p-8 text-center">
                   <Lightbulb className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
-                  <h4 className="text-lg font-bold mb-4">ML Pipeline Architecture</h4>
-                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">Learning to design end-to-end ML workflows, from data preprocessing to model deployment</p>
+                  <h4 className="text-lg font-bold mb-4">ML Research Methodology</h4>
+                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">Learning to reproduce academic papers, understand dataset construction, and implement research-quality code</p>
                 </SpotlightCard>
                 
                 <SpotlightCard className="p-8 text-center">
-                  <Code className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
-                  <h4 className="text-lg font-bold mb-4">Cross-Platform Development</h4>
-                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">Building mobile apps with camera integration, Python backends, and API orchestration</p>
+                  <Shield className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
+                  <h4 className="text-lg font-bold mb-4">Constitutional AI Principles</h4>
+                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">Understanding alignment research through critique-revision systems and RLAIF methodology</p>
                 </SpotlightCard>
                 
                 <SpotlightCard className="p-8 text-center">
-                  <TrendingUp className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
-                  <h4 className="text-lg font-bold mb-4">Product Iteration</h4>
-                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">Rapid prototyping, user feedback integration, and balancing feature scope with technical constraints</p>
+                  <Brain className="w-12 h-12 text-accent-sage dark:text-accent-coral mb-6 mx-auto" />
+                  <h4 className="text-lg font-bold mb-4">Domain Expertise</h4>
+                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed">Combining music performance background with AI research to tackle novel analysis problems</p>
                 </SpotlightCard>
               </div>
             </div>
