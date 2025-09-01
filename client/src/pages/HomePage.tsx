@@ -1,5 +1,6 @@
 import React, { Suspense, useState, useEffect, useRef } from "react";
 import Hero from "../components/layout/Hero";
+import ProjectsSection from "../components/home/ProjectsSection";
 import SkillsSection from "../components/home/SkillSection";
 import { ExperienceSection } from "../components/home/ExperienceSection";
 
@@ -36,7 +37,12 @@ export default function HomePage() {
 
   return (
     <>
-      <Hero />
+      <div id="home">
+        <Hero />
+      </div>
+      <div id="projects">
+        <ProjectsSection />
+      </div>
       <div className="relative" ref={skillsSectionRef}>
         {shouldLoadBackground && (
           <div className="absolute -inset-x-16 inset-y-0 opacity-5">

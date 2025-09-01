@@ -2,7 +2,6 @@ import React, { useCallback, Suspense } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import { Link } from "react-router-dom";
 import { Users, Target, Zap, Code } from "lucide-react";
 import GradientText from "../../styles/textAnimations/GradientText/GradientText";
 import { useThemeDetection } from "../../hooks/useDarkMode";
@@ -104,13 +103,13 @@ export default function Hero() {
 
           {/* CTA Button */}
           <div className="animate-fade-in mb-12">
-            <Link
-              to="/projects"
+            <a
+              href="#projects"
               className="btn-primary text-lg px-8 py-4 hover-lift inline-flex items-center gap-2"
             >
               <span>Currently Building</span>
               <Code className="w-5 h-5" />
-            </Link>
+            </a>
           </div>
 
         </div>

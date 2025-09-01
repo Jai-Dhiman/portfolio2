@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useDarkMode } from '../../hooks/useDarkMode';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const { darkMode, setDarkMode } = useDarkMode();
-  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -19,24 +18,7 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
-          <Link
-            to="/"
-            className={`text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/'
-              ? 'text-accent-sage dark:text-accent-coral'
-              : 'text-gray-700 dark:text-gray-300'
-              }`}
-          >
-            Portfolio
-          </Link>
-          <Link
-            to="/projects"
-            className={`text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/projects'
-              ? 'text-accent-sage dark:text-accent-coral'
-              : 'text-gray-700 dark:text-gray-300'
-              }`}
-          >
-            Projects
-          </Link>
+          {/* Navigation removed - single page portfolio */}
         </div>
 
         <div className="flex items-center gap-4">
@@ -73,26 +55,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-dark-400/95 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-4 space-y-2">
-            <Link
-              to="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/'
-                ? 'text-accent-sage dark:text-accent-coral'
-                : 'text-gray-700 dark:text-gray-300'
-                }`}
-            >
-              Portfolio
-            </Link>
-            <Link
-              to="/projects"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 text-sm font-medium transition-colors hover:text-accent-sage dark:hover:text-accent-coral ${location.pathname === '/projects'
-                ? 'text-accent-sage dark:text-accent-coral'
-                : 'text-gray-700 dark:text-gray-300'
-                }`}
-            >
-              Projects
-            </Link>
+            {/* Navigation removed - single page portfolio */}
           </div>
         </div>
       )}
