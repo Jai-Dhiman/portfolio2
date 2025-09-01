@@ -274,7 +274,7 @@ const ProjectsPage = () => {
                 {/* CTA Button */}
                 <div className="pt-4">
                   <motion.a
-                    href="https://github.com/Jai-Dhiman/piano-analysis-model"
+                    href="https://github.com/Jai-Dhiman/ml-learning/tree/main/piano-analysis-model"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center gap-3 px-6 py-3 text-base hover-lift"
