@@ -11,7 +11,7 @@ AI/ML Engineer with hands-on experience in semantic search, vector databases, an
 Software Engineer with full‑stack experience delivering scalable, reliable systems. Shipped production features across mobile, backend, and cloud infrastructure with CI/CD, observability, and performance optimization.
 
 (3)
-Product Builder with end-to-end delivery across discovery, design, and technical implementation. Combines user research, analytics, and experimentation to drive measurable outcomes in content discovery and engagement.
+AI-native Product Builder with hands-on experience shipping semantic search and recommendation systems. Combines product intuition, technical execution, and design thinking to solve real user problems.
 
 EXPERIENCES & PROJECTS
 
@@ -34,11 +34,11 @@ ranking strategies.
 •  Produced detailed system architecture and project overview at <https://www.jaidhiman.com/projects>.
 
 (3)
-•  Led end-to-end product from concept to beta, managing roadmap across engineering, and design functions.
-•  Drove product strategy using A/B testing and user analytics, achieving 60% reduction in load times.
-•  Built semantic content discovery system using vector embeddings, improving user engagement metrics by
-enabling personalized recommendations for 10K+ content items.
-•  Created product documentation showcasing system architecture at <https://www.jaidhiman.com/projects>.
+•  Shipped recommendation system processing 10K+ content items using vector embeddings with real-time discovery.
+•  Founded and led cross-functional product team from user research through beta launch (50+ users), managing engineering and design roadmaps with measurable 60% performance improvements.
+•  Designed end-to-end user experience in Figma, then coded complete technical implementation with AI-assisted dev. 
+•  Drove founder-level strategy including user research, feature prioritization, and go-to-market planning.
+•  Complete showcase: https://www.jaidhiman.com/projects.
 
 Independent Project - Piano Performance Analysis (Deep Learning for MIR) | 2025 – Present
 
@@ -54,10 +54,9 @@ Independent Project - Piano Performance Analysis (Deep Learning for MIR) | 2025 
 •  Planned future work includes multi‑task learning covering all 19 dimensions and extending the dataset scope to additional repertoire (Chopin/Liszt).
 
 (3)
-•  Defined the project goal: analyze piano performances to predict 19 perceptual dimensions (e.g., timing, articulation, pedal, timbre, dynamics, expression), based on the PercePiano dataset.
-•  Documented key dataset insights (scale, rating range, observed correlations across perceptual dimensions) to guide phased development.
-•  Established a phased plan: current status—dataset exploration and audio preprocessing; next—single‑dimension baseline (Timing_Stable_Unstable); future—multi‑task learning and comparative CNN vs. traditional ML study.
-•  Structured the repository for clarity (data, experiments, models, results, notebooks) and outlined future extension to additional repertoire (Chopin/Liszt).
+•  Building ML pipeline to predict 19 perceptual dimensions using PyTorch with reproducible experiment infrastructure.
+•  Applied product thinking: user-centered goals, phased roadmap (MVP → multi-task learning → expanded scope).
+
 
 Software Engineering Intern - Southern Glazer’s Wine & Spirits | May 2025 - July 2025
 
@@ -68,7 +67,7 @@ Software Engineering Intern - Southern Glazer’s Wine & Spirits | May 2025 - Ju
 •  Automated Python workflows and built monitoring dashboards to reduce manual interventions; collaborated on secure CI/CD deployment tooling.
 
 (3)
-•  Identified workflow pain points; delivered automation increasing productivity by 25%.
+•  Automated workflows using Python, delivering 25% productivity gains and enterprise monitoring dashboards.
 
 EDUCATION & CERTIFICATIONS
 
@@ -84,25 +83,22 @@ Aha! Product Management Professional Certificate | June 2025
 TECHNICAL SKILLS
 
 (1)
-•  Languages: Python, TypeScript, C++, Rust, SQL
-•  ML/AI: Retrieval/Re-ranking, Vector Embeddings, RecSys, RAG, Model Evaluation (Recall@K, MRR, NDCG, F1), Safety/Guardrails
-•  Frameworks: PyTorch, JAX/Flax, Hugging Face, FastAPI, scikit-learn, OpenCV, MLflow, wandb
-•  Data/Infra: NumPy, Pandas, AWS, GCP (Vertex AI), Kubernetes, Qdrant, Docker, CI/CD, Experiment Tracking
+Languages: Python, TypeScript, C++, Rust, SQL
+ML/AI: Retrieval/Re-ranking, Vector Embeddings, RecSys, RAG, Model Evaluation (Recall@K, MRR, NDCG, F1), Safety/Guardrails
+Frameworks: PyTorch, JAX/Flax, Hugging Face, FastAPI, scikit-learn, OpenCV, MLflow, wandb
+Data/Infra: NumPy, Pandas, AWS, GCP (Vertex AI), Kubernetes, Qdrant, Docker, CI/CD, Experiment Tracking
 
 (2)
-•  Languages: Python, TypeScript, Rust, C++, JavaScript, SQL
-•  Frontend: React Native, React, GraphQL, REST, WebSockets
-•  Backend/Infra: Node.js, FastAPI, AWS, GCP, Docker, Kubernetes, Serverless, CI/CD, Distributed Systems, Caching
-•  Databases: Postgres, Redis; Vector DBs (Qdrant) when needed
-•  Practices: Testing, Code Review, Performance Monitoring, A/B Testing, Agile/Scrum
+Languages: Python, TypeScript, Rust, C++, JavaScript, SQL
+Frontend: React Native, React, GraphQL, REST, WebSockets
+Backend/Infra: Node.js, FastAPI, AWS, GCP, Docker, Kubernetes, Serverless, CI/CD, Distributed Systems, Caching
+Databases: Postgres, Redis; Vector DBs (Qdrant) when needed
+Practices: Testing, Code Review, Performance Monitoring, A/B Testing, Agile/Scrum
 
 (3)
-•  Product: User Research, Requirements, Roadmap Planning, PRDs, Feature Prioritization
-•  Analytics: Amplitude, SQL, Funnel/Retention/Engagement metrics, A/B Testing
-•  Tools: Jira/Linear, Figma (UI/UX), Notion
-•  Technical Foundation: Python, TypeScript, React Native, API Design, Database Architecture, ML/AI Integration
-•  Core Strengths: Cross-functional Leadership, Creative Problem-Solving, Data-Driven Decisions
-
+AI & Product Development: GPT-4, Claude Code, Cursor, Replit, PyTorch, Vector Embeddings, Semantic Search, A/B
+Full-Stack: Python, TypeScript, React Native, Node.js, Figma, AWS/GCP, Docker, CI/CD
+Product: User Research, OKR Setting, Roadmap Planning, Analytics, Cross-functional Leadership
 RESEARCH & COMMUNITY
 
 (1)
@@ -116,6 +112,7 @@ RESEARCH & COMMUNITY
 •  Community: regular participant in SF hackathons & AI/ML meetups; ongoing AI Alignment learning path as a separate effort.
 
 (3)
-•  Transparent documentation of goals, scope, and planned phases to support incremental delivery and evaluation. Completed 100+ algo problems (Neetcode/LeetCode).
-•  Open Source: Pending LangChain (embeddings); planned JAX/Flax and huggingface/evaluate.
-•  Community: regular participant in SF hackathons & AI/ML meetups; pursuing an AI Alignment learning path.
+•  Shipped Real Products: Led complete product lifecycle from user interviews through technical implementation, resulting in production systems serving real users with measurable engagement improvements.
+•  AI-First Development: Built semantic search and recommendation systems using modern AI stack, including vector embeddings, real-time ML inference, and AI-assisted development workflows.
+•  Community Engagement: Active participant in SF AI/ML meetups and hackathons; solved 100+ algorithm problems for technical foundation.
+•  Open Source Contributions: Planned contributions to LangChain (embeddings) and huggingface/evaluate as part of broader AI development community engagement.

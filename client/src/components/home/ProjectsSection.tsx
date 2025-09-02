@@ -1,6 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, FileText, Users, Target, Zap, Shield, Brain, Github, TrendingUp, AlertTriangle, Calendar, MessageCircle, Lightbulb, Award, Compass, Code, ArrowRight, Smartphone, ChefHat, Camera, Utensils } from "lucide-react";
+import { FileText, Brain, Github, Lightbulb, Smartphone } from "lucide-react";
 import Tilt from 'react-parallax-tilt';
 import GradientText from '../../styles/textAnimations/GradientText/GradientText';
 import SpotlightCard from '../../styles/components/SpotlightCard/SpotlightCard';
@@ -58,12 +57,12 @@ const ProjectsSection = () => {
                 {/* Quick Stats */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white dark:bg-dark-400 p-4 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
-                    <div className="text-2xl font-bold text-accent-sage dark:text-accent-coral mb-1">20+</div>
+                    <div className="text-2xl font-bold text-accent-sage dark:text-accent-coral mb-1">30+</div>
                     <div className="text-sm text-primary-400 dark:text-dark-200">User Interviews</div>
                   </div>
                   <div className="bg-white dark:bg-dark-400 p-4 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
                     <div className="text-2xl font-bold text-accent-sage dark:text-accent-coral mb-1">Beta</div>
-                    <div className="text-sm text-primary-400 dark:text-dark-200">Near Launch</div>
+                    <div className="text-sm text-primary-400 dark:text-dark-200">50+ Signups</div>
                   </div>
                 </div>
 
