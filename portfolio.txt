@@ -23,7 +23,7 @@ Co-Founder & Technical Lead - Capture (Social Discovery Platform) | December 202
 comparing recall and precision across content cohorts.
 •  Designed recommendation engine capable of processing 10K+ items in real-time with A/B testing framework for
 ranking strategies.
-•  Produced detailed system architecture and project overview at <https://www.jaidhiman.com/projects>.
+•  Produced detailed system architecture and project overview at https://www.jaidhiman.com/projects.
 
 (2)
 •  Architected and implemented a full-stack platform from concept to beta (React Native, Node.js, Cloud Infra).
@@ -31,7 +31,7 @@ ranking strategies.
 •  Designed recommendation engine capable of processing 10K+ items in real-time with A/B testing framework for
 ranking strategies.
 •  Optimized database performance through query optimization and caching strategies, cutting load times by 60%.
-•  Produced detailed system architecture and project overview at <https://www.jaidhiman.com/projects>.
+•  Produced detailed system architecture and project overview at https://www.jaidhiman.com/projects.
 
 (3)
 •  Shipped recommendation system processing 10K+ content items using vector embeddings with real-time discovery.
@@ -99,6 +99,7 @@ Practices: Testing, Code Review, Performance Monitoring, A/B Testing, Agile/Scru
 AI & Product Development: GPT-4, Claude Code, Cursor, Replit, PyTorch, Vector Embeddings, Semantic Search, A/B
 Full-Stack: Python, TypeScript, React Native, Node.js, Figma, AWS/GCP, Docker, CI/CD
 Product: User Research, OKR Setting, Roadmap Planning, Analytics, Cross-functional Leadership
+
 RESEARCH & COMMUNITY
 
 (1)

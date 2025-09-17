@@ -21,7 +21,7 @@ export const ExperienceSection = () => {
   }
 
   return (
-    <section id="experience" className="py-16">
+    <section id="experience" className="py-16 scroll-mt-24">
       <h2 className="section-heading">Experience</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
         {experiences?.sort((a, b) => {

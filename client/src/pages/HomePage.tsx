@@ -40,7 +40,7 @@ export default function HomePage() {
       <div id="home">
         <Hero />
       </div>
-      <div id="projects">
+      <div id="projects" className="scroll-mt-24">
         <ProjectsSection />
       </div>
       <div className="relative" ref={skillsSectionRef}>

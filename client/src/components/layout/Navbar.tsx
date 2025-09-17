@@ -6,6 +6,8 @@ export default function Navbar() {
   const { darkMode, setDarkMode } = useDarkMode();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleAnchorClick = () => setMobileMenuOpen(false);
+
   return (
     <nav className="sticky top-0 z-50 glass-effect">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -18,7 +20,9 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
-          {/* Navigation removed - single page portfolio */}
+          <a href="#projects" className="nav-link" onClick={handleAnchorClick}>Projects</a>
+          <a href="#skills" className="nav-link" onClick={handleAnchorClick}>Skills</a>
+          <a href="#experience" className="nav-link" onClick={handleAnchorClick}>Experience</a>
         </div>
 
         <div className="flex items-center gap-4">
@@ -55,7 +59,9 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-dark-400/95 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-4 space-y-2">
-            {/* Navigation removed - single page portfolio */}
+            <a href="#projects" className="nav-link block" onClick={handleAnchorClick}>Projects</a>
+            <a href="#skills" className="nav-link block" onClick={handleAnchorClick}>Skills</a>
+            <a href="#experience" className="nav-link block" onClick={handleAnchorClick}>Experience</a>
           </div>
         </div>
       )}

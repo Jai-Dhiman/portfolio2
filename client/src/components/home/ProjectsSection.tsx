@@ -31,8 +31,9 @@ const ProjectsSection = () => {
             </p>
           </div>
 
-          {/* Project 1: Capture */}
-          <div className="space-y-16 mb-48">
+
+          {/* Project: Capture (compacted) */}
+          <div className="space-y-12 mb-24">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Project Preview Image */}
               <div className="max-w-xs mx-auto lg:mx-0">
@@ -51,20 +52,8 @@ const ProjectsSection = () => {
                   <GradientText>Capture: Privacy-First Social Platform</GradientText>
                 </h3>
                 <p className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Building privacy-first social platform with AI-powered content discovery and ethical design
+                  Built personalized recommendation system with safety guardrails and evaluation for ethical content discovery.
                 </p>
-                
-                {/* Quick Stats */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white dark:bg-dark-400 p-4 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
-                    <div className="text-2xl font-bold text-accent-sage dark:text-accent-coral mb-1">30+</div>
-                    <div className="text-sm text-primary-400 dark:text-dark-200">User Interviews</div>
-                  </div>
-                  <div className="bg-white dark:bg-dark-400 p-4 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
-                    <div className="text-2xl font-bold text-accent-sage dark:text-accent-coral mb-1">Beta</div>
-                    <div className="text-sm text-primary-400 dark:text-dark-200">50+ Signups</div>
-                  </div>
-                </div>
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
@@ -103,60 +92,39 @@ const ProjectsSection = () => {
               </div>
             </div>
 
-            {/* Demo Video and Architecture */}
-            <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-start">
-              {/* Left: Demo Video */}
+            {/* Product & System Design */}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
-                <h4 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">AI Content Discovery Demo</h4>
-                <div className="w-full h-auto">
-                  <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
-                    <div className="relative w-full rounded-xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
-                      <iframe
-                        className="absolute inset-0 w-full h-full rounded-xl"
-                        src="https://www.youtube.com/embed/-pnPIgEL2pI"
-                        title="Capture Vector Embedding Demo"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                  </Tilt>
-                </div>
-              </div>
-
-              {/* Middle: Figma Design System */}
-              <div>
-                <h4 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Design System & UX</h4>
+                <h4 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">Product Design</h4>
                 <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3}>
                   <img 
                     src="/images/figma.webp" 
-                    alt="Design System Architecture"
+                    alt="Capture Product Design"
                     className="w-full h-auto rounded-xl shadow-2xl object-cover aspect-[16/9]"
                   />
                 </Tilt>
               </div>
 
-              {/* Right: System Architecture */}
               <div>
-                <h4 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">System Architecture</h4>
+                <h4 className="text-xl font-semibold mb-6 text-gray-700 dark:text-gray-300">System Design</h4>
                 <Tilt tiltMaxAngleX={3} tiltMaxAngleY={3}>
                   <img 
                     src="/images/FeedSystemArchitecture.webp" 
-                    alt="Capture Feed System Architecture"
+                    alt="Capture System Design"
                     className="w-full h-auto rounded-xl shadow-2xl object-cover aspect-[16/9]"
                   />
                 </Tilt>
               </div>
             </div>
 
-            {/* Key Features */}
+            {/* Key Features (compact) */}
             <div className="grid md:grid-cols-2 gap-8">
               <SpotlightCard className="p-6">
                 <div className="flex items-start gap-4">
                   <Brain className="w-8 h-8 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-bold mb-2">Vector Embedding Content Discovery</h4>
-                    <p className="text-base text-primary-400 dark:text-dark-200">Built semantic search using sentence transformers + vector database for personalized content feeds</p>
+                    <h4 className="text-lg font-bold mb-2">Personalization</h4>
+                    <p className="text-base text-primary-400 dark:text-dark-200">Two-tower retrieval + ranking; evaluation with NDCG@K/AUC and A/B harness.</p>
                   </div>
                 </div>
               </SpotlightCard>
@@ -165,38 +133,26 @@ const ProjectsSection = () => {
                 <div className="flex items-start gap-4">
                   <Smartphone className="w-8 h-8 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-lg font-bold mb-2">Cross-Platform Mobile App</h4>
-                    <p className="text-base text-primary-400 dark:text-dark-200">React Native app with design system, real-time features, and privacy-focused architecture</p>
+                    <h4 className="text-lg font-bold mb-2">Product Delivery</h4>
+                    <p className="text-base text-primary-400 dark:text-dark-200">React Native app with privacy-forward architecture and design system.</p>
                   </div>
                 </div>
               </SpotlightCard>
             </div>
           </div>
 
-          {/* Project 2: Piano Analysis */}
+          {/* Project: CrescendAI */}
           <div className="space-y-12 mb-16">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Text Content */}
               <div className="text-center lg:text-left space-y-6">
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-author font-bold leading-tight">
-                  <GradientText>Piano Performance Analysis: PercePiano Recreation</GradientText>
+                  <GradientText>CrescendAI</GradientText>
                 </h3>
                 <p className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Recreating academic research from scratch - building ML models to predict 19 perceptual dimensions from piano performance audio
+                  AI-powered piano performance analysis and learning assistant.
                 </p>
                 
-                {/* Quick Stats */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white dark:bg-dark-400 p-4 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
-                    <div className="text-2xl font-bold text-accent-sage dark:text-accent-coral mb-1">1202</div>
-                    <div className="text-sm text-primary-400 dark:text-dark-200">Performance Dataset</div>
-                  </div>
-                  <div className="bg-white dark:bg-dark-400 p-4 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
-                    <div className="text-2xl font-bold text-accent-sage dark:text-accent-coral mb-1">19</div>
-                    <div className="text-sm text-primary-400 dark:text-dark-200">Perceptual Dimensions</div>
-                  </div>
-                </div>
-
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
                   {['Python', 'JAX/Flax', 'Audio Processing', 'Deep Learning', 'Research Methods'].map((tech) => (
@@ -206,10 +162,10 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 
-                {/* CTA Button */}
-                <div className="flex justify-center lg:justify-start">
+                {/* CTA Buttons */}
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <motion.a
-                    href="https://github.com/Jai-Dhiman/ml-learning/tree/main/piano-analysis-model"
+                    href="https://github.com/Jai-Dhiman/crescendai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm hover-lift"
@@ -217,29 +173,101 @@ const ProjectsSection = () => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Github className="w-4 h-4" />
-                    View Research Code
+                    View Code
+                  </motion.a>
+                  <motion.a
+                    href="https://crescend.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary inline-flex items-center gap-2 px-4 py-2 text-sm hover-lift"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span>Live</span>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
                   </motion.a>
                 </div>
               </div>
 
               {/* Research Highlight */}
               <div className="space-y-6">
-                <div className="bg-white dark:bg-dark-400 p-6 rounded-xl border border-primary-200 dark:border-dark-300 shadow-lg">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-700 dark:text-gray-300">Learning-Focused Research</h4>
-                  <p className="text-base text-primary-400 dark:text-dark-200 leading-relaxed mb-3">
-                    Recreating the PercePiano research paper from scratch to understand every aspect of the ML pipeline - from dataset analysis to model implementation.
-                  </p>
-                  <p className="text-sm text-accent-sage dark:text-accent-coral">
-                    Building everything from first principles for deep understanding of audio ML fundamentals.
-                  </p>
-                </div>
-                
-                <SpotlightCard className="p-4">
-                  <div className="flex items-start gap-3">
-                    <Lightbulb className="w-6 h-6 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
+                <SpotlightCard className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Lightbulb className="w-8 h-8 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="text-base font-semibold mb-1">Key Achievement</h4>
-                      <p className="text-sm text-primary-400 dark:text-dark-200">Phase 1 complete: Dataset analysis and audio preprocessing pipeline. Next: Single-task prediction models.</p>
+                      <h4 className="text-lg font-bold mb-2">Research Focus</h4>
+                      <ul className="list-disc pl-5 space-y-1 text-base text-primary-400 dark:text-dark-200">
+                        <li>86M‑parameter AST for 19‑dimensional performance analysis</li>
+                        <li>Rust edge preprocessing + GPU inference (Modal) for ~10–15s end‑to‑end analysis</li>
+                      </ul>
+                    </div>
+                  </div>
+                </SpotlightCard>
+            </div>
+          </div>
+          </div>
+          {/* Project: AI Safety Alignment */}
+          <div className="space-y-12 mb-24">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Text Content */}
+              <div className="text-center lg:text-left space-y-6">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-author font-bold leading-tight">
+                  <GradientText>AI Safety Alignment</GradientText>
+                </h3>
+                <p className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Re-implementing Constitutional AI research.
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                  {['PyTorch', 'scikit-learn', 'Python', 'W&B', 'JAX/Flax'].map((tech) => (
+                    <span key={tech} className="px-3 py-1 bg-primary-200 dark:bg-gray-700 text-primary-500 dark:text-gray-300 rounded-full text-sm font-medium">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <div className="flex justify-center lg:justify-start">
+                  <motion.a
+                    href="https://github.com/Jai-Dhiman/ml-learning"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center gap-2 px-4 py-2 text-sm hover-lift"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Github className="w-4 h-4" />
+                    View Code
+                  </motion.a>
+                </div>
+              </div>
+
+              {/* Highlight Card */}
+              <div className="space-y-6">
+                <SpotlightCard className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Lightbulb className="w-8 h-8 text-accent-sage dark:text-accent-coral mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-lg font-bold mb-2">Highlights</h4>
+                      <ul className="list-disc pl-5 space-y-2 text-base text-primary-400 dark:text-dark-200">
+                        <li>Safety Text Classifier with calibrated confidence; evaluates precision/recall/F1 on adversarial tests.</li>
+                        <li>Gemma 7B‑IT fine‑tuning with LoRA; side‑by‑side evaluation and human feedback collection.</li>
+                        <li>Critique/Revision workflow and full CAI with RLAIF (reward modeling + PPO), with rigorous safety benchmarks.</li>
+                      </ul>
                     </div>
                   </div>
                 </SpotlightCard>

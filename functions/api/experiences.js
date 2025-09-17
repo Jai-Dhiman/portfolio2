@@ -1,22 +1,23 @@
 export async function onRequest({}) {
+
 	const experiences = [
 		{
 			id: 1,
-			title: "Co-Founder & Technical Lead",
-			company: "Capture",
+			title: "Founding Software Engineer",
+			company: "Capture (AI-Powered Social Discovery)",
 			description:
-				"Built full-stack platform with semantic search using vector embeddings and database. Implemented custom evaluation harnesses for ML recommendation systems with real-time A/B testing frameworks.",
-			startDate: "2024-06-01",
+				"Built production recommendation engine (10K+ items) with semantic search; implemented safety evaluation (Recall@K/MRR/NDCG) and A/B testing; designed multi-layer safety systems and monitoring dashboards.",
+			startDate: "2024-12-01",
 			current: true,
 		},
 		{
 			id: 2,
 			title: "Software Engineering Intern",
-			company: "Southern Glazer Wine & Spirits",
+			company: "Southern Glazer's Wine & Spirits",
 			description:
-				"Automated enterprise workflows with Python and built monitoring dashboards. Collaborated on secure deployment pipelines and CI/CD tooling, improving developer productivity by 25%.",
+				"Automated Python ML workflows and built monitoring dashboards (reduced manual interventions by ~25%); contributed to secure CI/CD deployment infrastructure.",
 			startDate: "2025-05-01",
-			endDate: "2025-08-01",
+			endDate: "2025-07-31",
 			current: false,
 		},
 		{
@@ -24,9 +25,9 @@ export async function onRequest({}) {
 			title: "Full-Stack Developer Student",
 			company: "Actualize Coding Bootcamp",
 			description:
-				"500+ hours intensive program emphasizing data structures, algorithms, and system design foundations. Built full-stack applications with focus on performance optimization, database design, and scalable architecture patterns.",
-			startDate: "2024-01-01",
-			endDate: "2024-06-30",
+				"Full‑stack development with emphasis on data structures, algorithms, and distributed system design.",
+			startDate: "2024-06-01",
+			endDate: "2024-12-01",
 			current: false,
 		},
 		{
@@ -34,9 +35,9 @@ export async function onRequest({}) {
 			title: "Bachelor of Music in Performance",
 			company: "Berklee College of Music",
 			description:
-				"Developed creativity, discipline, and collaborative skills through ensemble performance.",
-			startDate: "2020-01-01",
-			endDate: "2023-05-01",
+				"Developed discipline, creativity, and collaborative problem‑solving through rigorous performance training.",
+			startDate: "2020-05-01",
+			endDate: "2023-12-01",
 			current: false,
 		},
 	];
