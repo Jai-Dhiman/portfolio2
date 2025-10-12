@@ -8,11 +8,31 @@ interface ExperienceCardProps {
 
 export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
 
-  const formatDate = (date: string | Date | null) => {
+  const formatDate = (date: string | Date | null, format: 'year' | 'month-year' = 'year') => {
     if (!date) return '';
 
     try {
+      // Handle string dates by parsing them properly to avoid timezone issues
+      if (typeof date === 'string') {
+        // If it's in YYYY-MM-DD format, parse it as UTC to avoid timezone shifts
+        const dateParts = date.split('-');
+        if (dateParts.length === 3) {
+          const year = parseInt(dateParts[0]);
+          const month = parseInt(dateParts[1]) - 1; // Month is 0-indexed
+          const day = parseInt(dateParts[2]);
+          const dateObj = new Date(year, month, day);
+          
+          if (format === 'month-year') {
+            return dateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+          }
+          return dateObj.getFullYear().toString();
+        }
+      }
       const dateObj = typeof date === 'string' ? new Date(date) : date;
+      
+      if (format === 'month-year') {
+        return dateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+      }
       return dateObj.getFullYear().toString();
     } catch (error) {
       console.error('Error formatting date:', error);
@@ -23,15 +43,16 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   const getDateDisplay = () => {
     if (!experience?.startDate) return '';
 
-    const startYear = formatDate(experience.startDate);
+    const startDisplay = formatDate(experience.startDate, 'month-year');
     if (experience.current) {
-      return `${startYear} - Present`;
+      return `${startDisplay} - Present`;
     }
     if (experience.endDate) {
-      const endYear = formatDate(experience.endDate);
-      return startYear === endYear ? startYear : `${startYear} - ${endYear}`;
+      const endDisplay = formatDate(experience.endDate, 'month-year');
+      // If same month and year, show just one date
+      return startDisplay === endDisplay ? startDisplay : `${startDisplay} - ${endDisplay}`;
     }
-    return startYear;
+    return startDisplay;
   };
 
   return (
