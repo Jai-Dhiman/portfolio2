@@ -239,11 +239,32 @@
   /* Optimize image loading */
   img {
     content-visibility: auto;
+    image-rendering: -webkit-optimize-contrast; /* Improve image rendering */
+    image-rendering: crisp-edges;
+  }
+  
+  /* Optimize logo images specifically */
+  img[alt*="logo"] {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    will-change: auto;
   }
 
   /* Reduce paint complexity */
   .card {
     contain: layout style paint;
+  }
+  
+  /* Optimize timeline items */
+  .timeline-item {
+    contain: layout style;
+    will-change: transform;
+  }
+  
+  /* Optimize motion components */
+  [data-motion] {
+    backface-visibility: hidden;
+    transform: translateZ(0);
   }
 
   /* Optimize scroll performance */

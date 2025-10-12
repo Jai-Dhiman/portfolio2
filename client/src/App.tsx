@@ -3,13 +3,28 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Loader from "./components/loader";
+import PreloadAssets from "./components/PreloadAssets";
 import { trackPageView } from "./lib/amplitude";
 import { trackEvent } from "./lib/amplitude";
 
-// Lazy load pages for better performance
-const HomePage = React.lazy(() => import("./pages/HomePage"));
+// Lazy load pages for better performance with better error boundaries
+const HomePage = React.lazy(() => 
+  import("./pages/HomePage").then(module => ({ 
+    default: module.default 
+  }))
+);
 
-const queryClient = new QueryClient();
+// Optimized query client with better defaults
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      gcTime: 10 * 60 * 1000, // 10 minutes (renamed from cacheTime)
+      retry: 2,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 // Component to track page views
 function PageTracker() {
@@ -30,6 +45,7 @@ export default function App() {
   
   return (
     <QueryClientProvider client={queryClient}>
+      <PreloadAssets />
       <Router>
         <PageTracker />
         <Layout>

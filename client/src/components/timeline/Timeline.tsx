@@ -44,7 +44,8 @@ const Timeline = () => {
       githubUrl: "https://github.com/Jai-Dhiman/capture",
       liveUrl: "https://www.captureapp.org",
       isProject: true,
-      isLeft: false
+      isLeft: false,
+      wide: true
     },
     {
       date: "August 2024",

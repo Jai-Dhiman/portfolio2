@@ -88,19 +88,19 @@ export default function Hero() {
       </div>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto z-10 text-center">
-          <h1 className="animate-fade-in text-3xl md:text-5xl font-author font-bold mb-6">
+          <h1 className="text-3xl md:text-5xl font-author font-bold mb-6">
             Hi, I'm <GradientText
               animationSpeed={6}
             >
               Jai Dhiman
             </GradientText>
           </h1>
-          <p className="text-xl animate-slide-up text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
             I like to build things and play music.
           </p>
 
           {/* CTA Button */}
-          <div className="animate-fade-in mb-12">
+          <div className="mb-12">
             <a
               href="#timeline"
               className="btn-primary text-lg px-8 py-4 hover-lift inline-flex items-center gap-2"

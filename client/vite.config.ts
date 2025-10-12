@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     visualizer({
       filename: "dist/stats.html",
-      open: true,
+      open: false, // Don't auto-open in production builds
       gzipSize: true,
       brotliSize: true,
     }),
@@ -17,7 +17,15 @@ export default defineConfig({
   },
   assetsInclude: ['**/*.glb'],
   optimizeDeps: {
-    include: ["react", "react-dom"],
+    include: [
+      "react", 
+      "react-dom", 
+      "react-router-dom",
+      "framer-motion",
+      "@tanstack/react-query",
+      "lucide-react"
+    ],
+    exclude: ["three", "@react-three/fiber", "@react-three/drei"], // Keep heavy 3D libs as separate chunks
   },
   server: {
     proxy: {
@@ -28,18 +36,42 @@ export default defineConfig({
     },
   },
   build: {
+    target: 'es2020', // Use modern JavaScript for better performance
+    minify: 'terser', // Better compression than esbuild
+    cssMinify: true,
+    reportCompressedSize: false, // Speeds up build
+    chunkSizeWarningLimit: 1600,
     rollupOptions: {
       output: {
-        entryFileNames: `assets/[name].js`,
-        chunkFileNames: `assets/[name].js`,
-        assetFileNames: `assets/[name].[ext]`,
+        entryFileNames: `assets/[name]-[hash].js`,
+        chunkFileNames: `assets/[name]-[hash].js`,
+        assetFileNames: `assets/[name]-[hash].[ext]`,
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          three: ['three', '@react-three/fiber', '@react-three/drei', '@react-three/rapier'],
-          animations: ['framer-motion', 'react-parallax-tilt', 'react-tsparticles', 'tsparticles-engine', 'tsparticles-slim'],
-          ui: ['lucide-react', '@tanstack/react-query'],
-        }
+          // Core vendor chunk
+          vendor: ['react', 'react-dom'],
+          // Router and query management
+          routing: ['react-router-dom', '@tanstack/react-query'],
+          // Heavy 3D libraries (lazy loaded)
+          three: ['three', '@react-three/fiber', '@react-three/drei', '@react-three/rapier', 'meshline'],
+          // Animation libraries
+          animations: ['framer-motion', 'react-parallax-tilt'],
+          // Particle system (lazy loaded)
+          particles: ['react-tsparticles', 'tsparticles-engine', 'tsparticles-slim'],
+          // UI components
+          ui: ['lucide-react'],
+          // Analytics
+          analytics: ['@amplitude/analytics-browser'],
+        },
+        // Optimize chunk loading
+        experimentalMinChunkSize: 1000,
       }
-    }
+    },
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.log in production
+        drop_debugger: true,
+        pure_funcs: ['console.log'], // Remove specific functions
+      },
+    },
   },
 });
