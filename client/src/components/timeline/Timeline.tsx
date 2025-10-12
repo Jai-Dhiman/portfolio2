@@ -122,18 +122,6 @@ const Timeline = () => {
     }
   ];
 
-  // Toolbox skills for quick scan (no duplicates across categories)
-  const toolboxSkills: Skill[] = [
-    { id: 1001, name: 'React', category: 'Toolbox', iconUrl: '/icons/react.svg' } as any,
-    { id: 1002, name: 'GraphQL', category: 'Toolbox', iconUrl: '/icons/graphql.svg' } as any,
-    { id: 1003, name: 'Figma', category: 'Toolbox', iconUrl: '/icons/figma.svg' } as any,
-    { id: 1004, name: 'Git', category: 'Toolbox', iconUrl: '/icons/git.svg' } as any,
-    { id: 1006, name: 'Linear', category: 'Toolbox', iconUrl: '/icons/linear.png' } as any,
-    { id: 1007, name: 'Cloudflare Workers', category: 'Toolbox', iconUrl: '/icons/cloudflareworkers.svg' } as any,
-    { id: 1008, name: 'GitHub', category: 'Toolbox', iconUrl: '/icons/github.svg' } as any,
-    { id: 1009, name: 'Notion', category: 'Toolbox', iconUrl: '/icons/notion.svg' } as any,
-    { id: 1010, name: 'Amplitude', category: 'Toolbox', iconUrl: '/icons/amplitude.png' } as any,
-  ];
 
   return (
     <div className="relative">
@@ -148,40 +136,32 @@ const Timeline = () => {
               <TimelineItem {...item} />
               
               {/* Insert skill clusters after certain timeline items */}
-              {index === 0 && skillsByCategory['ML Frameworks'] && (
+              {index === 0 && skillsByCategory['ML Core'] && (
                 <SkillCluster
-                  category="ML Frameworks"
-                  skills={skillsByCategory['ML Frameworks']}
+                  category="ML Core"
+                  skills={skillsByCategory['ML Core']}
                 />
               )}
-              {index === 1 && skillsByCategory['ML Systems'] && (
+              {index === 1 && skillsByCategory['Programming & Data'] && (
                 <SkillCluster
-                  category="ML Systems"
-                  skills={skillsByCategory['ML Systems']}
-                />
-              )}
-
-              {/* After AI Safety: Languages & Infrastructure */}
-              {index === 2 && skillsByCategory['Languages & Infrastructure'] && (
-                <SkillCluster
-                  category="Languages & Infrastructure"
-                  skills={skillsByCategory['Languages & Infrastructure']}
+                  category="Programming & Data"
+                  skills={skillsByCategory['Programming & Data']}
                 />
               )}
 
-              {/* After SGWS: Specialized */}
-              {index === 3 && skillsByCategory['Specialized'] && (
+              {/* After AI Safety: Infrastructure & Deployment */}
+              {index === 2 && skillsByCategory['Infrastructure & Deployment'] && (
                 <SkillCluster
-                  category="Specialized"
-                  skills={skillsByCategory['Specialized']}
+                  category="Infrastructure & Deployment"
+                  skills={skillsByCategory['Infrastructure & Deployment']}
                 />
               )}
 
-              {/* After Actualize: Toolbox */}
-              {index === 4 && (
+              {/* After SGWS: Product & Collaboration */}
+              {index === 3 && skillsByCategory['Product & Collaboration'] && (
                 <SkillCluster
-                  category="Toolbox"
-                  skills={toolboxSkills}
+                  category="Product & Collaboration"
+                  skills={skillsByCategory['Product & Collaboration']}
                 />
               )}
             </div>
