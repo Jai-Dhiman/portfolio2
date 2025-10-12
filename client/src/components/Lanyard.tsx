@@ -193,6 +193,14 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
     }
   }, [hovered, dragged]);
 
+  // Initialize band with a simple straight line to avoid NaNs on first frames
+  useEffect(() => {
+    if (band.current?.geometry) {
+      const initial = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, -1, 0)];
+      band.current.geometry.setPoints(initial);
+    }
+  }, []);
+
   useFrame((state, delta) => {
     if (dragged && typeof dragged !== "boolean") {
       vec.set(state.pointer.x, state.pointer.y, 0.5).unproject(state.camera);
@@ -205,40 +213,54 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
         z: vec.z - dragged.z,
       });
     }
-    if (fixed.current) {
+    if (fixed.current && j1.current && j2.current && j3.current && card.current && band.current?.geometry) {
       [j1, j2].forEach((ref) => {
+        const tr = ref.current.translation?.();
+        if (!tr) return;
         if (!ref.current.lerped)
-          ref.current.lerped = new THREE.Vector3().copy(
-            ref.current.translation()
-          );
-        const clampedDistance = Math.max(
-          0.1,
-          Math.min(1, ref.current.lerped.distanceTo(ref.current.translation()))
-        );
+          ref.current.lerped = new THREE.Vector3().copy(tr);
+        const dist = ref.current.lerped.distanceTo(tr);
+        const clampedDistance = Math.max(0.1, Math.min(1, dist));
         ref.current.lerped.lerp(
-          ref.current.translation(),
+          tr,
           delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))
         );
       });
 
       // Update curve points to include card position for proper rope connection
-      const cardPos = card.current.translation();
-      // Account for the card's visual offset and connect to the hook area
-      // Connect higher up to avoid overlapping with the card hook
-      const cardTopPos = new THREE.Vector3(
-        cardPos.x,
-        cardPos.y + 0.25, // Higher to connect above the hook area
-        cardPos.z
-      );
+      const cardPos = card.current.translation?.();
+      const j3Pos = j3.current.translation?.();
+      const j2Lerped = j2.current.lerped;
+      const j1Lerped = j1.current.lerped;
+      const fixedPos = fixed.current.translation?.();
 
-      curve.points[0].copy(cardTopPos); // Start from top of card
-      curve.points[1].copy(j3.current.translation());
-      curve.points[2].copy(j2.current.lerped);
-      curve.points[3].copy(j1.current.lerped);
-      curve.points[4] = new THREE.Vector3(); // Add extra point
-      curve.points[4].copy(fixed.current.translation());
+      if (!cardPos || !j3Pos || !j2Lerped || !j1Lerped || !fixedPos) return;
+      const hasNaN = (...vals: number[]) => vals.some((n) => !Number.isFinite(n));
+      if (
+        hasNaN(cardPos.x, cardPos.y, cardPos.z,
+               j3Pos.x, j3Pos.y, j3Pos.z,
+               j2Lerped.x, j2Lerped.y, j2Lerped.z,
+               j1Lerped.x, j1Lerped.y, j1Lerped.z,
+               fixedPos.x, fixedPos.y, fixedPos.z)
+      ) {
+        return; // Skip update if any value is invalid
+      }
 
-      band.current.geometry.setPoints(curve.getPoints(32));
+      // Connect above the hook area
+      const cardTopPos = new THREE.Vector3(cardPos.x, cardPos.y + 0.25, cardPos.z);
+
+      curve.points[0].copy(cardTopPos);
+      curve.points[1].copy(j3Pos);
+      curve.points[2].copy(j2Lerped);
+      curve.points[3].copy(j1Lerped);
+      curve.points[4] = new THREE.Vector3().copy(fixedPos);
+
+      const pts = curve.getPoints(32);
+      // Validate computed points to avoid NaNs
+      if (pts.every((p) => Number.isFinite(p.x) && Number.isFinite(p.y) && Number.isFinite(p.z))) {
+        band.current.geometry.setPoints(pts);
+      }
+
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
@@ -344,7 +366,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
         </RigidBody>
       </group>
       <mesh ref={band}>
-        <meshLineGeometry />
+        <meshLineGeometry points={[new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, -1, 0)]} />
         <meshLineMaterial
           color="black"
           depthTest={true}

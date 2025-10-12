@@ -1,36 +1,46 @@
 export async function onRequest({}) {
   const skills = [
-    // Machine Learning & AI (exactly 6)
-    { id: 7, name: "PyTorch & JAX/Flax", category: "Machine Learning & AI", iconUrl: "/icons/pytorch.svg" },
-    { id: 8, name: "HuggingFace & Transformers", category: "Machine Learning & AI", iconUrl: "/icons/huggingface.png" },
-    { id: 9, name: "LLM Integration & Fine-tuning", category: "Machine Learning & AI", iconUrl: "/icons/claude.svg" },
-    { id: 10, name: "Model Evaluation & Testing", category: "Machine Learning & AI", iconUrl: "/icons/wandb.png" },
-    { id: 11, name: "Vector Embeddings & Search", category: "Machine Learning & AI", iconUrl: "/icons/pinecone.png" },
-    { id: 12, name: "RAG & Context Engineering", category: "Machine Learning & AI", iconUrl: "/icons/langchain.png" },
+    // ML Frameworks (expanded)
+    { id: 1, name: "PyTorch", category: "ML Frameworks", iconUrl: "/icons/pytorch.svg" },
+    { id: 2, name: "JAX/Flax", category: "ML Frameworks", iconUrl: "/icons/jax-flax.png" },
+    { id: 3, name: "Hugging Face Transformers", category: "ML Frameworks", iconUrl: "/icons/huggingface.png" },
+    { id: 4, name: "PEFT/LoRA", category: "ML Frameworks", iconUrl: "/icons/peft-lora.png" },
+    { id: 5, name: "TRL", category: "ML Frameworks" },
+    { id: 6, name: "scikit-learn", category: "ML Frameworks", iconUrl: "/icons/scikit.png" },
+    { id: 25, name: "NumPy", category: "ML Frameworks", iconUrl: "/icons/numpy.svg" },
 
-    // Full-Stack Development (exactly 6)
-    { id: 13, name: "Python", category: "Full-Stack Development", iconUrl: "/icons/python.svg" },
-    { id: 14, name: "C++ & Rust", category: "Full-Stack Development", iconUrl: "/icons/c++.svg" },
-    { id: 15, name: "React & React Native", category: "Full-Stack Development", iconUrl: "/icons/react.svg" },
-    { id: 16, name: "API Design & GraphQL", category: "Full-Stack Development", iconUrl: "/icons/graphql.svg" },
-    { id: 17, name: "SQL & Database Design", category: "Full-Stack Development", iconUrl: "/icons/postgres.png" },
-    { id: 18, name: "Serverless Functions", category: "Full-Stack Development", iconUrl: "/icons/cloudflareworkers.svg" },
+    // ML Systems (expanded)
+    { id: 7, name: "Modal (GPU inference)", category: "ML Systems", iconUrl: "/icons/modal.png" },
+    { id: 8, name: "Docker", category: "ML Systems", iconUrl: "/icons/docker.svg" },
+    { id: 9, name: "Kubernetes (GKE)", category: "ML Systems", iconUrl: "/icons/kubernetes-original.svg" },
+    { id: 10, name: "A/B testing", category: "ML Systems", iconUrl: "/icons/ab.png" },
+    { id: 11, name: "Active learning", category: "ML Systems" },
+    { id: 12, name: "Weights & Biases", category: "ML Systems", iconUrl: "/icons/wandb.png" },
+    { id: 26, name: "Cloudflare Workers", category: "ML Systems", iconUrl: "/icons/cloudflareworkers.svg" },
 
-    // Cloud & DevOps (exactly 6)
-    { id: 19, name: "Docker & Kubernetes", category: "Cloud & DevOps", iconUrl: "/icons/docker.svg" },
-    { id: 20, name: "AWS & GCP", category: "Cloud & DevOps", iconUrl: "/icons/aws.png" },
-    { id: 21, name: "CI/CD Pipelines", category: "Cloud & DevOps", iconUrl: "/icons/ci-cd.png" },
-    { id: 22, name: "Distributed Systems", category: "Cloud & DevOps", iconUrl: "/icons/redis.svg" },
-    { id: 23, name: "Monitoring & Observability", category: "Cloud & DevOps", iconUrl: "/icons/grafana.svg" },
-    { id: 24, name: "Data Pipelines", category: "Cloud & DevOps", iconUrl: "/icons/apacheairflow.svg" },
+    // Languages & Infrastructure (expanded)
+    { id: 13, name: "Python", category: "Languages & Infrastructure", iconUrl: "/icons/python.svg" },
+    { id: 14, name: "Rust", category: "Languages & Infrastructure", iconUrl: "/icons/rust.png" },
+    { id: 15, name: "TypeScript", category: "Languages & Infrastructure", iconUrl: "/icons/typescript.svg" },
+    { id: 16, name: "SQL/PostgreSQL", category: "Languages & Infrastructure", iconUrl: "/icons/postgres.png" },
+    { id: 17, name: "GCP", category: "Languages & Infrastructure", iconUrl: "/icons/gcp.svg" },
+    { id: 18, name: "Redis", category: "Languages & Infrastructure", iconUrl: "/icons/redis.svg" },
 
-    // Product & Leadership (exactly 6)
-    { id: 25, name: "Product Strategy", category: "Product & Leadership", iconUrl: "/icons/roadmap.png" },
-    { id: 26, name: "User Research", category: "Product & Leadership", iconUrl: "/icons/user.png" },
-    { id: 27, name: "Feature Prioritization", category: "Product & Leadership", iconUrl: "/icons/prioritization.png" },
-    { id: 28, name: "Cross-functional Leadership", category: "Product & Leadership", iconUrl: "/icons/stakeholder.png" },
-    { id: 29, name: "A/B Testing Frameworks", category: "Product & Leadership", iconUrl: "/icons/ab.png" },
-    { id: 30, name: "Agile/Scrum", category: "Product & Leadership", iconUrl: "/icons/atlassian.png" },
+    // Specialized (expanded)
+    { id: 19, name: "Audio Spectrogram Transformer (AST)", category: "Specialized", iconUrl: "/icons/ast.png" },
+    { id: 20, name: "Mel-spectrograms", category: "Specialized", iconUrl: "/icons/mel-spectrogram.png" },
+    { id: 21, name: "RAG systems", category: "Specialized", iconUrl: "/icons/langchain.png" },
+    { id: 22, name: "Multi-task learning", category: "Specialized" },
+    { id: 23, name: "Preference learning (DPO/LoRA)", category: "Specialized" },
+    { id: 24, name: "Recommendation systems", category: "Specialized" },
+
+    // Tools & Collaboration (new category)
+    { id: 30, name: "Figma", category: "Tools & Collaboration", iconUrl: "/icons/figma.svg" },
+    { id: 31, name: "Linear", category: "Tools & Collaboration", iconUrl: "/icons/linear.png" },
+    { id: 32, name: "Slack", category: "Tools & Collaboration", iconUrl: "/icons/slack.svg" },
+    { id: 33, name: "GitHub", category: "Tools & Collaboration", iconUrl: "/icons/github.svg" },
+    { id: 34, name: "Notion", category: "Tools & Collaboration", iconUrl: "/icons/notion.svg" },
+    { id: 35, name: "Amplitude", category: "Tools & Collaboration", iconUrl: "/icons/amplitude.png" },
   ];
   return new Response(JSON.stringify(skills), { headers: { "content-type": "application/json" } });
-} 
+}

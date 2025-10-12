@@ -57,12 +57,12 @@ export default function Hero() {
               number: {
                 density: {
                   enable: true,
-                  area: 600,
+                  area: 800,
                 },
-                value: isDarkMode ? 80 : 50,
+                value: isDarkMode ? 40 : 25,
               },
               opacity: {
-                value: isDarkMode ? 0.5 : 0.15,
+                value: isDarkMode ? 0.3 : 0.08,
               },
               shape: {
                 type: "circle",
@@ -95,16 +95,14 @@ export default function Hero() {
               Jai Dhiman
             </GradientText>
           </h1>
-          <p className="text-xl animate-slide-up text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
+          <p className="text-xl animate-slide-up text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
             I like to build things and play music.
-          </p>
-          <p className="max-w-3xl mx-auto mb-8">
           </p>
 
           {/* CTA Button */}
           <div className="animate-fade-in mb-12">
             <a
-              href="#projects"
+              href="#timeline"
               className="btn-primary text-lg px-8 py-4 hover-lift inline-flex items-center gap-2"
             >
               <span>Currently Building</span>

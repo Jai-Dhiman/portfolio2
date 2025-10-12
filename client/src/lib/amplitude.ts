@@ -17,7 +17,10 @@ const initAmplitude = () => {
       serverUrl: 'https://api2.amplitude.com/batch',
     });
   } else {
-    console.error('Amplitude API key not found! Check VITE_AMPLITUDE_API_KEY env var');
+    // Silently skip if no key is provided in development
+    if (import.meta.env.MODE !== 'production') {
+      console.warn('Amplitude disabled: VITE_AMPLITUDE_API_KEY not set.');
+    }
   }
 };
 

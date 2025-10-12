@@ -20,22 +20,11 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
-          <a href="#projects" className="nav-link" onClick={handleAnchorClick}>Projects</a>
-          <a href="#skills" className="nav-link" onClick={handleAnchorClick}>Skills</a>
-          <a href="#experience" className="nav-link" onClick={handleAnchorClick}>Experience</a>
+          {/* Intentionally left blank: removed section anchors for timeline layout */}
         </div>
 
         <div className="flex items-center gap-4">
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden btn-secondary p-2"
-            aria-label="Toggle mobile menu"
-          >
-            <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          {/* Mobile menu removed */}
 
           <button
             onClick={() => setDarkMode(!darkMode)}
@@ -55,16 +44,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-dark-400/95 backdrop-blur-sm">
-          <div className="container mx-auto px-4 py-4 space-y-2">
-            <a href="#projects" className="nav-link block" onClick={handleAnchorClick}>Projects</a>
-            <a href="#skills" className="nav-link block" onClick={handleAnchorClick}>Skills</a>
-            <a href="#experience" className="nav-link block" onClick={handleAnchorClick}>Experience</a>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
