@@ -71,7 +71,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                       className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-lg flex-shrink-0 mt-1" // Increased logo size and prevent shrinking
                       loading="lazy"
                       decoding="async"
-                      fetchpriority="low"
                     />
                   )}
                   <div className="flex-1 min-w-0"> {/* Allow text to shrink if needed */}
@@ -154,7 +153,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                         className="w-full h-full object-contain rounded-md"
                         loading="lazy"
                         decoding="async"
-                        fetchpriority="low"
                       />
                     </div>
                   </div>

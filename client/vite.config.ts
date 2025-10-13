@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { visualizer } from "rollup-plugin-visualizer";
+import path from 'node:path';
 
 export default defineConfig({
   plugins: [
@@ -16,6 +17,10 @@ export default defineConfig({
     __AMPLITUDE_API_KEY__: JSON.stringify(process.env.VITE_AMPLITUDE_API_KEY || ''),
   },
   assetsInclude: ['**/*.glb'],
+  resolve: {
+    dedupe: ['react', 'react-dom'],
+    alias: [],
+  },
   optimizeDeps: {
     include: [
       "react", 
@@ -23,9 +28,16 @@ export default defineConfig({
       "react-router-dom",
       "framer-motion",
       "@tanstack/react-query",
-      "lucide-react"
+      "lucide-react",
+      // Force prebundle of scheduler so named ESM exports are available in dev
+      "scheduler",
+      // Also prebundle 3D libs in dev to ensure consistent module graph
+      "three",
+      "@react-three/fiber",
+      "@react-three/drei"
     ],
-    exclude: ["three", "@react-three/fiber", "@react-three/drei"], // Keep heavy 3D libs as separate chunks
+    // Do not exclude any deps for now; we want a unified optimized graph
+    exclude: [],
   },
   server: {
     proxy: {

@@ -4,7 +4,7 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { Users, Target, Zap, Code } from "lucide-react";
 import GradientText from "../../styles/textAnimations/GradientText/GradientText";
-import { useThemeDetection } from "../../hooks/useDarkMode";
+import { useThemeDetection, useReducedMotion } from "../../hooks/useDarkMode";
 import ErrorBoundary from "../ErrorBoundary";
 
 // Lazy load the Lanyard component
@@ -12,6 +12,7 @@ const Lanyard = React.lazy(() => import("../Lanyard"));
 
 export default function Hero() {
   const isDarkMode = useThemeDetection();
+  const prefersReducedMotion = useReducedMotion();
 
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
@@ -22,17 +23,18 @@ export default function Hero() {
 
   return (
     <section className="relative -mx-4 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden justify-center">
-      <div className="absolute inset-0">
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={{
-            fullScreen: { enable: false },
-            background: {
-              opacity: 0,
-            },
-            fpsLimit: 60,
+      {!prefersReducedMotion && (
+        <div className="absolute inset-0">
+          <Particles
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={{
+              fullScreen: { enable: false },
+              background: {
+                opacity: 0,
+              },
+              fpsLimit: 30, // Reduced FPS for better performance
             particles: {
               color: {
                 value: isDarkMode ? "#6B7F6B" : "#8B6F47", // Sage green for dark, cognac for light
@@ -75,11 +77,12 @@ export default function Hero() {
           }}
         />
       </div>
+      )}
 
       {/* Lanyard Animation - Hidden on mobile */}
       <div className="absolute inset-0 hidden lg:block">
         <div className="absolute top-0 right-0 w-1/3 h-full opacity-80 saturate-150">
-          <ErrorBoundary fallback={<div />}>
+          <ErrorBoundary fallback={<div />} showErrorInDev={true}>
             <Suspense fallback={<div />}>
               <Lanyard position={[0, 0, 18]} gravity={[0, -40, 0]} fov={12} transparent={true} />
             </Suspense>

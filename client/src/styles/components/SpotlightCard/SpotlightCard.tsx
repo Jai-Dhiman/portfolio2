@@ -37,8 +37,12 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
 	const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = useCallback((e) => {
 		if (!divRef.current || isFocused || prefersReducedMotion) return;
 
-		const rect = divRef.current.getBoundingClientRect();
-		setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+		// Throttle mouse move events for better performance
+		requestAnimationFrame(() => {
+			if (!divRef.current) return;
+			const rect = divRef.current.getBoundingClientRect();
+			setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+		});
 	}, [isFocused, prefersReducedMotion]);
 
 	const handleFocus = () => {
