@@ -30,6 +30,7 @@ const Timeline = () => {
   const timelineItems = [
     {
       date: "December 2024",
+      endDate: "Present",
       title: "Founding Engineer at Capture",
       subtitle: "Privacy-First Social Platform",
       description: "Grew a privacy-first social platform from solo to a small engineering team, launching a 50-user beta. Drove a 40% engagement lift through systematic experiments. Built personalized discovery with safety guardrails and resilient infrastructure.",
@@ -48,7 +49,8 @@ const Timeline = () => {
       wide: true
     },
     {
-      date: "August 2024",
+      date: "August 2025",
+      endDate: "Present",
       title: "CrescendAI: Piano Performance Analysis",
       subtitle: "ML Research & Production",
       description: "Built a production system that helps pianists get fast, meaningful feedback from their recordings. The product combines edge preprocessing with GPU inference to deliver responsive analysis and clean, understandable results. Our model outperforms a strong baseline and the tutor makes guidance approachable.",
@@ -64,7 +66,8 @@ const Timeline = () => {
       isLeft: true
     },
     {
-      date: "July 2024",
+      date: "July 2025",
+      endDate: "September 2025",
       title: "AI Safety Alignment Research",
       subtitle: "Constitutional AI Implementation",
       description: "Re-implemented a modern AI safety training process from Anthropic's research papers to reduce harmful outputs. Combined classifier training, instruction fine-tuning, critique-and-revision, and preference optimization. The result: measurably safer behavior in critical categories.",
@@ -80,6 +83,7 @@ const Timeline = () => {
     },
     {
       date: "May 2025",
+      endDate: "July 2025",
       title: "Software Engineering Intern",
       subtitle: "Southern Glazer's Wine & Spirits",
       description: "Built automated deployment pipeline (GitHub Actions + Docker); collaborated with DevOps Team, reducing deployment time from 2hrs to 15min and eliminating 6 config errors/month at $26B wine & spirits distributor.",
@@ -94,6 +98,7 @@ const Timeline = () => {
     },
     {
       date: "June 2024",
+      endDate: "December 2024",
       title: "Full-Stack Development Bootcamp",
       subtitle: "Actualize Coding",
       description: "Full-stack development with algorithms, data structures, and system design. Intensive CS fundamentals self-study: CLRS algorithms, distributed systems patterns, data structures & design.",
@@ -108,6 +113,7 @@ const Timeline = () => {
     },
     {
       date: "May 2020",
+      endDate: "December 2023",
       title: "Bachelor of Music in Performance",
       subtitle: "Berklee College of Music",
       description: "Developed discipline, creativity, and collaborative problem-solving through rigorous performance training. Performed in 2 international orchestra tours, honing high-pressure execution and teamwork skills.",

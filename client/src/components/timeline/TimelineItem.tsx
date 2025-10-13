@@ -2,6 +2,7 @@ import React from 'react';
 import { Github, ExternalLink, Calendar, MapPin } from 'lucide-react';
 
 interface TimelineItemProps {
+  endDate?: string;
   date: string;
   title: string;
   subtitle?: string;
@@ -19,6 +20,7 @@ interface TimelineItemProps {
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
   date,
+  endDate,
   title,
   subtitle,
   description,
@@ -41,9 +43,16 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
     <div className={`timeline-item flex flex-col md:flex-row md:items-center mb-16 ${isLeft ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
       {/* Date marker - on top for mobile, side for desktop */}
       <div className="flex-shrink-0 md:w-32 mb-4 md:mb-0 text-center md:text-right pr-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-sage/20 dark:bg-accent-coral/20 text-accent-sage dark:text-accent-coral rounded-full text-sm font-medium">
-          <Calendar className="w-3 h-3" />
-          <span className="whitespace-nowrap">{date}</span>
+        <div className="inline-flex flex-col items-center md:items-end gap-1">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-sage/20 dark:bg-accent-coral/20 text-accent-sage dark:text-accent-coral rounded-full text-sm font-medium">
+            <Calendar className="w-3 h-3" />
+            <span className="whitespace-nowrap">{date}</span>
+          </div>
+          {endDate && (
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-sage/20 dark:bg-accent-coral/20 text-accent-sage dark:text-accent-coral rounded-full text-sm font-medium">
+              <span className="whitespace-nowrap">{endDate}</span>
+            </div>
+          )}
         </div>
       </div>
 

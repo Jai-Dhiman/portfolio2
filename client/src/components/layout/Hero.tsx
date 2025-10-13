@@ -99,6 +99,7 @@ export default function Hero() {
             </GradientText>
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+            I'm a Machine Learning Engineer.<br />
             I like to build things and play music.
           </p>
 
@@ -108,8 +109,8 @@ export default function Hero() {
               href="#timeline"
               className="btn-primary text-lg px-8 py-4 hover-lift inline-flex items-center gap-2"
             >
-              <span>Currently Building</span>
               <Code className="w-5 h-5" />
+              <span>Currently Building</span>
             </a>
           </div>
 

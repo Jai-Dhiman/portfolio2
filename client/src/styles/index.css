@@ -324,4 +324,33 @@
   .youtube-embed-container:hover .youtube-thumbnail {
     filter: brightness(0.8);
   }
+
+  /* Skill Parallelogram Styles */
+  .skill-parallelogram {
+    position: relative;
+    transform: skewX(-16deg);
+    will-change: transform;
+  }
+
+  .skill-parallelogram-inner {
+    transform: skewX(16deg);
+    will-change: transform;
+  }
+
+  .skill-parallelogram,
+  .skill-parallelogram * {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  /* Generic parallelogram utility for reuse (buttons, dates) */
+  .pg {
+    display: inline-block;
+    transform: skewX(-16deg);
+  }
+  .pg-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform: skewX(16deg);
+  }
 }
