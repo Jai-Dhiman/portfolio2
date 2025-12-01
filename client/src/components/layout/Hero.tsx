@@ -2,7 +2,7 @@ import React, { useCallback, Suspense } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import { Users, Target, Zap, Code } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import GradientText from "../../styles/textAnimations/GradientText/GradientText";
 import { useThemeDetection, useReducedMotion } from "../../hooks/useDarkMode";
 import ErrorBoundary from "../ErrorBoundary";
@@ -92,27 +92,21 @@ export default function Hero() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto z-10 text-center">
           <h1 className="text-3xl md:text-5xl font-author font-bold mb-6">
-            Hi, I'm <GradientText
-              animationSpeed={6}
-            >
-              Jai Dhiman
-            </GradientText>
+            Hi, I'm <GradientText animationSpeed={6}>Jai Dhiman</GradientText>
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            I'm a Machine Learning Engineer.<br />
-            I like to build things and play music.
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-12">
+            Audio ML Engineer with a Berklee background.<br />
+            I'm building AI that understands music the way musicians do.
           </p>
 
-          {/* CTA Button */}
-          <div className="mb-12">
-            <a
-              href="#timeline"
-              className="btn-primary text-lg px-8 py-4 hover-lift inline-flex items-center gap-2"
-            >
-              <Code className="w-5 h-5" />
-              <span>Currently Building</span>
-            </a>
-          </div>
+          {/* Scroll indicator */}
+          <a
+            href="#featured-project"
+            className="inline-flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-primary-400 dark:hover:text-accent-sage transition-colors"
+          >
+            <span className="text-sm">See my work</span>
+            <ArrowDown className="w-5 h-5 animate-bounce" />
+          </a>
 
         </div>
       </div>

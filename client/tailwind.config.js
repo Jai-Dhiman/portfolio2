@@ -12,17 +12,17 @@ export default {
           500: "#6B5435", // Darker cognac
         },
         dark: {
-          100: "#F5F3F0", // Light text on dark
-          200: "#A69080", // Soft taupe for secondary text
-          300: "#6B5D52", // Medium dark tone
-          400: "#2C241D", // Dark background
-          500: "#1A1410", // Darkest background
+          100: "#ECEAE6", // Warm off-white text on dark
+          200: "#A5A29A", // Warm gray for secondary text
+          300: "#2A2A28", // Dark warm gray for borders/cards
+          400: "#1C1C1A", // Dark warm gray background
+          500: "#141412", // Darkest warm gray
         },
         accent: {
-          coral: "#A69080", // Soft Taupe (replacing coral)
-          gold: "#8B6F47", // Using main brand for gold contexts
-          sage: "#6B7F6B", // Muted Sage Green
-          teal: "#6B7F6B", // Using sage for teal contexts
+          coral: "#6B7F6B", // Sage green for dark mode highlights
+          gold: "#8B6F47", // Cognac for light mode
+          sage: "#6B7F6B", // Old sage green for dark mode
+          teal: "#6B7F6B", // Sage green accent
         },
       },
       fontFamily: {

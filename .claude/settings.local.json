@@ -12,7 +12,13 @@
       "Bash(mv:*)",
       "WebSearch",
       "Read(/Users/jdhiman/Documents/ml-learning/**)",
-      "Read(/Users/jdhiman/Documents/ml-learning/piano-analysis-model/**)"
+      "Read(/Users/jdhiman/Documents/ml-learning/piano-analysis-model/**)",
+      "Bash(cat:*)",
+      "Bash(bun run dev)",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_resize",
+      "Bash(tree:*)"
     ],
     "deny": []
   }

@@ -34,14 +34,13 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="nav-link hover-lift"
                 aria-label={link.name}
-                download={link.name === 'Resume'} // Add download attribute for resume
               >
                 {link.icon}
               </a>
             ))}
           </div>
           <p className="text-sm highlight">
-            © {new Date().getFullYear()} Jai Dhiman
+            {new Date().getFullYear()} Jai Dhiman
           </p>
         </div>
       </div>

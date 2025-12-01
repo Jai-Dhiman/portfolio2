@@ -4,36 +4,32 @@ import { Skill } from '../../types';
 interface SkillClusterProps {
   category: string;
   skills: Skill[];
+  hideIcons?: boolean;
 }
 
-const SkillCluster: React.FC<SkillClusterProps> = ({ category, skills }) => {
-  // Mono border color based on theme (set via Tailwind classes on element)
-
+const SkillCluster: React.FC<SkillClusterProps> = ({ category, skills, hideIcons = false }) => {
   return (
     <div className="py-8">
-      <div className="text-center mb-6">
-        <h3 className="text-lg font-author font-bold text-accent-sage dark:text-accent-coral mb-4">
+      <div className="text-center">
+        <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
           {category}
         </h3>
-        <div className="flex flex-wrap justify-center gap-1 max-w-2xl mx-auto">
-          {skills.map((skill, index) => (
+        <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+          {skills.map((skill) => (
             <div
               key={skill.id}
-              className={`relative skill-parallelogram px-5 py-2 bg-primary-200/40 dark:bg-dark-300 text-primary-500 dark:text-dark-100 text-sm font-medium backdrop-blur-sm border-2 border-primary-400 dark:border-primary-300 ${index > 0 ? '-ml-2' : ''}`}
-              style={{ zIndex: skills.length - index }}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-dark-300/50 border border-primary-200 dark:border-dark-300 text-sm text-gray-700 dark:text-gray-300 hover:border-primary-400 dark:hover:border-accent-sage transition-colors"
             >
-              <div className="skill-parallelogram-inner flex items-center gap-2">
-                {skill.iconUrl && (
-                  <img
-                    src={skill.iconUrl}
-                    alt={skill.name}
-                    className="w-4 h-4 object-contain rounded-md"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                )}
-                <span className="whitespace-nowrap">{skill.name}</span>
-              </div>
+              {!hideIcons && skill.iconUrl && (
+                <img
+                  src={skill.iconUrl}
+                  alt=""
+                  className="w-4 h-4 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              <span>{skill.name}</span>
             </div>
           ))}
         </div>

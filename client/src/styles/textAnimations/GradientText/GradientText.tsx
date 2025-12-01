@@ -13,8 +13,8 @@ interface GradientTextProps {
 export default function GradientText({
 	children,
 	className = "",
-	lightColors = ["#8B6F47", "#6B7F6B", "#D4C4B0", "#8B6F47"], // Cognac to sage to light cognac
-	darkColors = ["#A69080", "#6B7F6B", "#F5F3F0", "#A69080"], // Taupe to sage to warm white
+	lightColors = ["#6B7F6B", "#8FA38F", "#6B7F6B", "#4A5F4A"], // Sage green variations
+	darkColors = ["#6B7F6B", "#F1F5F9", "#8FA38F", "#6B7F6B"], // Sage to white to light sage
 	animationSpeed = 8,
 	showBorder = false,
 }: GradientTextProps) {

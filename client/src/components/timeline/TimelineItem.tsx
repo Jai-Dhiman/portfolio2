@@ -44,12 +44,12 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       {/* Date marker - on top for mobile, side for desktop */}
       <div className="flex-shrink-0 md:w-32 mb-4 md:mb-0 text-center md:text-right pr-2">
         <div className="inline-flex flex-col items-center md:items-end gap-1">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-sage/20 dark:bg-accent-coral/20 text-accent-sage dark:text-accent-coral rounded-full text-sm font-medium">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-400/20 dark:bg-accent-sage/20 text-primary-400 dark:text-accent-sage rounded-full text-sm font-medium">
             <Calendar className="w-3 h-3" />
             <span className="whitespace-nowrap">{date}</span>
           </div>
           {endDate && (
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-sage/20 dark:bg-accent-coral/20 text-accent-sage dark:text-accent-coral rounded-full text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-400/20 dark:bg-accent-sage/20 text-primary-400 dark:text-accent-sage rounded-full text-sm font-medium">
               <span className="whitespace-nowrap">{endDate}</span>
             </div>
           )}
@@ -58,8 +58,8 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 
       {/* Timeline line - hidden on mobile */}
       <div className="hidden md:flex flex-shrink-0 mx-10 flex-col items-center">
-        <div className="w-4 h-4 rounded-full bg-accent-sage dark:bg-accent-coral border-4 border-primary-100 dark:border-dark-400 shadow-lg"></div>
-        <div className="w-0.5 h-16 bg-gradient-to-b from-accent-sage/50 to-transparent dark:from-accent-coral/50"></div>
+        <div className="w-4 h-4 rounded-full bg-primary-400 dark:bg-accent-sage border-4 border-primary-100 dark:border-dark-400 shadow-lg"></div>
+        <div className="w-0.5 h-16 bg-gradient-to-b from-primary-400/50 to-transparent dark:from-accent-sage/50"></div>
       </div>
 
       {/* Content */}
@@ -87,7 +87,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                       {title}
                     </h3>
                     {subtitle && (
-                      <p className="text-accent-sage dark:text-accent-coral font-medium flex items-center gap-2 mt-1 text-base">
+                      <p className="text-primary-400 dark:text-accent-sage font-medium flex items-center gap-2 mt-1 text-base">
                         <MapPin className="w-4 h-4 flex-shrink-0" />
                         {subtitle}
                       </p>
@@ -102,13 +102,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 
               {highlights.length > 0 && (
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-accent-sage dark:text-accent-coral mb-2 uppercase tracking-wide">
+                  <h4 className="text-sm font-semibold text-primary-400 dark:text-accent-sage mb-2 uppercase tracking-wide">
                     Key Results
                   </h4>
                   <ul className="space-y-1">
                     {highlights.map((highlight, index) => (
                       <li key={index} className="text-sm text-primary-400 dark:text-dark-200 flex items-center gap-2">
-                        <span className="text-accent-sage dark:text-accent-coral">•</span>
+                        <span className="text-primary-400 dark:text-accent-sage">•</span>
                         <span>{highlight}</span>
                       </li>
                     ))}
@@ -124,7 +124,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                       href={formatUrls(githubUrl)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-dark-400 hover:bg-dark-300 dark:bg-primary-500 dark:hover:bg-primary-400 text-primary-100 dark:text-dark-100 rounded-lg text-sm font-medium transition-colors border border-primary-400 dark:border-primary-400"
+                      className="inline-flex items-center gap-2 px-4 py-2 border-2 border-primary-400 dark:border-accent-sage text-primary-400 dark:text-accent-sage hover:bg-primary-400 hover:text-white dark:hover:bg-accent-sage dark:hover:text-dark-500 rounded-lg text-sm font-medium transition-colors"
                     >
                       <Github className="w-4 h-4" />
                       Code
@@ -135,7 +135,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                       href={formatUrls(liveUrl)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-accent-sage hover:bg-accent-sage/80 dark:bg-accent-coral dark:hover:bg-accent-coral/80 text-primary-100 rounded-lg text-sm font-medium transition-colors"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary-400 hover:bg-primary-500 dark:bg-accent-sage dark:hover:bg-accent-sage/80 text-white dark:text-dark-500 rounded-lg text-sm font-medium transition-colors"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Live

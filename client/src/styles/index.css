@@ -36,24 +36,24 @@
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 rounded-lg bg-primary-400 hover:bg-primary-500 text-white dark:bg-accent-sage dark:hover:bg-accent-coral dark:text-dark-100 transition-colors duration-200;
+    @apply px-4 py-2 rounded-lg bg-primary-400 hover:bg-primary-500 text-white dark:bg-accent-sage dark:hover:bg-accent-sage/80 dark:text-dark-500 transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply px-4 py-2 rounded-lg border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white dark:border-accent-sage dark:text-accent-sage dark:hover:bg-accent-sage dark:hover:text-dark-100 transition-colors duration-200;
+    @apply px-4 py-2 rounded-lg border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white dark:border-accent-sage dark:text-accent-sage dark:hover:bg-accent-sage dark:hover:text-dark-500 transition-colors duration-200;
   }
 
   .card {
-    @apply bg-white dark:bg-dark-400 rounded-lg shadow-md p-6 border border-primary-200 dark:border-dark-300 transition-all duration-200 hover:border-accent-sage dark:hover:border-accent-coral;
+    @apply bg-white dark:bg-dark-400 rounded-lg shadow-md p-6 border border-primary-200 dark:border-dark-300 transition-all duration-200 hover:border-primary-400 dark:hover:border-accent-sage;
     contain: layout style paint;
   }
 
   .nav-link {
-    @apply text-primary-400 dark:text-dark-100 hover:text-accent-sage dark:hover:text-accent-coral transition-colors duration-200;
+    @apply text-primary-400 dark:text-dark-100 hover:text-primary-500 dark:hover:text-accent-sage transition-colors duration-200;
   }
 
   .highlight {
-    @apply text-accent-sage dark:text-accent-coral;
+    @apply text-primary-400 dark:text-accent-sage;
   }
 
   .loader {

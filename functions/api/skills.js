@@ -1,5 +1,61 @@
 export async function onRequest({}) {
 	const skills = [
+		// Audio ML (lead with audio-specific stack)
+		{
+			id: 50,
+			name: "MERT",
+			category: "Audio ML",
+			iconUrl: "/icons/mert.png",
+		},
+		{
+			id: 51,
+			name: "Wav2Vec2",
+			category: "Audio ML",
+			iconUrl: "/icons/wav2vec.png",
+		},
+		{
+			id: 52,
+			name: "librosa",
+			category: "Audio ML",
+			iconUrl: "/icons/librosa.png",
+		},
+		{
+			id: 53,
+			name: "Spectrograms",
+			category: "Audio ML",
+			iconUrl: "/icons/spectrogram.png",
+		},
+		{
+			id: 19,
+			name: "Audio Spectrogram Transformer",
+			category: "Audio ML",
+			iconUrl: "/icons/ast.png",
+		},
+		{
+			id: 54,
+			name: "pretty_midi",
+			category: "Audio ML",
+			iconUrl: "/icons/midi.png",
+		},
+		{
+			id: 55,
+			name: "torchaudio",
+			category: "Audio ML",
+			iconUrl: "/icons/pytorch.svg",
+		},
+		{
+			id: 56,
+			name: "nnAudio",
+			category: "Audio ML",
+			iconUrl: "/icons/nnaudio.png",
+		},
+		{
+			id: 57,
+			name: "CQT/mel-spectrograms",
+			category: "Audio ML",
+			iconUrl: "/icons/spectrogram.png",
+		},
+
 		// ML Core (frameworks + techniques)
 		{
 			id: 1,
@@ -20,35 +76,16 @@ export async function onRequest({}) {
 			iconUrl: "/icons/huggingface.png",
 		},
 		{
-			id: 4,
-			name: "PEFT/LoRA",
-			category: "ML Core",
-			iconUrl: "/icons/peft-lora.png",
-		},
-		{
 			id: 6,
 			name: "scikit-learn",
 			category: "ML Core",
 			iconUrl: "/icons/scikit.png",
 		},
 		{
-			id: 21,
-			name: "RAG systems",
-			category: "ML Core",
-			iconUrl: "/icons/langchain.png",
-		},
-		{ id: 23, name: "Preference learning (DPO)", category: "ML Core" },
-		{
 			id: 12,
 			name: "Weights & Biases",
 			category: "ML Core",
 			iconUrl: "/icons/wandb.png",
-		},
-		{
-			id: 19,
-			name: "Audio Spectrogram Transformer (AST)",
-			category: "ML Core",
-			iconUrl: "/icons/ast.png",
 		},
 
 		// Programming & Data (languages + data tools)
@@ -72,7 +109,7 @@ export async function onRequest({}) {
 		},
 		{
 			id: 16,
-			name: "PostgreSQL",
+			name: "SQL",
 			category: "Programming & Data",
 			iconUrl: "/icons/postgres.png",
 		},
@@ -88,8 +125,20 @@ export async function onRequest({}) {
 			category: "Programming & Data",
 			iconUrl: "/icons/pandas.svg",
 		},
+		{
+			id: 38,
+			name: "GraphQL",
+			category: "Programming & Data",
+			iconUrl: "/icons/graphql.svg",
+		},
 
 		// Infrastructure & Deployment (cloud + systems)
+		{
+			id: 7,
+			name: "Modal",
+			category: "Infrastructure & Deployment",
+			iconUrl: "/icons/modal.png",
+		},
 		{
 			id: 17,
 			name: "GCP",
@@ -97,10 +146,10 @@ export async function onRequest({}) {
 			iconUrl: "/icons/gcp.svg",
 		},
 		{
-			id: 7,
-			name: "Modal (GPU inference)",
+			id: 58,
+			name: "AWS",
 			category: "Infrastructure & Deployment",
-			iconUrl: "/icons/modal.png",
+			iconUrl: "/icons/aws.svg",
 		},
 		{
 			id: 8,
@@ -114,7 +163,6 @@ export async function onRequest({}) {
 			category: "Infrastructure & Deployment",
 			iconUrl: "/icons/kubernetes-original.svg",
 		},
-
 		{
 			id: 18,
 			name: "Redis",
@@ -135,12 +183,12 @@ export async function onRequest({}) {
 		},
 		{
 			id: 39,
-			name: "GitHub Actions (CI/CD)",
+			name: "GitHub Actions",
 			category: "Infrastructure & Deployment",
 			iconUrl: "/icons/cicd.svg",
 		},
 
-		// Product & Collaboration (full-stack + tools)
+		// Product & Collaboration
 		{
 			id: 33,
 			name: "GitHub",
@@ -166,34 +214,22 @@ export async function onRequest({}) {
 			iconUrl: "/icons/notion.svg",
 		},
 		{
-			id: 32,
-			name: "Slack",
+			id: 42,
+			name: "Jupyter",
 			category: "Product & Collaboration",
-			iconUrl: "/icons/slack.svg",
+			iconUrl: "/icons/jupyter.svg",
 		},
 		{
-			id: 35,
+			id: 43,
 			name: "Amplitude",
 			category: "Product & Collaboration",
 			iconUrl: "/icons/amplitude.png",
 		},
 		{
-			id: 40,
-			name: "Google Colab",
+			id: 44,
+			name: "Colab",
 			category: "Product & Collaboration",
 			iconUrl: "/icons/colab.svg",
-		},
-		{
-			id: 41,
-			name: "Streamlit",
-			category: "Product & Collaboration",
-			iconUrl: "/icons/streamlit.svg",
-		},
-		{
-			id: 42,
-			name: "Jupyter Notebooks",
-			category: "Product & Collaboration",
-			iconUrl: "/icons/jupyter.svg",
 		},
 	];
 	return new Response(JSON.stringify(skills), {
