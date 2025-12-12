@@ -77,7 +77,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                     <img
                       src={logo}
                       alt={`${title} logo`}
-                      className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-lg flex-shrink-0 mt-1" // Increased logo size and prevent shrinking
+                      className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-xl flex-shrink-0 mt-1"
                       loading="lazy"
                       decoding="async"
                     />

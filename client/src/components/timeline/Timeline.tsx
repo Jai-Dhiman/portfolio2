@@ -31,6 +31,23 @@ const Timeline = () => {
 	// Define timeline data with narrative descriptions
 	const timelineItems = [
 		{
+			date: "September 2025",
+			endDate: "November 2025",
+			title: "Software Engineer (Contract)",
+			subtitle: "Sonautic",
+			description:
+				"Architected multi-agent system using LangChain with tool use for music practice recommendations.",
+			highlights: [
+				"Multi-agent system with tool use for autonomous retrieval from instructional materials and synthesized guidance with cited responses.",
+				"Shipped production-ready MVP in 10 weeks: React Native app with auth flows, state management (Zustand + React Query).",
+				"FastAPI backend with PostgreSQL powering the RAG pipeline.",
+			],
+			logo: "/icons/sonautic.png",
+			liveUrl: "https://sonautic.io",
+			isProject: false,
+			isLeft: false,
+		},
+		{
 			date: "December 2024",
 			endDate: "August 2025",
 			title: "Founding Engineer",
@@ -289,7 +306,7 @@ const Timeline = () => {
 					{/* Hackathon Wins */}
 					<div className="mt-16 max-w-4xl mx-auto">
 						<h3 className="text-lg font-semibold text-center text-gray-900 dark:text-white mb-6">
-							Hackathon Wins
+							Hackathons
 						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 							<div className="card p-4 text-center hover-lift">
@@ -320,6 +337,9 @@ const Timeline = () => {
 								</p>
 							</div>
 						</div>
+						<p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-4">
+							Invited participant at xAI and Y-Combinator Agent Mail hackathons. Active in SF AI/ML developer community.
+						</p>
 					</div>
 				</section>
 
@@ -376,6 +396,9 @@ const Timeline = () => {
 											Berklee Highlights
 										</h4>
 									</div>
+									<p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+										May 2020 - December 2023
+									</p>
 									<ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
 										<li className="flex items-center gap-2">
 											<span className="w-1.5 h-1.5 rounded-full bg-primary-400 dark:bg-accent-sage"></span>

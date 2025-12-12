@@ -87,6 +87,70 @@ export async function onRequest({}) {
 			category: "ML Core",
 			iconUrl: "/icons/wandb.png",
 		},
+		{
+			id: 61,
+			name: "LoRA/DPO Fine-Tuning",
+			category: "ML Core",
+			iconUrl: "/icons/finetune.png",
+		},
+
+		// Search & Retrieval
+		{
+			id: 70,
+			name: "Semantic Search",
+			category: "Search & Retrieval",
+			iconUrl: "/icons/search.png",
+		},
+		{
+			id: 71,
+			name: "Vector DB",
+			category: "Search & Retrieval",
+			iconUrl: "/icons/vectordb.png",
+		},
+		{
+			id: 72,
+			name: "RAG",
+			category: "Search & Retrieval",
+			iconUrl: "/icons/rag.png",
+		},
+		{
+			id: 73,
+			name: "Ranking Systems",
+			category: "Search & Retrieval",
+			iconUrl: "/icons/ranking.png",
+		},
+
+		// LLM/Alignment
+		{
+			id: 80,
+			name: "Constitutional AI",
+			category: "LLM/Alignment",
+			iconUrl: "/icons/anthropic.png",
+		},
+		{
+			id: 81,
+			name: "RLHF/DPO",
+			category: "LLM/Alignment",
+			iconUrl: "/icons/rlhf.png",
+		},
+		{
+			id: 82,
+			name: "LangChain",
+			category: "LLM/Alignment",
+			iconUrl: "/icons/langchain.png",
+		},
+		{
+			id: 83,
+			name: "Multi-Agent Systems",
+			category: "LLM/Alignment",
+			iconUrl: "/icons/agents.png",
+		},
+		{
+			id: 84,
+			name: "Prompt Engineering",
+			category: "LLM/Alignment",
+			iconUrl: "/icons/prompt.png",
+		},
 
 		// Programming & Data (languages + data tools)
 		{
@@ -106,6 +170,12 @@ export async function onRequest({}) {
 			name: "Rust",
 			category: "Programming & Data",
 			iconUrl: "/icons/rust.png",
+		},
+		{
+			id: 60,
+			name: "C++",
+			category: "Programming & Data",
+			iconUrl: "/icons/cpp.png",
 		},
 		{
 			id: 16,
@@ -184,6 +254,18 @@ export async function onRequest({}) {
 		{
 			id: 39,
 			name: "GitHub Actions",
+			category: "Infrastructure & Deployment",
+			iconUrl: "/icons/cicd.svg",
+		},
+		{
+			id: 62,
+			name: "PostgreSQL",
+			category: "Infrastructure & Deployment",
+			iconUrl: "/icons/postgres.png",
+		},
+		{
+			id: 63,
+			name: "CI/CD",
 			category: "Infrastructure & Deployment",
 			iconUrl: "/icons/cicd.svg",
 		},
