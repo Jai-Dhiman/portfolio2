@@ -31,33 +31,16 @@ const Timeline = () => {
 	// Define timeline data with narrative descriptions
 	const timelineItems = [
 		{
-			date: "September 2025",
-			endDate: "November 2025",
-			title: "Software Engineer (Contract)",
-			subtitle: "Sonautic",
-			description:
-				"Architected multi-agent system using LangChain with tool use for music practice recommendations.",
-			highlights: [
-				"Multi-agent system with tool use for autonomous retrieval from instructional materials and synthesized guidance with cited responses.",
-				"Shipped production-ready MVP in 10 weeks: React Native app with auth flows, state management (Zustand + React Query).",
-				"FastAPI backend with PostgreSQL powering the RAG pipeline.",
-			],
-			logo: "/icons/sonautic.png",
-			liveUrl: "https://sonautic.io",
-			isProject: false,
-			isLeft: false,
-		},
-		{
 			date: "December 2024",
 			endDate: "August 2025",
 			title: "Founding Engineer",
 			subtitle: "Capture",
 			description:
-				"Built privacy-focused social platform from 0 to 50 beta users as sole engineer. Architected recommendation engine and distributed infrastructure.",
+				"Built privacy-focused social platform from 0 to 50 beta users as sole engineer. Architected hybrid recommendation system and distributed ML infrastructure.",
 			highlights: [
-				"Recommendation engine: collaborative filtering + content-based ranking with vector embeddings (0.68 Recall@5 on cold-start).",
-				"Ranking metrics framework (Recall@K, MRR, NDCG) with automated backtesting; drove 40% engagement increase.",
-				"Distributed infrastructure: Redis rate limiting, circuit breakers, 10K+ req/min with <50ms p99 latency.",
+				"Hybrid recommendation system combining semantic search (Qdrant vector DB) with collaborative filtering; achieved 0.68 Recall@5 on cold-start users.",
+				"Production ML infrastructure: embedding pipeline, ranking metrics framework (Recall@K, MRR, NDCG), automated backtesting, and A/B testing for model iteration.",
+				"Distributed backend handling 10K+ req/min with 50ms p99 latency: Cloudflare Workers, GraphQL (Apollo), Redis caching, circuit breakers for fault tolerance.",
 			],
 			image: "/images/FeedSystemArchitecture.webp",
 			imageLabel: "System Design:",
@@ -182,29 +165,25 @@ const Timeline = () => {
 								<li className="flex items-start gap-2">
 									<Cpu className="w-5 h-5 text-primary-400 dark:text-accent-sage flex-shrink-0 mt-0.5" />
 									<span>
-										Multi-modal architecture fusing MERT-330M audio backbone
-										with MusicBERT symbolic encoding via cross-attention
+										Achieved R²=0.455 on PercePiano benchmark, surpassing published symbolic SOTA (0.397) by 15%
 									</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<Cpu className="w-5 h-5 text-primary-400 dark:text-accent-sage flex-shrink-0 mt-0.5" />
 									<span>
-										Hierarchical temporal aggregation (note to phrase to piece)
-										using bidirectional LSTMs + relative attention
+										MERT-330M audio foundation model with learned temporal aggregation; 13+ ablation experiments validating architecture (layer selection, pooling strategies, loss functions)
 									</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<Cpu className="w-5 h-5 text-primary-400 dark:text-accent-sage flex-shrink-0 mt-0.5" />
 									<span>
-										Efficient processing of 2-10 minute long-form audio
-										performances
+										Hybrid RAG system combining BM25 + dense vectors with Reciprocal Rank Fusion for piano pedagogy feedback with citable responses
 									</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<Cpu className="w-5 h-5 text-primary-400 dark:text-accent-sage flex-shrink-0 mt-0.5" />
 									<span>
-										Targeting PercePiano benchmark (current: R²=0.36 vs SOTA: R²=0.40); publishing
-										research upon achieving competitive baseline
+										Edge-first architecture: Rust/WASM frontend, Cloudflare Workers orchestration, HF Inference Endpoints
 									</span>
 								</li>
 							</ul>
@@ -214,10 +193,10 @@ const Timeline = () => {
 							{[
 								"PyTorch",
 								"MERT-330M",
-								"MusicBERT",
+								"Rust/WASM",
+								"Cloudflare Workers",
 								"librosa",
 								"nnAudio",
-								"Modal",
 							].map((tech) => (
 								<span
 									key={tech}
@@ -250,8 +229,7 @@ const Timeline = () => {
 						</div>
 
 						<p className="mt-6 text-sm text-gray-500 dark:text-gray-400 italic">
-							Active research project. Publishing results upon achieving
-							competitive baseline.
+							Active research project. Targeting ISMIR 2026.
 						</p>
 					</div>
 				</section>
