@@ -33,14 +33,14 @@ const Timeline = () => {
 		{
 			date: "December 2024",
 			endDate: "August 2025",
-			title: "Founding Engineer",
+			title: "Founding Software Engineer",
 			subtitle: "Capture",
 			description:
-				"Built privacy-focused social platform from 0 to 50 beta users as sole engineer. Architected hybrid recommendation system and distributed ML infrastructure.",
+				"Built privacy-first social platform end-to-end (418 commits, 5 contributors): React Native, TypeScript/Cloudflare Workers, GraphQL, SQLite D1.",
 			highlights: [
-				"Hybrid recommendation system combining semantic search (Qdrant vector DB) with collaborative filtering; achieved 0.68 Recall@5 on cold-start users.",
-				"Production ML infrastructure: embedding pipeline, ranking metrics framework (Recall@K, MRR, NDCG), automated backtesting, and A/B testing for model iteration.",
-				"Distributed backend handling 10K+ req/min with 50ms p99 latency: Cloudflare Workers, GraphQL (Apollo), Redis caching, circuit breakers for fault tolerance.",
+				"Designed distributed infrastructure load-tested to 10K+ req/min at 50ms p99: edge caching, Redis rate limiting, circuit breakers, Rust WASM image processing.",
+				"Created recommendation system (Qdrant + collaborative filtering); 0.68 Recall@5 via iterative A/B testing. Implemented WebAuthn passkey auth with biometric fallbacks, E2E encryption, OAuth (Apple/Google).",
+				"Built SvelteKit analytics dashboard; established CI/CD with GitHub Actions and Turborepo.",
 			],
 			image: "/images/FeedSystemArchitecture.webp",
 			imageLabel: "System Design:",
@@ -143,7 +143,7 @@ const Timeline = () => {
 									CrescendAI
 								</h2>
 								<p className="text-primary-400 dark:text-accent-sage font-medium">
-									AI-Powered Piano Performance Evaluation
+									Independent ML Researcher
 								</p>
 								<p className="text-sm text-gray-500 dark:text-gray-400">
 									September 2025 - Present
@@ -152,9 +152,8 @@ const Timeline = () => {
 						</div>
 
 						<p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-							AI-powered piano performance evaluation for students in
-							underserved markets. Validated product need through interviews
-							with 12 music educators and 20+ students.
+							AI-powered piano performance evaluation for students who can't access private teachers.
+							Published research: audio foundation models outperform symbolic for piano evaluation.
 						</p>
 
 						<div className="mb-6">
@@ -165,13 +164,13 @@ const Timeline = () => {
 								<li className="flex items-start gap-2">
 									<Cpu className="w-5 h-5 text-primary-400 dark:text-accent-sage flex-shrink-0 mt-0.5" />
 									<span>
-										Achieved R²=0.455 on PercePiano benchmark, surpassing published symbolic SOTA (0.397) by 15%
+										R²=0.537 vs 0.347 baseline (p&lt;10⁻²⁵), 55% above published symbolic SOTA. Targeting ISMIR 2026.
 									</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<Cpu className="w-5 h-5 text-primary-400 dark:text-accent-sage flex-shrink-0 mt-0.5" />
 									<span>
-										MERT-330M audio foundation model with learned temporal aggregation; 13+ ablation experiments validating architecture (layer selection, pooling strategies, loss functions)
+										MuQ audio foundation model; 13+ ablation experiments validating layer selection, pooling strategies, loss functions, and soundfont augmentation.
 									</span>
 								</li>
 								<li className="flex items-start gap-2">
