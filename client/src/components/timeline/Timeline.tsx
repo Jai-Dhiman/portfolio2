@@ -6,7 +6,7 @@ import TimelineItem from "./TimelineItem";
 import SkillCluster from "./SkillCluster";
 import MusicStaffBackground from "../../styles/backgrounds/MusicStaffBackground";
 import Loader from "../loader";
-import { ExternalLink, Github, Music, Cpu, Trophy, Award } from "lucide-react";
+import { ExternalLink, Github, Music, Cpu, Trophy, Award, FileText } from "lucide-react";
 
 const Timeline = () => {
 	const { data: skills, isLoading: skillsLoading } = useQuery({
@@ -227,9 +227,27 @@ const Timeline = () => {
 							</a>
 						</div>
 
-						<p className="mt-6 text-sm text-gray-500 dark:text-gray-400 italic">
-							Active research project. Targeting ISMIR 2026.
-						</p>
+						<div className="mt-6 pt-6 border-t border-gray-200 dark:border-dark-300">
+							<div className="flex items-center gap-2 mb-2">
+								<FileText className="w-4 h-4 text-primary-400 dark:text-accent-sage" />
+								<span className="text-sm font-semibold text-gray-900 dark:text-white">
+									Publication
+								</span>
+							</div>
+							<p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
+								"Audio Foundation Models Outperform Symbolic Representations for Piano Performance Evaluation"
+								<span className="text-gray-500 dark:text-gray-400"> - January 2025</span>
+							</p>
+							<a
+								href="https://arxiv.org/abs/2601.19029"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center gap-1.5 text-sm text-primary-500 dark:text-accent-sage hover:underline"
+							>
+								<ExternalLink className="w-3.5 h-3.5" />
+								<span>Read on arXiv</span>
+							</a>
+						</div>
 					</div>
 				</section>
 
